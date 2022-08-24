@@ -1,9 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --gray-light: #dfdfe0;
+  --gray-dark: #808080;
+  --green-light: #aac4b9;
+  --blue-dark: #012839;
+  --green-dark: #779593;
+  --dark: #161719;
+  --brown-dark: #2f3331;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  /* color: --primary-text;
+  background-color: var(--primary-light); */
+}
+
+body {
+  min-height: 0vw;
+  font-size: calc(0.6122848200312989vw + 0.3092723004694837em);
+}
+
+.container {
+  max-width: 97.5em;
+  margin: 0 auto;
+  padding-left: 3.88em;
+  padding-right: 3.88em;
 }
 
 a {
@@ -11,16 +48,36 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primary-text);
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+h1 {
+  font-size: 6.94em;
+  line-height: 121%;
+  letter-spacing: 0.0075em;
+}
+h2 {
+  font-size: 3.33em;
+  line-height: 121%;
+  letter-spacing: 0.01em;
+}
+h3 {
+  font-size: 2.22em;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
 }
