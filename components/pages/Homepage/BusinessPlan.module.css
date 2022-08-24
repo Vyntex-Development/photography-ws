@@ -1,0 +1,119 @@
+.BusinessPlan {
+  background-color: var(--green-light);
+  padding: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-column-gap: 16px;
+  grid-row-gap: 0px;
+}
+
+/*  GRID STYLE */
+.grid > div:nth-of-type(1) {
+  grid-area: 1 / 2 / 2 / 6;
+}
+.grid > div:nth-of-type(2) {
+  grid-area: 1 / 6 / 2 / 10;
+}
+.grid > div:nth-of-type(3) {
+  grid-area: 2 / 2 / 3 / 12;
+  margin: 2rem 0 2.5rem;
+}
+.grid > div:nth-of-type(4) {
+  grid-area: 3 / 2 / 4 / 5;
+}
+.grid > div:nth-of-type(5) {
+  grid-area: 3 / 6 / 4 / 8;
+}
+.grid > div:nth-of-type(6) {
+  grid-area: 3 / 9 / 4 / 11;
+}
+
+/* INDIVIDUAL EL STYLE */
+
+.grid > div:nth-of-type(1) h2,
+.grid > div:nth-of-type(2) p {
+  color: var(--blue-dark);
+}
+
+.grid > div:nth-of-type(2) p {
+  line-height: 150%;
+}
+
+.grid > div:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+}
+
+.grid > div:nth-of-type(3) {
+  border-bottom: 1px solid var(--green-dark);
+  display: flex;
+  padding-bottom: 0.875rem;
+}
+
+.grid > div:nth-of-type(3) p {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 29px;
+  letter-spacing: 0.01em;
+  color: var(--blue-dark);
+}
+
+.grid > div:nth-of-type(3) p:not(:last-of-type) {
+  margin-right: 2.75rem;
+}
+
+.grid > div:nth-of-type(4) span {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.grid > div:nth-of-type(4) p {
+  margin: 1rem 0 1.5rem;
+  color: var(--brown-dark);
+}
+
+.grid > div:nth-of-type(5) li,
+.grid > div:nth-of-type(6) li,
+.grid > div:nth-of-type(4) span {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--blue-dark);
+}
+
+.grid > div:nth-of-type(5),
+.grid > div:nth-of-type(6) {
+  padding-top: 1.875rem;
+}
+
+.grid > div:nth-of-type(5) ul,
+.grid > div:nth-of-type(6) ul {
+  padding: 0;
+  margin: 0;
+}
+
+.grid > div:nth-of-type(5) li,
+.grid > div:nth-of-type(6) li {
+  list-style: none;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.grid > div:nth-of-type(5) li:not(:last-of-type),
+.grid > div:nth-of-type(6) li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.grid > div:nth-of-type(5) li svg,
+.grid > div:nth-of-type(6) li svg {
+  margin-right: 1rem;
+}
