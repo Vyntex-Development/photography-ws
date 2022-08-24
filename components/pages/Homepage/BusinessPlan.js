@@ -24,9 +24,9 @@ const BusinessPlan = () => {
           <div>
             <span>$250-$650</span>
             <p>
-              Fortune 500 build your super emerging markets What's a Euro
+              Fortune 500 build your super emerging markets What&apos;s a Euro
               liquidity embracing ingenuity making bread and honey Scrooge
-              McDuckin' percentage.
+              McDuckin&apos; percentage.
             </p>
             <Link href="/book-now">Book now</Link>
           </div>
