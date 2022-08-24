@@ -10,7 +10,7 @@ const Header = () => {
                 <Image
                 layout="fill"
                 objectFit="cover"
-                alt="quotation"
+                alt="logo"
                 src="/images/logo.png"
               ></Image>
                 </div>

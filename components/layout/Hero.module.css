@@ -1,0 +1,29 @@
+.HeroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:97.5em;
+}
+
+.HeroSection p{
+    width: 55rem;
+    margin-top: 5.75rem;
+    margin-bottom: 10rem;
+    font-size: 2.25rem;
+    
+}
+
+
+
+.HeroWrapper {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ImageWrapper {
+    width: 92em;
+    height: 500px;
+    position:relative;
+    margin-bottom: 1rem;
+}
