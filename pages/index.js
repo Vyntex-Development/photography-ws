@@ -1,8 +1,9 @@
+import Footer from "../components/layout/Footer";
+
 const home = () => {
   return (
     <div>
-      <h1>Title</h1>
-      <p>Neki tekst</p>
+      <Footer />
     </div>
   );
 };
