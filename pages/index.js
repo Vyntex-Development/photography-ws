@@ -1,10 +1,7 @@
+import Header from "../components/layout/Header"
+
 const home = () => {
-  return (
-    <div>
-      <h1>Title</h1>
-      <p>Neki tekst</p>
-    </div>
-  );
+  return (<Header></Header>);
 };
 
 export default home;

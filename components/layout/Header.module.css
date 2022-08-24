@@ -1,0 +1,30 @@
+.HeaderWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gray-light);
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+}
+
+.LogoWrapper {
+    width: 100px;
+    height: 60px;
+    position: relative;
+}
+
+.LinksWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.Link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.97em;
+    line-height: 140%;
+    color: var(--gray-dark)
+}
