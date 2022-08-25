@@ -1,0 +1,28 @@
+.Link {
+  color: var(--white);
+  border-radius: 4px;
+  width: max-content;
+  cursor: pointer;
+}
+
+.Link a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  padding: 0.625rem 3rem;
+  display: inline-block;
+}
+
+.Primary {
+  background: var(--green-dark);
+}
+
+.Secondary {
+  background: var(--brown-dark);
+}
