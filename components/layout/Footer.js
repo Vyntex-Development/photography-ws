@@ -1,6 +1,7 @@
 import classes from "./Footer.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import CustomLink from "../UI/Link";
 import { InstagramSvg, TweeterSvg, BehanceSvg, FacebookSvg } from "../svg/svg";
 
 const Footer = () => {
@@ -10,7 +11,9 @@ const Footer = () => {
         <div className={classes.gridTextWrapper}>
           <h2>Have an idea?</h2>
           <p>Lets hear about it. Contact us!</p>
-          <Link href="/contact">Contact us</Link>
+          <CustomLink href="/contact" linkType="primary">
+            Contact us
+          </CustomLink>
         </div>
         <div className={classes.gridImageWrapper}>
           <div className={classes.ImageWrapper}>

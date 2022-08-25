@@ -1,0 +1,42 @@
+.BlogPosts {
+  padding: 5rem 0;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 16px;
+}
+
+.GridItem {
+  grid-area: 1 / 2 / 2 / 12;
+}
+
+.Heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.25rem;
+}
+
+.Heading a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+}
+
+.BlogCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 4.5rem;
+}
+
+.BlogCards > div {
+  width: 100%;
+}
