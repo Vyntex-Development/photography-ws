@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import classes from "./Hero.module.css"
 
 const Hero = () => {
@@ -8,12 +9,26 @@ const Hero = () => {
                 <div className={classes.HeroWrapper}>
                     
                     <div className={classes.ImageWrapper}>
-                    <Image
-                    layout="fill"
-                    objectFit="contain"
-                    alt="hero"
-                    src="/images/hero.png"
-                ></Image>
+                        <div className={classes.LinksWrapper}>
+                            <Link passHref={true} href="https://www.facebook.com/">
+                                <a className={classes.Link}>FACEBOOK</a>
+                            </Link>
+                            <Link passHref={true} href="https://www.twitter.com/">
+                                <a className={classes.Link}>TWITTER</a>
+                            </Link>
+                            <Link passHref={true} href="https://www.instagram.com/">
+                                <a className={classes.Link}>INSTAGRAM</a>
+                            </Link>
+                            <Link passHref={true} href="https://www.behance.net/">
+                                <a className={classes.Link}>BEHANCE</a>
+                            </Link>
+                        </div>
+                        <Image
+                            layout="fill"
+                            objectFit="contain"
+                            alt="hero"
+                            src="/images/hero.png"
+                        ></Image>
 
                     </div>
                 <h1>Alexander Alexadrovic</h1>
