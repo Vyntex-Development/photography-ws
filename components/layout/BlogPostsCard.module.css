@@ -1,0 +1,50 @@
+.ImageWrapper {
+  position: relative;
+  height: 19.44em;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.CardTitle {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--blue-dark);
+  margin-bottom: 0.5rem;
+  max-width: 20rem;
+}
+
+.CardDescription {
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  color: var(--gray-dark);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(119, 149, 147, 0.2);
+}
+
+.CardDetailsWrapper {
+  display: flex;
+  padding-top: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardDetailsWrapper > div:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+}
+
+.CardDetailsWrapper > div:nth-of-type(1) svg {
+  margin-right: 0.5rem;
+}
+
+.CardDetailsWrapper p {
+  font-size: 0.875rem;
+  line-height: 114%;
+  letter-spacing: 0.1px;
+  color: var(--gray-dark);
+}
+
+.CardDetailsWrapper p span {
+  font-weight: 500;
+}
