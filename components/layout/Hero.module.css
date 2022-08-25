@@ -13,7 +13,25 @@
     
 }
 
+.LinksWrapper {
+    position:absolute;
+    display: flex;
+    z-index: 5;
+    transform: rotate(-90deg);
+    gap: 0.75rem;
+    top: 239px;
+    right: 1070px;
 
+}
+
+.Link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: var(--gray-dark)
+}
 
 .HeroWrapper {
     display:flex;
