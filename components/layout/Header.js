@@ -1,12 +1,19 @@
 import classes from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  const projectPage = router.pathname.includes("/projects");
+
   return (
     <div className="container">
       <div className={classes.HeaderWrapper}>
-        <div className={classes.LogoWrapper}>
+        <div
+          className={classes.LogoWrapper}
+          style={{ filter: `${projectPage ? "invert(1)" : ""}` }}
+        >
           <Image
             layout="fill"
             objectFit="cover"

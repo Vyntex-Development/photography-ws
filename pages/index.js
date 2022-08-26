@@ -1,18 +1,5 @@
-import Hero from "../components/layout/Hero";
-import BusinessPlan from "../components/pages/Homepage/BusinessPlan";
-import BlogPosts from "../components/layout/BlogPosts";
-import Portfolio from "../components/layout/Portfolio";
+import HomePage from "../components/pages/Homepage/Homepage";
 
-
-const home = () => {
-  return (
-    <>
-      <Hero />
-      <Portfolio />
-      <BlogPosts />
-      <BusinessPlan />
-      </>
-  );
-};
+const home = () => <HomePage />;
 
 export default home;

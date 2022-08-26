@@ -1,5 +1,5 @@
 import classes from "./BusinessPlan.module.css";
-import { CheckmarkSvg } from "../../svg/svg";
+import { CheckmarkSvg, ScrollToTopSvg } from "../../svg/svg";
 import CustomLink from "../../UI/Link";
 import { useState } from "react";
 
@@ -115,7 +115,6 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-
           {activeTab === 1 && (
             <div className={activeSecond}>
               <ul>
@@ -134,7 +133,6 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-
           {activeTab === 2 && (
             <div className={activeThird}>
               <ul>
@@ -153,7 +151,6 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-
           {activeTab === 0 && (
             <div className={activeFirst}>
               <ul>
@@ -172,7 +169,6 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-
           {activeTab === 1 && (
             <div className={activeSecond}>
               <ul>
@@ -191,7 +187,6 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-
           {activeTab === 2 && (
             <div className={activeThird}>
               <ul>
@@ -210,26 +205,7 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={() => {
-              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            }}
-          >
-            <path
-              d="M23.9373 40L23.9373 8M23.9373 8C23.9373 13.5338 26.1124 16.1805 27.2 16.6617M23.9373 8C23.9373 13.4135 21.8458 16.0201 20.8 16.6617"
-              stroke="#779593"
-            />
-            <path
-              d="M48 46H0V50H48V46Z"
-              fill="#779593"
-              mask="url(#path-1-inside-1_12_180)"
-            />
-          </svg>
+          <ScrollToTopSvg />
         </div>
       </div>
     </div>

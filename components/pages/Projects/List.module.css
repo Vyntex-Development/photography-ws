@@ -1,0 +1,113 @@
+
+
+.List {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.SpansWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 20.625rem;
+    margin-bottom: 2.875rem
+}
+
+.SpansWrapper span {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: var(--gray-light)
+}
+
+.TitleLinksWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.5rem;
+
+    
+}
+
+.LinksWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LinksWrapper a {
+    display: flex;
+    justify-content: space-between;
+    width: 37vw;
+    align-items: center;
+}
+.LinksWrapper a :nth-child(1){
+    font-size: 2rem;
+    color: var(--gray-light);
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.LinksWrapper a :nth-child(2) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 140%;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+}
+
+.LinksDotWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.SpanBlock {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gray-light);
+    border-radius: 100%;
+
+}
+
+.ProjectHeading {
+    color: var(--gray-light)
+
+}
+
+.Line {
+    border: 1px solid #808080;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.LastLine {
+    border: 1px solid #808080;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+
+}
+.FirstLine {
+    border: 2px solid #808080;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.ImageWrapper {
+    position: absolute;
+    width: 390.56px;
+    height: 419.74px;
+    right: 160px;
+    top: -44px;
+
+}
