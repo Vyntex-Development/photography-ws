@@ -125,3 +125,44 @@
   bottom: 28px;
   cursor: pointer;
 }
+
+.Tab {
+  position: relative;
+  cursor: pointer;
+}
+
+.Tab .Active {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  height: 3px;
+  background-color: var(--blue-dark);
+  border-radius: 12px;
+  animation: border-width 1s ease-in-out;
+}
+
+.AnimateTabContent {
+  animation: tab-opacity 1s;
+}
+
+@keyframes tab-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes border-width {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
