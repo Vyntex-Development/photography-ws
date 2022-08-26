@@ -1,47 +1,109 @@
 .HeroSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width:97.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 97.5em;
 }
 
-.HeroSection p{
-    width: 55rem;
-    margin-top: 5.75rem;
-    margin-bottom: 10rem;
-    font-size: 2.25rem;
-    
-}
-
-.LinksWrapper {
-    position:absolute;
-    display: flex;
-    z-index: 5;
-    transform: rotate(-90deg);
-    gap: 0.75rem;
-    top: 239px;
-    right: 1070px;
-
+.HeroSection p {
+  width: 55rem;
+  margin-top: 5.75rem;
+  margin-bottom: 10rem;
+  font-size: 2.25rem;
 }
 
 .Link {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 140%;
-    color: var(--gray-dark)
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  color: var(--gray-dark);
 }
 
 .HeroWrapper {
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.SwitchOrder {
+  flex-direction: column-reverse;
+}
+
+.SwitchOrder h1 {
+  margin-bottom: 2.5rem;
+  color: var(--gray-light);
+}
+
+.SwitchOrder .ImageWrapper {
+  margin-bottom: 1.5rem;
 }
 
 .ImageWrapper {
-    width: 92em;
-    height: 500px;
-    position:relative;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.LinksWrapper {
+  position: absolute;
+  display: flex;
+  z-index: 5;
+  transform: rotate(-90deg);
+  gap: 0.75rem;
+  top: 239px;
+  left: calc(-150px + 2.06rem);
+}
+
+.ProjectInfoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ProjectInfoWrapper > div:nth-of-type(2) {
+  display: flex;
+}
+
+.Dot {
+  background-color: white;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  display: block;
+  margin-left: 6rem;
+}
+
+.Details {
+  display: flex;
+}
+
+.Detail {
+  display: flex;
+}
+
+.Detail span {
+  text-transform: uppercase;
+  margin: 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.87rem;
+  line-height: 140%;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+
+.Detail span:nth-of-type(1) {
+  margin-right: 1rem;
+  color: var(--gray-dark);
+}
+
+.Detail:not(:last-of-type) {
+  margin-right: 5rem;
 }
