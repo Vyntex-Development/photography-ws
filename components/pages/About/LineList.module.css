@@ -1,0 +1,119 @@
+.List {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+
+
+.List h2 {
+    font-family: 'Cormorant Garamond';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 58px;
+letter-spacing: 0.01em;
+
+/* Firefly */
+color: #012839;
+
+
+}
+.LinksWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LinksWrapper a {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.LinksWrapper a :nth-child(1){
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    
+    /* identical to box height, or 20px */
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    
+    /* Gumbo */
+    color: #779593;
+}
+
+.LinksWrapper a :nth-child(2) {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+
+/* identical to box height, or 20px */
+letter-spacing: 0.015em;
+text-transform: uppercase;
+
+/* Firefly */
+color: #012839;
+}
+
+.Line {
+    border: 1px solid #808080;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.LastLine {
+    border: 1px solid #808080;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+
+}
+.FirstLine {
+    border: 2px solid #808080;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.SpansWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 20.625rem;
+    margin-bottom: 2.875rem
+}
+
+.SpansWrapper span {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: var(--gray-light)
+}
+
+.Load {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+
+/* identical to box height, or 20px */
+letter-spacing: 0.02em;
+text-transform: uppercase;
+
+/* Gumbo */
+color: #779593;
+align-self: center;
+
+}
