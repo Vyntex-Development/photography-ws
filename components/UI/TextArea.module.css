@@ -1,0 +1,18 @@
+.TextArea textarea {
+  background: transparent;
+  border: 1px solid var(--gray-dark);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  resize: none;
+}
+
+.TextArea textarea::placeholder {
+  text-transform: uppercase;
+  color: var(--gray-dark);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}

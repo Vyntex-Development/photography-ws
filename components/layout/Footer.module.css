@@ -89,6 +89,10 @@
   border-bottom: 1px solid var(--gray-light);
 }
 
+.MarginTopDisable {
+  margin-top: 0rem;
+}
+
 .footerMadeByWrapper {
   padding: 1.5rem 0;
 }
