@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 
   let bgColor;
 
-  if (router.pathname === "/") {
+  if (router.pathname === "/" || router.pathname === "/blog") {
     bgColor = "#DFDFE0";
   }
 
