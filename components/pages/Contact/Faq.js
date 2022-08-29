@@ -56,7 +56,7 @@ const Faq = () => {
       <div className={classes.Faq}>
         <div className={classes.Question} onClick={() => setActive(2)}>
           <p className={`${active === 2 ? classes.Active : ""}`}>
-            Don't architects add substantial cost to a project?
+            Don&apos;t architects add substantial cost to a project?
           </p>
           {active !== 2 && <ClosedSvg />}
           {active === 2 && <OpenSvg />}
@@ -102,7 +102,7 @@ const Faq = () => {
       <div className={classes.Faq}>
         <div className={classes.Question} onClick={() => setActive(4)}>
           <p className={`${active === 4 ? classes.Active : ""}`}>
-            What's my role in the design process?
+            What&apos;s my role in the design process?
           </p>
           {active !== 4 && <ClosedSvg />}
           {active === 4 && <OpenSvg />}

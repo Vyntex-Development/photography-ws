@@ -18,8 +18,8 @@ const ContactPage = () => {
       <div>
         <h2>Get in touch!</h2>
         <p>
-          Everyone's a handyman any work goin mate? a poor tradie blames his
-          tools coffee break tough as nails ball park figure tools down
+          Everyone&apos;s a handyman any work goin mate? a poor tradie blames
+          his tools coffee break tough as nails ball park figure tools down
           excavator hard yakka.
         </p>
         <div className={classes.ContactDetails}>
