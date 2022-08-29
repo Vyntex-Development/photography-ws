@@ -1,0 +1,62 @@
+.Faq {
+  border-bottom: 1px solid var(--green-dark);
+}
+
+.Question {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+
+.Faq:nth-of-type(1) .Question {
+  padding-top: 0rem;
+}
+
+.Question p,
+.Answer p {
+  line-height: 150%;
+  color: var(--gray-light);
+}
+
+.Question p {
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.Answer p {
+  margin-bottom: 1rem;
+  max-width: 34rem;
+}
+
+.Answer {
+  overflow: hidden;
+  max-height: 0;
+}
+
+.Open {
+  max-height: 300px;
+  transition: all 0.9s ease-in-out;
+}
+
+.Question svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Question svg:nth-of-type(1) {
+  z-index: 1;
+}
+
+.Question svg:nth-of-type(2) {
+  z-index: 2;
+}
+
+.Faq .Question .Active {
+  color: #aac4b9;
+}
