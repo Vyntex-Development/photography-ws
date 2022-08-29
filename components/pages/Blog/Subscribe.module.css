@@ -1,0 +1,64 @@
+.Subscribe {
+  width: 100%;
+  position: relative;
+  padding-top: 5rem;
+}
+
+.Form {
+  background-color: var(--brown-dark);
+  padding: 2.5rem 0 2.5rem 7rem;
+  z-index: 1;
+  position: relative;
+  max-width: 40.93rem;
+}
+
+.Form h3 {
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: var(--gray-light);
+  margin-bottom: 1rem;
+}
+
+.Form p {
+  max-width: 27rem;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  color: var(--gray-dark);
+}
+
+.InputWrapper {
+  margin: 1.5rem 0 1rem;
+  width: 100%;
+  max-width: 27rem;
+  position: relative;
+}
+
+.InputWrapper input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding: 0.625rem 0 0.625rem 1.5rem;
+}
+
+.InputWrapper input::placeholder {
+  color: var(--gray-dark);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 0.015em;
+}
+
+.InputWrapper button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  padding: 0.625rem 3rem;
+  background: var(--green-dark);
+  border: 0;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
