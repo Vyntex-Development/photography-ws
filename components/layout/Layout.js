@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     bgColor = "#DFDFE0";
   }
 
-  if (router.pathname.includes("/projects")) {
+  if (router.pathname.includes("/projects") || router.pathname === "/contact") {
     bgColor = "#2F3331";
   }
 
