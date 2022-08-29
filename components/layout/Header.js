@@ -6,13 +6,14 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const projectPage = router.pathname.includes("/projects");
+  const contactPage = router.pathname === "/contact";
 
   return (
     <div className="container">
       <div className={classes.HeaderWrapper}>
         <div
           className={classes.LogoWrapper}
-          style={{ filter: `${projectPage ? "invert(1)" : ""}` }}
+          style={{ filter: `${projectPage || contactPage ? "invert(1)" : ""}` }}
         >
           <Image
             layout="fill"
