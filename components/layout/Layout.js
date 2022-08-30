@@ -15,11 +15,13 @@ const Layout = ({ children }) => {
     bgColor = "#2F3331";
   }
 
+  let errorPage = router.route === "/404";
+
   return (
     <div style={{ backgroundColor: bgColor }}>
       <Header />
       <main>{children}</main>
-      <Footer />
+      {!errorPage && <Footer />}
     </div>
   );
 };
