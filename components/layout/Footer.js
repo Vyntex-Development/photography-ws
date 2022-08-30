@@ -81,11 +81,11 @@ const Footer = () => {
           }`}
         >
           <div>
-            <Link href="/about-us">About us</Link>
-            <Link href="/project">Project</Link>
+            <Link href="/about">About us</Link>
+            <Link href="/projects">Project</Link>
             <Link href="/blog">Blog</Link>
-            <Link href="/contact-us">Contact us</Link>
-            <Link href="/terms-of-use">Terms of Use</Link>
+            <Link href="/contact">Contact us</Link>
+            <Link href="/privacy-policy">Terms of Use</Link>
           </div>
           <div>
             <InstagramSvg />
@@ -97,7 +97,7 @@ const Footer = () => {
         <div className={classes.footerMadeByWrapper}>
           <div>
             made by &nbsp;
-            <Link href="/about-us">vyntex</Link>
+            <Link href="https://www.vyntex.com/">vyntex</Link>
           </div>
           <div>with webflow</div>
         </div>
