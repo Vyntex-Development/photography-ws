@@ -8,9 +8,9 @@ const PrivacyPolicyPage = () => {
         <p>
           BY ACCESSING OR USING OUR SERVICES, YOU CONSENT TO THE COLLECTION,
           TRANSFER, MANIPULATION, STORAGE, DISCLOSURE AND OTHER USES OF YOUR
-          INFORMATION (COLLECTIVELY, "USE OF YOUR INFORMATION") AS DESCRIBED IN
-          THIS PRIVACY POLICY. IF YOU DO NOT AGREE WITH OR CONSENT TO THIS
-          PRIVACY POLICY YOU MAY NOT ACCESS OR USE OUR SERVICES.
+          INFORMATION (COLLECTIVELY, &quot;USE OF YOUR INFORMATION&quot;) AS
+          DESCRIBED IN THIS PRIVACY POLICY. IF YOU DO NOT AGREE WITH OR CONSENT
+          TO THIS PRIVACY POLICY YOU MAY NOT ACCESS OR USE OUR SERVICES.
         </p>
       </div>
       <div className={classes.Policies}>
@@ -30,7 +30,7 @@ const PrivacyPolicyPage = () => {
           <p>
             7 problems with science facts. 8 ways best stores are completely
             overrated. The 17 worst amazing gadgets in history. 16 things about
-            future technologies your kids don't want you to know. Why best
+            future technologies your kids don&apos;t want you to know. Why best
             stores are killing you.
           </p>
         </div>
