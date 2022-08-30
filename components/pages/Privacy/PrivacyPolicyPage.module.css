@@ -1,0 +1,71 @@
+.PrivacyPolicyWrapper {
+  width: 100%;
+  max-width: 43rem;
+  margin: -0.75rem auto 0;
+  padding-bottom: 2rem;
+}
+
+.PrivacyPolicyWrapper h1 {
+  margin-bottom: 3rem;
+  color: var(--blue-dark);
+  margin-left: 1rem;
+}
+
+.IntroWrappper p {
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--gray-dark);
+  margin-bottom: 2.5rem;
+  margin-left: 1rem;
+}
+
+.ParaWrapper {
+  border-top: 1px solid var(--green-dark);
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+}
+
+.ListWrapper {
+  border-top: 1px solid var(--green-dark);
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+}
+
+.ListItem {
+  padding-left: 1rem;
+}
+
+.ListWrapper p:nth-of-type(1),
+.ListItem p:nth-of-type(1):not(:last-of-type) {
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #2a303b;
+  margin-bottom: 1rem;
+}
+
+.ListWrapper p:nth-of-type(2),
+.ListItem p:nth-of-type(2) {
+  margin-bottom: 3rem;
+}
+
+.ListItem span {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.ParaWrapper p:nth-of-type(1) {
+  margin-bottom: 3rem;
+}
+
+.PrivacyPolicyWrapper h2 {
+  margin-left: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.PrivacyPolicyWrapper h2 {
+  margin-top: 3rem;
+}
