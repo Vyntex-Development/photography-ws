@@ -39,7 +39,7 @@ const Header = () => {
           <Link passHref={true} href="/projects">
             <a className={classes.Link}>PROJECTS</a>
           </Link>
-          <Link passHref={true} href="/blog">
+          <Link passHref={true} href="/blogs">
             <a className={classes.Link}>BLOG</a>
           </Link>
           <Link passHref={true} href="/contact">

@@ -1,8 +1,13 @@
 import classes from "./BlogPosts.module.css";
 import BlogCard from "./BlogPostsCard";
 import Link from "next/link";
+import { ScrollToTopSvg } from "../svg/svg";
+import { useRouter } from "next/router";
 
 const BlogPosts = () => {
+  const router = useRouter();
+  const homepage = router.pathname === "/";
+
   return (
     <div className={classes.BlogPosts}>
       <div className="container">
@@ -10,7 +15,7 @@ const BlogPosts = () => {
           <div className={classes.GridItem}>
             <div className={classes.Heading}>
               <h2>Latest blog posts</h2>
-              <Link href="/">see more</Link>
+              <Link href="/blogs">see more</Link>
             </div>
             <div className={classes.BlogCards}>
               <BlogCard
@@ -39,6 +44,11 @@ const BlogPosts = () => {
               />
             </div>
           </div>
+          {!homepage && (
+            <div className={classes.ScrollSvgWrapper}>
+              <ScrollToTopSvg />
+            </div>
+          )}
         </div>
       </div>
     </div>
