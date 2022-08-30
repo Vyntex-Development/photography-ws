@@ -1,0 +1,42 @@
+.CoverImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.Layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+  opacity: 0.85;
+  z-index: 1;
+
+  display: flex;
+}
+
+.ContentWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ContentWrapper h2 {
+  margin: 2.5rem 0 1rem;
+}
+
+.ContentWrapper p {
+  margin-bottom: 1.5rem;
+}
