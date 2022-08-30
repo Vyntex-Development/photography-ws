@@ -1,13 +1,12 @@
-import Subscribe from "./Subscribe";
-import Articles from "./Articles";
-import MostTrending from "./MostTrending";
+import BlogPosts from "../../layout/BlogPosts";
+import BlogContent from "./BlogContent";
 
 const BlogPage = () => {
   return (
     <>
-      <MostTrending />
-      <Articles />
-      <Subscribe />
+      <BlogContent />
+
+      <BlogPosts />
     </>
   );
 };

@@ -7,6 +7,10 @@ const Button = ({ type, children, btnType }) => {
     btnClasses = classes.Primary;
   }
 
+  if (btnType === "secondary") {
+    btnClasses = classes.Secondary;
+  }
+
   return (
     <button type={type} className={`${classes.Btn} ${btnClasses}`}>
       {children}
