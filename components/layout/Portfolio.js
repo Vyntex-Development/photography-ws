@@ -6,6 +6,24 @@ const Portfolio = () => {
     return (
         <div className="container">
                 <div className={classes.ProtfolioWrapper}>
+                    <div className={classes.CurveWrapper}>
+                    <Image
+                        layout="fill"
+                        objectFit="cover"
+                        alt="curve"
+                        src="/images/curve.png"
+                    ></Image>
+
+                    </div>
+                    <div className={classes.ScrollWrapper}>
+                    <Image
+                        layout="fill"
+                        objectFit="cover"
+                        alt="scroll"
+                        src="/images/scroll.png"
+                    ></Image>
+
+                    </div>
                 <div className={classes.SpansWrapper}>
                     <span>All</span>
                     <span>Personal</span>
