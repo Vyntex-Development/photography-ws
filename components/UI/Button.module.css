@@ -11,3 +11,8 @@
   color: var(--gray-light);
   background-color: var(--green-dark);
 }
+
+.Secondary {
+  color: var(--gray-light);
+  background-color: var(--dark);
+}
