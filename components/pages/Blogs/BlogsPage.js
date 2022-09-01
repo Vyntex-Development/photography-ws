@@ -2,10 +2,10 @@ import Subscribe from "./Subscribe";
 import Articles from "./Articles";
 import MostTrending from "./MostTrending";
 
-const BlogsPage = () => {
+const BlogsPage = ({ blogs }) => {
   return (
     <>
-      <MostTrending />
+      <MostTrending blogs={blogs} />
       <Articles />
       <Subscribe />
     </>
