@@ -4,9 +4,10 @@ import Link from "next/link";
 import { ScrollToTopSvg } from "../svg/svg";
 import { useRouter } from "next/router";
 
-const BlogPosts = () => {
+const BlogPosts = ({ blogs }) => {
   const router = useRouter();
   const homepage = router.pathname === "/";
+  const slicedBlogs = blogs.slice(0, 3);
 
   return (
     <div className={classes.BlogPosts}>
@@ -18,30 +19,22 @@ const BlogPosts = () => {
               <Link href="/blogs">see more</Link>
             </div>
             <div className={classes.BlogCards}>
-              <BlogCard
-                title="2023 Thailand Workshop"
-                description={`That's B for billions skiing in Aspen private art collection elegance precious upgrade lifestyle`}
-                readingTime={4}
-                author="Joe Doe"
-                date="20/07/2022"
-                media="/blog-card-img-1.png"
-              />
-              <BlogCard
-                title="Best camera for portrait photography"
-                description={`That's B for billions skiing in Aspen private art collection elegance precious upgrade lifestyle`}
-                readingTime={4}
-                author="Joe Doe"
-                date="20/07/2022"
-                media="/blog-card-img-2.png"
-              />
-              <BlogCard
-                title="Aspen private art collection elegance"
-                description={`That's B for billions skiing in Aspen private art collection elegance precious upgrade lifestyle`}
-                readingTime={4}
-                author="Joe Doe"
-                date="20/07/2022"
-                media="/blog-card-img-3.png"
-              />
+              {slicedBlogs.map(
+                ({ title, description, id, details, media, slug }) => {
+                  return (
+                    <BlogCard
+                      key={id}
+                      title={title}
+                      description={description}
+                      media={media}
+                      readingTime={details.reading_time}
+                      author={details.author}
+                      date={details.date}
+                      slug={slug}
+                    />
+                  );
+                }
+              )}
             </div>
           </div>
           {!homepage && (

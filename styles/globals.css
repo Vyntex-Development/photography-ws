@@ -79,3 +79,17 @@ p {
   line-height: 150%;
   margin: 0;
 }
+
+/* .animate-grid {
+  animation: grid-opacity 1s;
+}
+
+@keyframes grid-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
