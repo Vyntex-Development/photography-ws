@@ -1,11 +1,11 @@
 import List from "./List";
 
-const Projects = () => {
-    return (
-      <>
-        <List />
-        </>
-    );
-  };
+const Projects = ({ projects }) => {
+  return (
+    <>
+      <List projects={projects} />
+    </>
+  );
+};
 
-  export default Projects;
+export default Projects;

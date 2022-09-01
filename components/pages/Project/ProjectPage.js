@@ -2,12 +2,20 @@ import Hero from "../../layout/Hero";
 import Inspiration from "./Inspiration";
 import ProjectInfo from "./ProjectInfo";
 
-const ProjectPage = () => {
+const ProjectPage = ({ projects, project }) => {
+  const { media, title, details } = project;
+  const { client, location, time } = details;
   return (
     <>
-      <Hero title="Classic as Chanel" media="/project-page-hero-img.png" />
+      <Hero
+        title={title}
+        media={media}
+        client={client}
+        location={location}
+        time={time}
+      />
       <Inspiration />
-      <ProjectInfo />
+      <ProjectInfo project={project} projects={projects} />
     </>
   );
 };

@@ -4,13 +4,15 @@ import classes from "./BlogPage.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogPage = () => {
+const BlogPage = ({ blog, blogs }) => {
+  const { title, description, media, details } = blog;
+
   return (
     <>
       <div className="container">
         <div className={classes.HeroWrapper}>
           <div className={classes.ArrowDotWrapper}>
-            <Link passHref={true} href="https://www.google.com/">
+            <Link passHref={true} href="/blogs">
               <a>
                 <div className={classes.ArrowWrapper}>
                   <Image
@@ -25,25 +27,20 @@ const BlogPage = () => {
 
             <span className={classes.Dot}></span>
           </div>
-
-          <h2>Best Camera for Portrait Photography</h2>
-          <p>
-            Killer classics behind the scenes Kate Moss does Anna Wintour smile
-            fall fashion hashtag.
-          </p>
-
+          <h2>{title}</h2>
+          <p>{description}</p>
           <div className={classes.ImageWrapper}>
             <Image
               layout="fill"
               objectFit="cover"
               alt="blog-hero"
-              src="/images/blog-hero.png"
+              src={media}
             ></Image>
           </div>
         </div>
       </div>
-      <BlogContent />
-      <BlogPosts />
+      <BlogContent details={details} />
+      <BlogPosts blogs={blogs} />
     </>
   );
 };

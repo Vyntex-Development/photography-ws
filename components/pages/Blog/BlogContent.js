@@ -4,7 +4,9 @@ import Button from "../../UI/Button";
 import { ClockSvg, InstagramSvg, FacebookSvg, TweeterSvg } from "../../svg/svg";
 import Input from "../../UI/Input";
 
-const BlogContent = () => {
+const BlogContent = ({ details }) => {
+  const { author, reading_time, date } = details;
+
   return (
     <div className="container">
       <div className={classes.BlogContentWrapper}>
@@ -21,13 +23,13 @@ const BlogContent = () => {
               </div>
               <div className={classes.BlogInfoWrapper}>
                 <p>
-                  By <span>Joe Doe</span>
+                  By <span>{author}</span>
                 </p>
                 <div className={classes.Info}>
-                  <p>20/07/2022</p>
+                  <p>{date}</p>
                   <div>
                     <ClockSvg />
-                    <p>4 min</p>
+                    <p>{reading_time} min</p>
                   </div>
                 </div>
               </div>

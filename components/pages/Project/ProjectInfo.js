@@ -1,8 +1,14 @@
 import classes from "./ProjectInfo.module.css";
 import Image from "next/image";
 import { ScrollToTopSvg } from "../../svg/svg";
+import Link from "next/link";
 
-const ProjectInfo = () => {
+const ProjectInfo = ({ project, projects }) => {
+  const indexOfProject = projects.findIndex((p) => p.id === project.id);
+  const prevProject = projects[indexOfProject - 1];
+  const nextProject = projects[indexOfProject + 1];
+  const { stuff } = project;
+  const { art_director, makeup, photographer, costumes } = stuff;
   return (
     <div className={`${classes.ProjectDetailsWrapper} container`}>
       <div className={classes.ProjectDetails}>
@@ -11,7 +17,7 @@ const ProjectInfo = () => {
             <p>art director</p>
           </div>
           <div className={classes.GridItem}>
-            <p>sophie amelie</p>
+            <p>{art_director}</p>
           </div>
           <span></span>
         </div>
@@ -20,7 +26,7 @@ const ProjectInfo = () => {
             <p>photographer</p>
           </div>
           <div className={classes.GridItem}>
-            <p>sophie amelie</p>
+            <p>{photographer}</p>
           </div>
           <span></span>
         </div>
@@ -29,7 +35,7 @@ const ProjectInfo = () => {
             <p>make-up</p>
           </div>
           <div className={classes.GridItem}>
-            <p>gracy jones</p>
+            <p>{makeup}</p>
           </div>
           <span></span>
         </div>
@@ -38,23 +44,34 @@ const ProjectInfo = () => {
             <p>costumes</p>
           </div>
           <div className={classes.GridItem}>
-            <p>gracy jones</p>
-            <p>joy liv</p>
+            {costumes.map((c, i) => (
+              <p key={i}>{c}</p>
+            ))}
           </div>
           <span></span>
         </div>
       </div>
       <div className={classes.NavigateWrapper}>
-        <div className={classes.PrevProjectWrapper}>
-          <p>previous project</p>
-          <h3>Living in the City</h3>
-          <Image src="/arrow.png" width={150} height={30} />
-        </div>
-        <div className={classes.NextProjectWrapper}>
-          <p>next project</p>
-          <h3>Becoming you</h3>
-          <Image src="/arrow.png" width={150} height={30} />
-        </div>
+        {prevProject && (
+          <div className={classes.PrevProjectWrapper}>
+            <p>previous project</p>
+            <Link href={`/projects/${prevProject.slug}`} passHref>
+              <h3>{prevProject.title}</h3>
+            </Link>
+
+            <Image src="/arrow.png" width={150} height={30} />
+          </div>
+        )}
+        {nextProject && (
+          <div className={classes.NextProjectWrapper}>
+            <p>next project</p>
+            <Link href={`/projects/${nextProject.slug}`} passHref>
+              <h3>{nextProject.title}</h3>
+            </Link>
+
+            <Image src="/arrow.png" width={150} height={30} />
+          </div>
+        )}
       </div>
       <ScrollToTopSvg />
     </div>
