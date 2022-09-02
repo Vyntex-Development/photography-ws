@@ -4,7 +4,7 @@ import classes from "./Hero.module.css";
 import { ArrowBackSvg } from "../svg/svg";
 import { useRouter } from "next/router";
 
-const Hero = ({ title, media }) => {
+const Hero = ({ title, media, client, location, time }) => {
   const router = useRouter();
 
   const mainPage = router.pathname === "/";
@@ -54,21 +54,25 @@ const Hero = ({ title, media }) => {
         {projectPage && (
           <div className={classes.ProjectInfoWrapper}>
             <div>
-              <ArrowBackSvg />
+              <Link href="/projects" passHref>
+                <a>
+                  <ArrowBackSvg />
+                </a>
+              </Link>
             </div>
             <div>
               <div className={classes.Details}>
                 <div className={classes.Detail}>
                   <span>client</span>
-                  <span>trial and error</span>
+                  <span>{client}</span>
                 </div>
                 <div className={classes.Detail}>
                   <span>location</span>
-                  <span>new york</span>
+                  <span>{location}</span>
                 </div>
                 <div className={classes.Detail}>
                   <span>time</span>
-                  <span>nov 2022</span>
+                  <span>{time}</span>
                 </div>
               </div>
               <span className={classes.Dot}></span>

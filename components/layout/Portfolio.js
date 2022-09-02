@@ -1,20 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
 import classes from "./Portfolio.module.css"
-import { useRef, useEffect } from "react";
+
 import { useInView } from 'react-intersection-observer'
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
-const Portfolio = () => {
+const Portfolio = ({ projects }) => {
 
     const scrollRef = useRef();
     const containerRef = useRef();
-
+    const [filteredProjects, setFilteredProjects] = useState(projects);
+    const setFilteredProjectsHandler = (projectType) => {
+    setFilteredProjects(
+      [...projects].filter((p) =>
+        projectType ? p.type === projectType : projects
+      )
+    );
+    
+  };
     useEffect(() => {
         if (!containerRef?.current) return;
         const observer = new IntersectionObserver(([entry]) => {
             
             if (entry.isIntersecting) {
+                console.log("ulazi u funkijcu")
                 scrollRef.current.style.opacity = "1"
                 scrollRef.current.style.position = "sticky";
                 scrollRef.current.style.marginLeft = "auto";
@@ -34,121 +44,63 @@ const Portfolio = () => {
     return (
         <div className="container">
                 <div className={classes.ProtfolioWrapper} ref={containerRef}>
-                    <div className={classes.CurveWrapper}>
-                    <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="curve"
-                        src="/images/curve.png"
-                    ></Image>
-
-                    </div>
-                    <div className={classes.ScrollWrapper} ref={scrollRef}>
+                <div className={classes.ScrollWrapper} ref={scrollRef}>
                     <Image
                         layout="fill"
                         objectFit="cover"
                         alt="scroll"
                         src="/images/scroll.png"
                     ></Image>
-
-                    </div>
-                <div className={classes.SpansWrapper}>
-                    <span>All</span>
-                    <span>Personal</span>
-                    <span>Commercial</span>
+    
                 </div>
-                <div className={classes.PortfolioGrid}>
-                    <div className={classes.GridItemOne}>
-                        <div className={classes.ImageWrapper}>
+                <div className={classes.CurveWrapper}>
                         <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src="/images/portfolio1.png"
-                    ></Image>
-                        </div>
-                        <div className={classes.GridItemText}>
-                            <p>simplicity of living</p>
-                            <p>divandivan</p>
-                        </div>
-                    </div>
-                    <div className={classes.GridItemTwo}>
-                        <div className={classes.ImageWrapper}>
-                        <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src="/images/portfolio2.png"
-                    ></Image>
-                        </div>
-                        <div className={classes.GridItemText}>
-                            <p>enrichment</p>
-                            <p>sloun</p>
-                        </div>
-                    </div>
-                    <div className={classes.GridItemThree}>
-                        <div className={classes.ImageWrapperBig}>
-                        <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src="/images/portfolio3.png"
-                    ></Image>
-                        </div>
-                        <div className={classes.GridItemText}>
-                            <p>becoming you</p>
-                            <p>floskula</p>
-                        </div>
-                    </div>
-                    <div className={classes.GridItemFour}>
-                        <div className={classes.ImageWrapper}>
-                        <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src="/images/portfolio4.png"
-                    ></Image>
-                        </div>
-                        <div className={classes.GridItemText}>
-                            <p>Classic as chanel</p>
-                            <p>divandivan</p>
-                        </div>
-                    </div>
-                    <div className={classes.GridItemFive}>
-                        <div className={classes.ImageWrapperBig}>
-                        <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src="/images/portfolio5.png"
-                    ></Image>
-                        </div>
-                        <div className={classes.GridItemText}>
-                            <p>waking life</p>
-                            <p>floskula</p>
-                        </div>
-                    </div>
-                    <div className={classes.GridItemSix}>
-                        <div className={classes.ImageWrapperBig}>
-                        <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src="/images/portfolio6.png"
-                    ></Image>
-                        </div>
-                        <div className={classes.GridItemText}>
-                            <p>champagne</p>
-                            <p>doingwork</p>
-                        </div>
-                    </div>
-                    
-                </div>
+                            layout="fill"
+                            objectFit="cover"
+                            alt="curve"
+                            src="/images/curve.png"
+                        ></Image>
 
-            </div>
+                        </div>
+                    <div className={classes.SpansWrapper}>
+                        <span onClick={() => setFilteredProjectsHandler("")}>All</span>
+                        <span onClick={() => setFilteredProjectsHandler("personal")}>
+                            Personal
+                        </span>
+                        <span onClick={() => setFilteredProjectsHandler("commercial")}>
+                            Commercial
+                        </span>
+                    </div>
+                <div className={classes.PortfolioGrid}
+        >
+          {filteredProjects.map(({ title, description, media, id, slug }) => {
+            return (
+              <div key={id}>
+                <Link href={`/projects/${slug}`} passHref>
+                  <a href="">
+                    <div className={classes.ImageWrapper}>
+                      <Image
+                        layout="fill"
+                        objectFit="cover"
+                        alt="hero"
+                        src={media}
+                      ></Image>
+                    </div>
+                    <div className={classes.GridItemText}>
+                      <p>{title}</p>
+                      <p>{description}</p>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
         </div>
-        
-    )
-}
+                   
+                    
+      </div>
+    </div>
+  );
+};
 
 export default Portfolio;

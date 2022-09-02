@@ -2,7 +2,7 @@ import classes from "./Inspiration.module.css";
 import Image from "next/image";
 import { BackDecorationLine } from "../../svg/svg";
 
-const Inspiration = () => {
+const Inspiration = ({ project }) => {
   return (
     <div className={classes.InspirationWrapper}>
       <div className={`${classes.Inspiration} container`}>
@@ -44,7 +44,6 @@ const Inspiration = () => {
           <Image src="/inspiration-img-2.png" layout="fill" />
         </div>
       </div>
-
       <BackDecorationLine />
     </div>
   );
