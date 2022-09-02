@@ -1,11 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
 import classes from "./Portfolio.module.css"
+import { useRef, useEffect } from "react";
+import { useInView } from 'react-intersection-observer'
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 const Portfolio = () => {
+
+    const scrollRef = useRef();
+    const containerRef = useRef();
+
+    useEffect(() => {
+        if (!containerRef?.current) return;
+        const observer = new IntersectionObserver(([entry]) => {
+            
+            if (entry.isIntersecting) {
+                scrollRef.current.style.opacity = "1"
+                scrollRef.current.style.position = "sticky";
+                scrollRef.current.style.marginLeft = "auto";
+                scrollRef.current.style.marginRight = 0;
+                scrollRef.current.style.paddingTop = 210;
+                scrollRef.current.style.zIndex = 5;
+                
+            }
+            else scrollRef.current.style.opacity = "0";
+
+
+        });
+
+        observer.observe(containerRef.current)
+    }, [containerRef]);
+    
     return (
         <div className="container">
-                <div className={classes.ProtfolioWrapper}>
+                <div className={classes.ProtfolioWrapper} ref={containerRef}>
                     <div className={classes.CurveWrapper}>
                     <Image
                         layout="fill"
@@ -15,7 +43,7 @@ const Portfolio = () => {
                     ></Image>
 
                     </div>
-                    <div className={classes.ScrollWrapper}>
+                    <div className={classes.ScrollWrapper} ref={scrollRef}>
                     <Image
                         layout="fill"
                         objectFit="cover"
