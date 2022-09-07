@@ -5,6 +5,7 @@
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .Primary {
@@ -15,4 +16,9 @@
 .Secondary {
   color: var(--gray-light);
   background-color: var(--dark);
+}
+
+.Btn:hover {
+  background-color: var(--gray-dark);
+  color: white;
 }

@@ -1,53 +1,59 @@
 .WhoWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5rem;
 }
 
 .HeadingParagraphWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    text-align: left;
-    max-width: 34.4375rem;
-    margin-bottom: 5rem;
-    color: #012839;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: left;
+  max-width: 34.4375rem;
+  margin-bottom: 5rem;
+  color: #012839;
 }
 
 .HeadingParagraphWrapper h1 {
-    padding-bottom: 1.5rem;
-
+  padding-bottom: 1.5rem;
 }
 
 .ImageWrapper {
-    position: relative;
-    width: 100%;
-    height: 28.125rem;
+  position: relative;
+  width: 100%;
+  height: 28.125rem;
 }
 
 .Down {
-    display: flex;
-    
-    justify-content: space-between;
+  display: flex;
 
+  justify-content: space-between;
 }
 
 .Left {
-    width: auto;
+  width: auto;
 }
 
 .Right {
-    width: 41rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    color: #012839;
+  width: 41rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #012839;
 }
 
 .Right h2 {
-    margin-bottom: 4px;
-    margin-top: 5rem;;
+  margin-bottom: 4px;
+  margin-top: 5rem;
+}
+
+.Dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 60%;
+  background-color: #161719;
+  margin-top: 5rem;
 }

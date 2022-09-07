@@ -6,9 +6,9 @@ import BusinessPlan from "./BusinessPlan";
 const HomePage = ({ blogs, projects }) => {
   return (
     <>
-      <Hero title="Alexander Alexadrovic" media="/images/hero.png" />
+      {/* <Hero title="Alexander Alexadrovic" media="/images/hero.png" />
       <Portfolio projects={projects} />
-      <BlogPosts blogs={blogs} />
+      <BlogPosts blogs={blogs} /> */}
       <BusinessPlan />
     </>
   );

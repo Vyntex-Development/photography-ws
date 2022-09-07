@@ -16,17 +16,21 @@ const Header = () => {
           className={classes.LogoWrapper}
           style={{
             filter: `${
-              projectPage || contactPage || aboutPage ? "invert(1)" : ""
+              projectPage || contactPage || aboutPage
+                ? "invert(1)"
+                : "invert(0)"
             }`,
           }}
         >
           <Link passHref={true} href="/">
-            <Image
-              layout="fill"
-              objectFit="cover"
-              alt="logo"
-              src="/images/logo.png"
-            ></Image>
+            <a href="">
+              <Image
+                layout="fill"
+                objectFit="cover"
+                alt="logo"
+                src="/images/logo.png"
+              ></Image>
+            </a>
           </Link>
         </div>
         <div className={classes.LinksWrapper}>

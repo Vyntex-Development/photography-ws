@@ -6,7 +6,7 @@ const BlogsPage = ({ blogs }) => {
   return (
     <>
       <MostTrending blogs={blogs} />
-      <Articles />
+      <Articles blogs={blogs} />
       <Subscribe />
     </>
   );

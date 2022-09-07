@@ -1,10 +1,14 @@
 .TextArea textarea {
+  font-family: "Inter";
+
   background: transparent;
   border: 1px solid var(--gray-dark);
   border-radius: 4px;
   padding: 0.75rem 1rem;
   width: 100%;
   resize: none;
+  outline: none;
+  color: var(--gray-light);
 }
 
 .TextArea textarea::placeholder {
@@ -15,4 +19,8 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
+}
+
+.TextArea textarea:focus {
+  border: 1px solid var(--green-dark);
 }

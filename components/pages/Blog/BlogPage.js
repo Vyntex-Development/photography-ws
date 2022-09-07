@@ -24,7 +24,6 @@ const BlogPage = ({ blog, blogs }) => {
                 </div>
               </a>
             </Link>
-
             <span className={classes.Dot}></span>
           </div>
           <h2>{title}</h2>

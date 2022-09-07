@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
     router.pathname === "/" ||
     router.pathname === "/blog" ||
     router.pathname === "/privacy-policy" ||
+    router.pathname === "/about" ||
     router.pathname.includes("/blogs")
   ) {
     bgColor = "#DFDFE0";
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
       {!errorPage && <Footer />}
     </div>

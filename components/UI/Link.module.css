@@ -3,6 +3,7 @@
   border-radius: 4px;
   width: max-content;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .Link a {
@@ -17,6 +18,7 @@
   color: var(--gray-light);
   padding: 0.625rem 3rem;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .Primary {
@@ -25,4 +27,9 @@
 
 .Secondary {
   background: var(--brown-dark);
+}
+
+.Link a:hover {
+  background-color: var(--gray-dark);
+  color: white;
 }

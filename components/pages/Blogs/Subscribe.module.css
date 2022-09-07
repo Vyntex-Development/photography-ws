@@ -61,4 +61,10 @@
   border: 0;
   text-transform: uppercase;
   color: var(--gray-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.InputWrapper button:hover {
+  background-color: var(--blue-dark);
 }

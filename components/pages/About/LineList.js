@@ -1,107 +1,87 @@
-import classes from "./LineList.module.css"
-import Link from "next/link";
+import classes from "./LineList.module.css";
+import { useState } from "react";
 
+const LineList = ({ cv, exibitions }) => {
+  let initialNumberOfDisplayedProjects = 4;
 
+  const [displayedCVDetails, setDisplayedCVDetails] = useState(
+    cv.slice(0, initialNumberOfDisplayedProjects)
+  );
+  const [displayedExibitionDetails, setDisplayedExibitionDetails] = useState(
+    exibitions.slice(0, initialNumberOfDisplayedProjects)
+  );
+  const [numberOfDisplayedCVProjects, setNumberOfDisplayedCVProjects] =
+    useState(initialNumberOfDisplayedProjects);
+  const [numberOfDisplayedExibitions, setNumberOfDisplayedExibitions] =
+    useState(initialNumberOfDisplayedProjects);
 
-const LineList = () => {
-    return (
-        <div className="container">
-            <div className={classes.List}>
-                <h2>CV</h2>
-                <div className={classes.FirstLine}></div>
-                
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>Communication team manager and official photographer & videographer, Film Festival berlin</span>
-                                <span>2015-present</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>Assistent production & managment for Mienium Photos exibition</span>
-                                <span>2015-2018</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>Member, cenzura photo collective</span>
-                                <span>2013-2015</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>official ban phtographer</span>
-                                <span>2011-2013</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <p className={classes.Load}>load more</p>
-                    
+  const updateListOfProjects = (
+    displayedNumOfProjects,
+    updatedNumberOfProjects,
+    fullListOfProjects,
+    updatedDisplayedList
+  ) => {
+    updatedNumberOfProjects(displayedNumOfProjects);
+    const updatedListOfProjects = fullListOfProjects.slice(
+      0,
+      displayedNumOfProjects
+    );
+    updatedDisplayedList(updatedListOfProjects);
+  };
+
+  const loadMore = (projectType) => {
+    let isCV = projectType === "cv";
+    let displayedNumberOfProjects = isCV
+      ? numberOfDisplayedCVProjects + 4
+      : numberOfDisplayedExibitions + 4;
+    updateListOfProjects(
+      displayedNumberOfProjects,
+      isCV ? setNumberOfDisplayedCVProjects : setNumberOfDisplayedExibitions,
+      isCV ? cv : exibitions,
+      isCV ? setDisplayedCVDetails : setDisplayedExibitionDetails
+    );
+  };
+
+  return (
+    <div className="container">
+      <div className={classes.List}>
+        <h2>CV</h2>
+        {displayedCVDetails.map(({ id, title, year }) => {
+          return (
+            <div className={classes.LinksWrapper} key={id}>
+              <span>{title}</span>
+              <span>{year}</span>
             </div>
-            <div className={classes.List}>
-                <h2>Exibitions</h2>
-                <div className={classes.FirstLine}></div>
-                
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>conscientious, gallery of new york, new york</span>
-                                <span>2020</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>wenting out, Soho, west germany, Berlin</span>
-                                <span>2018</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>New times are coming, Beppe Finnesi, milan</span>
-                                <span>2015</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <div className={classes.LinksWrapper}>
-                        <Link passHref={true} href="https://www.google.com/">
-                            <a>
-                                <span>Bodilymay, 404 gallery, berlin</span>
-                                <span>2014</span></a>
-                        </Link>
-                            
-                            
-                        </div>
-                        <div className={classes.Line}></div>
-                        <p className={classes.Load}>load more</p>
-                    
-            </div>
-        </div>
-    )
-}
+          );
+        })}
+        {!(displayedCVDetails.length >= cv.length) && (
+          <p className={classes.Load} onClick={() => loadMore("cv")}>
+            load more
+          </p>
+        )}
+      </div>
+      <div className={classes.List}>
+        <h2>Exibitions</h2>
+        {displayedExibitionDetails.map(
+          ({ id, title, exibit_place, city, year }) => {
+            return (
+              <div className={classes.LinksWrapper} key={id}>
+                <span>
+                  {title}, {exibit_place}, {city}
+                </span>
+                <span>{year}</span>
+              </div>
+            );
+          }
+        )}
+        {!(displayedExibitionDetails.length >= exibitions.length) && (
+          <p className={classes.Load} onClick={() => loadMore("exibitions")}>
+            load more
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default LineList;

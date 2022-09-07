@@ -9,6 +9,7 @@
   position: relative;
   height: 31.25rem;
   top: -178px;
+  z-index: 2;
 }
 
 .LinksWrapper {
