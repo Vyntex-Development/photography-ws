@@ -1,103 +1,143 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
-import classes from "./Portfolio.module.css"
-
-import { useInView } from 'react-intersection-observer'
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
+import classes from "./Portfolio.module.css";
+import { useInView } from "react-intersection-observer";
 
 const Portfolio = ({ projects }) => {
-
-    const scrollRef = useRef();
-    const containerRef = useRef();
-    const [filteredProjects, setFilteredProjects] = useState(projects);
-    const setFilteredProjectsHandler = (projectType) => {
-    setFilteredProjects(
-      [...projects].filter((p) =>
-        projectType ? p.type === projectType : projects
-      )
-    );
-    
+  const scrollWrapper = useRef();
+  const portfolioGridRef = useRef();
+  const [ref, inView, entry] = useInView({
+    threshold: 0.3,
+  });
+  const [projectType, setProjectType] = useState("");
+  const setFilteredProjectsHandler = (projectType) => {
+    setProjectType(projectType);
   };
-    useEffect(() => {
-        if (!containerRef?.current) return;
-        const observer = new IntersectionObserver(([entry]) => {
-            
-            if (entry.isIntersecting) {
-                console.log("ulazi u funkijcu")
-                scrollRef.current.style.opacity = "1"
-                scrollRef.current.style.position = "sticky";
-                scrollRef.current.style.marginLeft = "auto";
-                scrollRef.current.style.marginRight = 0;
-                scrollRef.current.style.paddingTop = 210;
-                scrollRef.current.style.zIndex = 5;
-                
-            }
-            else scrollRef.current.style.opacity = "0";
 
+  const allProjects = projects;
+  const personalProjects = projects.filter((p) => p.type === "personal");
+  const comercialProjects = projects.filter((p) => p.type === "commercial");
 
-        });
+  const tabs = [
+    { type: "", filteredProjects: allProjects },
+    { type: "personal", filteredProjects: personalProjects },
+    { type: "commercial", filteredProjects: comercialProjects },
+  ];
 
-        observer.observe(containerRef.current)
-    }, [containerRef]);
-    
-    return (
-        <div className="container">
-                <div className={classes.ProtfolioWrapper} ref={containerRef}>
-                <div className={classes.ScrollWrapper} ref={scrollRef}>
-                    <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="scroll"
-                        src="/images/scroll.png"
-                    ></Image>
-    
-                </div>
-                <div className={classes.CurveWrapper}>
-                        <Image
-                            layout="fill"
-                            objectFit="cover"
-                            alt="curve"
-                            src="/images/curve.png"
-                        ></Image>
+  useEffect(() => {
+    console.log(entry);
+    scrollWrapper.current.style.opacity = inView ? "1" : "0";
+    scrollWrapper.current.style.transform = inView
+      ? `translate(calc(-${
+          entry.target.getBoundingClientRect().left
+        }px - 3.88em), -88px)`
+      : "0";
 
-                        </div>
-                    <div className={classes.SpansWrapper}>
-                        <span onClick={() => setFilteredProjectsHandler("")}>All</span>
-                        <span onClick={() => setFilteredProjectsHandler("personal")}>
-                            Personal
-                        </span>
-                        <span onClick={() => setFilteredProjectsHandler("commercial")}>
-                            Commercial
-                        </span>
-                    </div>
-                <div className={classes.PortfolioGrid}
-        >
-          {filteredProjects.map(({ title, description, media, id, slug }) => {
-            return (
-              <div key={id}>
-                <Link href={`/projects/${slug}`} passHref>
-                  <a href="">
-                    <div className={classes.ImageWrapper}>
-                      <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt="hero"
-                        src={media}
-                      ></Image>
-                    </div>
-                    <div className={classes.GridItemText}>
-                      <p>{title}</p>
-                      <p>{description}</p>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
+    scrollWrapper.current.style.transition = inView
+      ? "all 0.7s ease"
+      : "all 0.2s ease";
+  }, [inView]);
+
+  return (
+    <div className={classes.PortfolioContainer}>
+      <div className={classes.SectionContainer}>
+        <div className={classes.CurveWrapper}>
+          <Image
+            layout="fill"
+            objectFit="contain"
+            alt="curve"
+            src="/images/curve.png"
+          ></Image>
         </div>
-                   
-                    
+        {projectType === "" && (
+          <div className={classes.CurveWrapperSecond}>
+            <Image
+              layout="fill"
+              objectFit="contain"
+              alt="curve"
+              src="/images/curve-1.png"
+            ></Image>
+          </div>
+        )}
+        <div>
+          <div className="container" ref={ref}>
+            <div className={classes.ProtfolioWrapper}>
+              <div className={classes.ScollElementWrapper} ref={scrollWrapper}>
+                <div className={classes.ScollElement}>
+                  <Image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="scroll"
+                    src="/images/scroll.png"
+                  ></Image>
+                </div>
+              </div>
+              <div className={classes.SpansWrapper}>
+                <span
+                  className={`${projectType === "" ? classes.Selected : ""}`}
+                  onClick={() => setFilteredProjectsHandler("")}
+                >
+                  All
+                </span>
+                <span
+                  className={`${
+                    projectType === "personal" ? classes.Selected : ""
+                  }`}
+                  onClick={() => setFilteredProjectsHandler("personal")}
+                >
+                  Personal
+                </span>
+                <span
+                  className={`${
+                    projectType === "commercial" ? classes.Selected : ""
+                  }`}
+                  onClick={() => setFilteredProjectsHandler("commercial")}
+                >
+                  Commercial
+                </span>
+              </div>
+              <div className={classes.PortfolioGrid} ref={portfolioGridRef}>
+                {tabs.map(({ type, filteredProjects }) => {
+                  return filteredProjects.map(
+                    ({ title, description, media, id, slug }) => {
+                      return (
+                        projectType === type && (
+                          <div
+                            key={id}
+                            className={`${
+                              projectType === type
+                                ? classes.AnimateTabContent
+                                : ""
+                            }`}
+                          >
+                            <Link href={`/projects/${slug}`} passHref>
+                              <a href="">
+                                <div className={classes.ImageWrapper}>
+                                  <Image
+                                    layout="fill"
+                                    objectFit="cover"
+                                    alt="hero"
+                                    src={media}
+                                  ></Image>
+                                  <div className={classes.ImageOverlay}></div>
+                                </div>
+                                <div className={classes.GridItemText}>
+                                  <p>{title}</p>
+                                  <p>{description}</p>
+                                </div>
+                              </a>
+                            </Link>
+                          </div>
+                        )
+                      );
+                    }
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

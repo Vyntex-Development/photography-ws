@@ -2,14 +2,34 @@ import classes from "./BlogContent.module.css";
 import Image from "next/image";
 import Button from "../../UI/Button";
 import { ClockSvg, InstagramSvg, FacebookSvg, TweeterSvg } from "../../svg/svg";
+import { useEffect, useState } from "react";
 import Input from "../../UI/Input";
+import { useInView } from "react-intersection-observer";
 
 const BlogContent = ({ details }) => {
   const { author, reading_time, date } = details;
+  const [readingDurationVisualDisplay, setReadingDurationVisualDisplay] =
+    useState();
+  const [ref, inView, entry] = useInView();
+
+  useEffect(() => {
+    const animateOnScroll = () => {
+      if (inView) {
+        setReadingDurationVisualDisplay(
+          (window.scrollY / entry.boundingClientRect.height) * 100
+        );
+      }
+    };
+    window.addEventListener("scroll", animateOnScroll);
+
+    return () => {
+      window.removeEventListener("scroll", animateOnScroll);
+    };
+  }, [inView]);
 
   return (
     <div className="container">
-      <div className={classes.BlogContentWrapper}>
+      <div className={classes.BlogContentWrapper} ref={ref}>
         <div className={classes.StickyWrapper}>
           <div>
             <div className={classes.BlogAboutWrapper}>
@@ -35,7 +55,10 @@ const BlogContent = ({ details }) => {
               </div>
             </div>
             <div className={classes.ReadingDuration}>
-              <div className={classes.Duration}></div>
+              <div
+                style={{ width: `${readingDurationVisualDisplay}%` }}
+                className={classes.Duration}
+              ></div>
             </div>
             <div className={classes.SocialIcons}>
               <p>share:</p>

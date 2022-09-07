@@ -31,4 +31,9 @@
   font-size: 0.875rem;
   line-height: 140%;
   color: var(--gray-dark);
+  transition: all 0.2s ease;
+}
+
+.Link:hover {
+  color: var(--dark);
 }

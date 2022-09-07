@@ -5,11 +5,18 @@
   margin-bottom: 1.5rem;
 }
 
+.ImageWrapper img {
+  transition: all 0.5s ease;
+}
+
+.ImageWrapper:hover img {
+  transform: scale(1.1);
+}
+
 .CardTitle {
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--blue-dark);
   margin-bottom: 0.5rem;
   max-width: 20rem;
 }
@@ -42,7 +49,7 @@
   font-size: 0.875rem;
   line-height: 114%;
   letter-spacing: 0.1px;
-  color: var(--gray-dark);
+  /* color: var(--gray-light); */
 }
 
 .CardDetailsWrapper p span {

@@ -3,98 +3,45 @@ import classes from "./Articles.module.css";
 import Image from "next/image";
 import { ClockSvg } from "../../svg/svg";
 
-const Articles = () => {
+const Articles = ({ blogs }) => {
+  const lastTreeArticles = blogs.slice(-3);
+
   return (
     <div className={`${classes.Articles} container`}>
       <h2>Latest Articles</h2>
       <div>
-        <div className={classes.Grid}>
-          <div className={classes.Image}>
-            <Image src="/article-img-1.png" layout="fill" />
-          </div>
-          <div className={classes.Title}>
-            <h3>Best Camera for Portrait Photography</h3>
-          </div>
-          <div>
-            <div>
-              <div className={classes.ArticleDetails}>
-                <div>
-                  <ClockSvg /> <p>4 min</p>
+        {lastTreeArticles.map(
+          ({ title, description, details, media, slug, id }) => {
+            return (
+              <div className={classes.Grid} key={id}>
+                <div className={classes.Image}>
+                  <Image src={media} layout="fill" />
                 </div>
-                <p>
-                  By <span>Jon Doe</span>
-                </p>
-                <p>20/07/2022</p>
-              </div>
-              <p className={classes.ArticleText}>
-                Hand crafted kidnap insurance Monaco space tourist upgrade
-                lifestyle the playboy mansion the home in the Hamptons bespoke
-                Maybachs on bachs on bachs on bachs
-              </p>
-            </div>
-          </div>
-          <div>
-            <Link href="/">read more</Link>
-          </div>
-        </div>
-        <div className={classes.Grid}>
-          <div className={classes.Image}>
-            <Image src="/article-img-2.png" layout="fill" />
-          </div>
-          <div className={classes.Title}>
-            <h3>Aspen private art collection elegance</h3>
-          </div>
-          <div>
-            <div>
-              <div className={classes.ArticleDetails}>
-                <div>
-                  <ClockSvg /> <p>4 min</p>
+                <div className={classes.Title}>
+                  <h3>{title}</h3>
                 </div>
-                <p>
-                  By <span>Jon Doe</span>
-                </p>
-                <p>20/07/2022</p>
-              </div>
-              <p className={classes.ArticleText}>
-                Hand crafted kidnap insurance Monaco space tourist upgrade
-                lifestyle the playboy mansion the home in the Hamptons bespoke
-                Maybachs on bachs on bachs on bachs
-              </p>
-            </div>
-          </div>
-          <div>
-            <Link href="/">read more</Link>
-          </div>
-        </div>
-        <div className={classes.Grid}>
-          <div className={classes.Image}>
-            <Image src="/article-img-3.png" layout="fill" />
-          </div>
-          <div className={classes.Title}>
-            <h3>2023 Thailand Workshop</h3>
-          </div>
-          <div>
-            <div>
-              <div className={classes.ArticleDetails}>
                 <div>
-                  <ClockSvg /> <p>4 min</p>
+                  <div>
+                    <div className={classes.ArticleDetails}>
+                      <div>
+                        <ClockSvg color="#2f3331" />
+                        <p>{details.reading_time} min</p>
+                      </div>
+                      <p>
+                        By <span>Jon Doe</span>
+                      </p>
+                      <p>20/07/2022</p>
+                    </div>
+                    <p className={classes.ArticleText}>{description}</p>
+                  </div>
                 </div>
-                <p>
-                  By <span>Jon Doe</span>
-                </p>
-                <p>20/07/2022</p>
+                <div>
+                  <Link href={`/blogs/${slug}`}>read more</Link>
+                </div>
               </div>
-              <p className={classes.ArticleText}>
-                Hand crafted kidnap insurance Monaco space tourist upgrade
-                lifestyle the playboy mansion the home in the Hamptons bespoke
-                Maybachs on bachs on bachs on bachs
-              </p>
-            </div>
-          </div>
-          <div>
-            <Link href="/">read more</Link>
-          </div>
-        </div>
+            );
+          }
+        )}
       </div>
     </div>
   );
