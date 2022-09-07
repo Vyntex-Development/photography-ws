@@ -11,9 +11,9 @@ const Articles = ({ blogs }) => {
       <h2>Latest Articles</h2>
       <div>
         {lastTreeArticles.map(
-          ({ title, description, details, media, slug }) => {
+          ({ title, description, details, media, slug, id }) => {
             return (
-              <div className={classes.Grid}>
+              <div className={classes.Grid} key={id}>
                 <div className={classes.Image}>
                   <Image src={media} layout="fill" />
                 </div>
