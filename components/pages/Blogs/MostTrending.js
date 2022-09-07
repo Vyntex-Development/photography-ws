@@ -24,7 +24,7 @@ const MostTrending = ({ blogs }) => {
                   title={title}
                   description={description}
                   media={media}
-                  readingTime={details.readingTime}
+                  readingTime={details.reading_time}
                   author={details.author}
                   date={details.date}
                   slug={slug}
@@ -41,7 +41,7 @@ const MostTrending = ({ blogs }) => {
                 <h2>{firstBlog.title}</h2>
                 <div className={classes.CardDetailsWrapper}>
                   <div>
-                    <ClockSvg />
+                    <ClockSvg color="#DFDFE0" />
                     <p>{firstBlog.details.reading_time} min</p>
                   </div>
                   <p>

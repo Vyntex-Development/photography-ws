@@ -54,16 +54,27 @@ const ProjectInfo = ({ project, projects }) => {
       <div className={classes.NavigateWrapper}>
         {prevProject && (
           <div className={classes.PrevProjectWrapper}>
+            <Image
+              src={prevProject.media}
+              height={225}
+              width={210}
+              objectFit="cover"
+            />
             <p>previous project</p>
             <Link href={`/projects/${prevProject.slug}`} passHref>
               <h3>{prevProject.title}</h3>
             </Link>
-
             <Image src="/arrow.png" width={150} height={30} />
           </div>
         )}
         {nextProject && (
           <div className={classes.NextProjectWrapper}>
+            <Image
+              src={nextProject.media}
+              height={225}
+              width={210}
+              objectFit="cover"
+            />
             <p>next project</p>
             <Link href={`/projects/${nextProject.slug}`} passHref>
               <h3>{nextProject.title}</h3>

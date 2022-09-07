@@ -59,10 +59,42 @@
 .PrevProjectWrapper {
   grid-column: 2/5;
   height: 40px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .NextProjectWrapper {
   grid-column: 9/12;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.PrevProjectWrapper > span:nth-of-type(1) {
+  transform: rotate(360deg) !important;
+}
+
+.PrevProjectWrapper > span:nth-of-type(1),
+.NextProjectWrapper > span:nth-of-type(1) {
+  position: absolute !important;
+  opacity: 0 !important;
+  z-index: 0 !important;
+  top: -32px !important;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.NextProjectWrapper:hover > span:nth-of-type(1) {
+  opacity: 1 !important;
+  transform: rotate(-10deg);
+}
+
+.PrevProjectWrapper:hover > span:nth-of-type(1) {
+  opacity: 1 !important;
+  transform: rotate(350deg) !important;
 }
 
 .PrevProjectWrapper p,
@@ -73,12 +105,16 @@
   text-transform: uppercase;
   color: var(--gray-light);
   margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
 }
 
 .PrevProjectWrapper h3,
 .NextProjectWrapper h3 {
   color: var(--gray-light);
   margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
 }
 
 .PrevProjectWrapper > span {

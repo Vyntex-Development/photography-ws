@@ -64,6 +64,7 @@
 .SocialIcons svg {
   width: 1.56rem;
   height: 1.56rem;
+  cursor: pointer;
 }
 
 .FormInputWrapper {
@@ -96,4 +97,20 @@
 
 .FormBottomWrapper p {
   color: var(--gray-light);
+}
+
+.SocialIcons svg:hover {
+  animation: jiggle 0.3s infinite linear;
+}
+
+@keyframes jiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
 }

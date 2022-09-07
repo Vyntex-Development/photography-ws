@@ -3,6 +3,8 @@
   flex-direction: column;
   position: relative;
   margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .SpansWrapper {
@@ -30,6 +32,8 @@
   border-bottom: 2px solid #808080;
   align-items: center;
   padding-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .LinksWrapper {
@@ -67,42 +71,20 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--gray-dark);
+  position: relative;
 }
 
 .SpanBlock {
   width: 8px;
   height: 8px;
-  background-color: var(--gray-light);
+  background-color: var(--gray-dark);
   border-radius: 100%;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .ProjectHeading {
   color: var(--gray-light);
-}
-
-.Line {
-  border: 1px solid var(--gray-dark);
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.LastLine {
-  border: 1px solid var(--gray-dark);
-  margin-top: 1.5rem;
-  margin-bottom: 5rem;
-}
-.FirstLine {
-  border: 2px solid var(--gray-dark);
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.ImageWrapper {
-  position: absolute;
-  width: 390.56px;
-  height: 419.74px;
-  right: 160px;
-  top: -44px;
 }
 
 .LinksDotWrapper a {
@@ -112,6 +94,16 @@
   width: 100%;
   align-items: center;
   padding: 1.5rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.LinksDotWrapper:hover h3,
+.LinksDotWrapper:hover p {
+  color: var(--gray-light);
+}
+.LinksDotWrapper:hover .SpanBlock {
+  background-color: var(--gray-light);
 }
 
 .LinksDotWrapper a h3 {
@@ -119,6 +111,7 @@
   line-height: 140%;
   letter-spacing: 0.01em;
   color: var(--gray-dark);
+  transition: all 0.3s ease;
 }
 .LinksDotWrapper a p {
   grid-area: 1 / 5 / 2 / 6;
@@ -127,8 +120,27 @@
   letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--gray-dark);
+  transition: all 0.3s ease;
 }
 .LinksDotWrapper a div {
   grid-area: 1 / 12 / 2 / 13;
   margin-left: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.Selected {
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.ImageWrapper {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: all 0.3s ease-out;
+}
+.ImageWrapper > span {
+  z-index: 0 !important;
 }

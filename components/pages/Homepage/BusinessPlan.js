@@ -1,19 +1,39 @@
 import classes from "./BusinessPlan.module.css";
 import { CheckmarkSvg, ScrollToTopSvg } from "../../svg/svg";
 import CustomLink from "../../UI/Link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 const BusinessPlan = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
   const [activeTab, setActiveTab] = useState(0);
+  const [isFirstSectionEnter, setIsFirstSectionEnter] = useState(false);
+  const refSvg = useRef();
 
   const activeFirst = activeTab === 0 ? classes.AnimateTabContent : "";
   const activeSecond = activeTab === 1 ? classes.AnimateTabContent : "";
   const activeThird = activeTab === 2 ? classes.AnimateTabContent : "";
 
+  useEffect(() => {
+    inView && setIsFirstSectionEnter(true);
+    if (isFirstSectionEnter) return;
+    // refSvg.current.style.opacity = inView ? "1" : "0";
+    // refSvg.current.style.right = inView ? "0px" : "-999px";
+    refSvg.current.style.opacity = inView
+      ? refSvg.current.classList.add("show")
+      : refSvg.current.classList.remove("show");
+    // refSvg.current.style.right = inView ? "0px" : "-999px";
+    // refSvg.current.style.right =
+    //   inView && window.innerWidth < 768 ? "24px" : "-999px";
+  }, [inView, isFirstSectionEnter]);
+
   return (
     <div className={classes.BusinessPlan}>
       <div className="container">
-        <div className={classes.grid}>
+        <div className={classes.grid} ref={ref}>
           <div>
             <h2>The Right Plan for Your Business</h2>
           </div>
@@ -25,7 +45,9 @@ const BusinessPlan = () => {
           </div>
           <div>
             <p
-              className={classes.Tab}
+              className={`${classes.Tab}  ${
+                activeTab === 0 ? classes.ActiveTab : ""
+              }`}
               onClick={() => {
                 setActiveTab(0);
               }}
@@ -36,7 +58,9 @@ const BusinessPlan = () => {
               ></span>
             </p>
             <p
-              className={classes.Tab}
+              className={`${classes.Tab}  ${
+                activeTab === 1 ? classes.ActiveTab : ""
+              }`}
               onClick={() => {
                 setActiveTab(1);
               }}
@@ -47,7 +71,9 @@ const BusinessPlan = () => {
               ></span>
             </p>
             <p
-              className={classes.Tab}
+              className={`${classes.Tab}  ${
+                activeTab === 2 ? classes.ActiveTab : ""
+              }`}
               onClick={() => {
                 setActiveTab(2);
               }}
@@ -205,7 +231,9 @@ const BusinessPlan = () => {
               </ul>
             </div>
           )}
-          <ScrollToTopSvg />
+          <div className={classes.SvgWrapper} ref={refSvg}>
+            <ScrollToTopSvg />
+          </div>
         </div>
       </div>
     </div>
