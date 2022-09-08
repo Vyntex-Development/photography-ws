@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      {/* <Header /> */}
+      <Header />
       <main>{children}</main>
       {!errorPage && <Footer />}
     </div>

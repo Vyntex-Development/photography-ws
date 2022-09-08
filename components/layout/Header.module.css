@@ -1,12 +1,14 @@
+.HeaderSectionWrapper {
+  position: relative;
+}
+
 .HeaderWrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   position: relative;
   z-index: 100;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding: 26px 0;
 }
 
 .LogoWrapper {
@@ -20,7 +22,7 @@
 }
 
 .LinksWrapper {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -36,4 +38,134 @@
 
 .Link:hover {
   color: var(--dark);
+}
+
+.MobileMenu {
+  position: absolute;
+  background-color: var(--gray-light);
+  width: 100%;
+  padding: 2rem;
+  padding-top: 1rem;
+  top: 112px;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  left: -999px;
+  transition: all 0.5s ease-in-out;
+}
+
+.MobileMenu.Open {
+  left: 0;
+}
+
+.MobileMenu a:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.MenuButtonWrapper {
+  width: 1.5rem;
+  height: 0.75rem;
+  display: flex;
+  margin-right: 22px;
+  margin-top: 13px;
+  position: relative;
+  cursor: pointer;
+}
+
+.MenuButtonWrapper span {
+  width: 100%;
+  height: 1px;
+  /* background-color: #012839; */
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.MenuButtonWrapper span:nth-of-type(1) {
+  top: 0;
+  transform-origin: 5.5px 3px;
+}
+
+.MenuButtonWrapper span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.MenuButtonWrapper span:nth-of-type(3) {
+  bottom: 0;
+  transform-origin: 5.5px -2px;
+}
+
+.Link {
+  opacity: 0;
+}
+
+.Link.AnimateLink {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.AnimateLink:nth-of-type(1) {
+  transition-delay: 0.5s;
+}
+
+.AnimateLink:nth-of-type(2) {
+  transition-delay: 0.75s;
+}
+.AnimateLink:nth-of-type(3) {
+  transition-delay: 1s;
+}
+.AnimateLink:nth-of-type(4) {
+  transition-delay: 1.25s;
+}
+.AnimateLink:nth-of-type(5) {
+  transition-delay: 1.5s;
+}
+
+.AnimateHamburger span:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+
+.AnimateHamburger span:nth-of-type(2) {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.AnimateHamburger span:nth-of-type(3) {
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 1024px) {
+  .HeaderWrapper {
+    padding: 2.5rem 0;
+    align-items: center;
+  }
+
+  .MenuButtonWrapper {
+    display: none;
+  }
+
+  .LinksWrapper {
+    display: flex;
+  }
+
+  .LinksWrapper .Link {
+    opacity: 1;
+  }
+
+  .MobileMenu {
+    display: none;
+  }
+}
+
+@keyframes link-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

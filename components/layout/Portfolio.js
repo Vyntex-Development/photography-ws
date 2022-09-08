@@ -33,6 +33,8 @@ const Portfolio = ({ projects }) => {
           entry.target.getBoundingClientRect().left
         }px - 3.88em), -88px)`
       : "0";
+    scrollWrapper.current.style.transform =
+      inView && window.innerWidth < 991 ? `translate( -16px, -88px)` : "0";
 
     scrollWrapper.current.style.transition = inView
       ? "all 0.7s ease"

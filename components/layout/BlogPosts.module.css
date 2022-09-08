@@ -3,15 +3,14 @@
 }
 
 .Grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-  grid-column-gap: 16px;
-  position: relative;
+  display: flex;
 }
 
-.GridItem {
-  grid-area: 1 / 2 / 2 / 12;
+.BlogCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-direction: column;
 }
 
 .Heading {
@@ -32,12 +31,6 @@
   color: var(--green-dark);
 }
 
-.BlogCards {
-  display: flex;
-  justify-content: space-between;
-  gap: 4.5rem;
-}
-
 .BlogCards > div {
   width: 100%;
 }
@@ -55,4 +48,35 @@
   right: 0px;
   bottom: -2rem;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .BlogCards {
+    gap: 2.5%;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 16px;
+    position: relative;
+  }
+
+  .GridItem {
+    grid-area: 1 / 2 / 2 / 12;
+  }
+
+  .BlogCards {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .BlogCards {
+    gap: 4.5rem;
+  }
 }

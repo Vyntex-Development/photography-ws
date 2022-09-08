@@ -42,7 +42,10 @@ const Footer = () => {
   }, [inView]);
 
   return (
-    <footer className={classes.footer} ref={ref}>
+    <footer
+      className={`${classes.footer} ${contactPage ? classes.TopBorder : ""}`}
+      ref={ref}
+    >
       {!contactPage && (
         <div className={`${classes.grid} container`}>
           <div className={classes.gridTextWrapper}>

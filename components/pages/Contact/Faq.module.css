@@ -2,6 +2,10 @@
   border-bottom: 1px solid var(--green-dark);
 }
 
+.Faq:last-of-type {
+  border-bottom: 0;
+}
+
 .Question {
   padding: 1rem 0;
   display: flex;
@@ -25,6 +29,7 @@
 .Question p {
   letter-spacing: 0.01em;
   text-transform: uppercase;
+  max-width: 254px;
 }
 
 .Answer p {
@@ -45,8 +50,12 @@
 .Question svg {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0%;
+  transform: translateY(16px);
+}
+
+.Faq:nth-of-type(1) .Question svg {
+  transform: translateY(0px);
 }
 
 .Question svg:nth-of-type(1) {
@@ -59,4 +68,24 @@
 
 .Faq .Question .Active {
   color: #aac4b9;
+  max-width: 254px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .Question p,
+  .Faq .Question .Active {
+    max-width: none;
+  }
+
+  .Question svg {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .Faq:last-of-type {
+    border-bottom: 1px solid var(--green-dark);
+  }
 }

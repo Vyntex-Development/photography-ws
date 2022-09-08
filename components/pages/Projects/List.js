@@ -34,7 +34,6 @@ const List = ({ projects }) => {
 
   useEffect(() => {
     if (!inside) setVisibleImageId(-1);
-    // if (animateImage) return;
     if (inView) setAnimateImage(true);
   }, [inView, inside]);
 
