@@ -181,10 +181,10 @@
   animation: tab-opacity 1s;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto auto;
@@ -208,13 +208,13 @@
   }
 
   .grid > div:nth-of-type(4) {
-    grid-area: 3 / 2 / 4 / 5;
+    grid-area: 3 / 2 / 4 / 6;
   }
   .grid > div:nth-of-type(5) {
-    grid-area: 3 / 6 / 4 / 8;
+    grid-area: 3 / 6 / 4 / 9;
   }
   .grid > div:nth-of-type(6) {
-    grid-area: 3 / 9 / 4 / 11;
+    grid-area: 3 / 9 / 4 / 12;
   }
 
   .grid > div:nth-of-type(3) {
@@ -228,6 +228,26 @@
 
   .grid > div:nth-of-type(3):not(:last-of-type) {
     width: 100%;
+  }
+
+  .grid > div:nth-of-type(5) li,
+  .grid > div:nth-of-type(6) li {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .grid > div:nth-of-type(5) {
+    grid-area: 3 / 6 / 4 / 8;
+  }
+  .grid > div:nth-of-type(6) {
+    grid-area: 3 / 9 / 4 / 11;
+  }
+
+  .grid > div:nth-of-type(5) li,
+  .grid > div:nth-of-type(6) li,
+  .grid > div:nth-of-type(4) span {
+    font-size: 1rem;
   }
 }
 

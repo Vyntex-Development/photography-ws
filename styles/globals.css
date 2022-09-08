@@ -52,13 +52,13 @@ h3 {
 }
 
 h1 {
-  font-size: 6.94em;
-  line-height: 121%;
+  font-size: 72px;
+  line-height: 87px;
   letter-spacing: 0.0075em;
 }
 h2 {
-  font-size: 3.33em;
-  line-height: 121%;
+  font-size: 36px;
+  line-height: 44px;
   letter-spacing: 0.01em;
 }
 h3 {
@@ -98,6 +98,16 @@ p {
   .show {
     opacity: 1 !important;
     right: 0 !important;
+  }
+
+  h1 {
+    font-size: 6.94em;
+    line-height: 121%;
+  }
+
+  h2 {
+    font-size: 3.33em;
+    line-height: 121%;
   }
 }
 

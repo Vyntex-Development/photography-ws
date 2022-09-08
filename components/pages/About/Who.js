@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Who = () => {
   return (
-    <div className="container">
+    <div className={`${classes.WhoSectionWrapper} container`}>
       <div className={classes.WhoWrapper}>
         <div className={classes.HeadingParagraphWrapper}>
           <h1>Who we are</h1>

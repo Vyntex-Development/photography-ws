@@ -1,6 +1,6 @@
 .ImageWrapper {
   position: relative;
-  height: 19.44em;
+  height: 288px;
   width: 100%;
   margin-bottom: 1.5rem;
 }
@@ -15,7 +15,7 @@
 
 .CardTitle {
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   max-width: 20rem;
@@ -54,4 +54,14 @@
 
 .CardDetailsWrapper p span {
   font-weight: 500;
+}
+
+@media screen and (min-width: 992px) {
+  .ImageWrapper {
+    height: 19.44em;
+  }
+
+  .CardTitle {
+    letter-spacing: 0.01em;
+  }
 }

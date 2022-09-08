@@ -115,10 +115,21 @@
   margin-top: 0.625rem;
 }
 
-@media screen and (min-width: 769px) {
+.MarginTopDisable {
+  margin-top: 0rem;
 }
 
-@media screen and (min-width: 1025px) {
+.TopBorder {
+  border-top: 1px solid var(--green-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .gridImageWrapper {
+    min-height: 588px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -180,10 +191,6 @@
     z-index: 5;
     transform: translate(-100px, 700px);
     transition-delay: 1000ms;
-  }
-
-  .MarginTopDisable {
-    margin-top: 0rem;
   }
 
   .footerMadeByWrapper > div a {

@@ -15,12 +15,17 @@
   position: relative;
 }
 
+.PortfolioGrid {
+  display: flex;
+  flex-direction: column;
+}
+
 .CurveWrapper {
   position: absolute;
   width: 1224px;
   height: 1082px;
-  top: 100px;
-  left: calc(-200px - 3.9em);
+  top: 0;
+  left: calc(-300px - 9em);
   z-index: 0;
 }
 
@@ -44,8 +49,8 @@
 
 .ScollElement {
   position: relative;
-  width: 166px;
-  height: 166px;
+  width: 90px;
+  height: 90px;
   top: 0;
 }
 .SpansWrapper {
@@ -68,14 +73,8 @@
 }
 
 .PortfolioGrid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, auto);
-  grid-column-gap: 1rem;
-  grid-row-gap: 2.5rem;
+  display: flex;
   width: 100%;
-  position: relative;
-  z-index: 2;
 }
 
 .PortfolioGrid > div:nth-of-type(1) {
@@ -148,7 +147,14 @@
 .GridItemText {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
 }
+
+.AnimateTabContent:last-of-type a .GridItemText {
+  margin-bottom: 0;
+}
+
 .GridItemText p {
   font-family: "Inter";
   font-style: normal;
@@ -163,8 +169,40 @@
   animation: tab-opacity 1s;
 }
 
-.Selected {
+.SpansWrapper .Selected {
   border-bottom: 2px solid #012839;
+  color: #012839;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .PortfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-column-gap: 1rem;
+    grid-row-gap: 2.5rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .CurveWrapper {
+    top: 100px;
+    left: calc(-200px - 3.9em);
+  }
+
+  .ScollElement {
+    width: 166px;
+    height: 166px;
+  }
+
+  .GridItemText {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
 }
 
 @keyframes tab-opacity {

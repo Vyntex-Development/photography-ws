@@ -6,11 +6,6 @@
 }
 
 .List h2 {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 58px;
   letter-spacing: 0.01em;
   margin-bottom: 2.25rem;
   color: #012839;
@@ -43,6 +38,7 @@
 
 .LinksWrapper span:nth-of-type(2) {
   color: var(--blue-dark);
+  text-align: right;
 }
 
 .Load {
@@ -61,4 +57,11 @@
 
 .Selected {
   border-bottom: 1px solid white;
+}
+
+@media screen and (min-width: 1024px) {
+  .LinksWrapper span:nth-of-type(2) {
+    color: var(--blue-dark);
+    text-align: center;
+  }
 }

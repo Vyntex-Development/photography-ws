@@ -1,3 +1,7 @@
+.HeroSectionWrapper {
+  padding: 0;
+}
+
 .HeroSection {
   display: flex;
   flex-direction: column;
@@ -6,10 +10,15 @@
 }
 
 .HeroSection p {
-  width: 55rem;
-  margin-top: 5.75rem;
-  margin-bottom: 10rem;
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 7.875rem;
   font-size: 2.25rem;
+  padding: 0 1rem;
+}
+
+.HeroWrapper h1 {
+  padding: 0 1rem;
 }
 
 .Link {
@@ -55,7 +64,7 @@
   transform: rotate(-90deg);
   gap: 0.75rem;
   top: 239px;
-  left: calc(-150px + 2.06rem);
+  left: calc(-150px + 1rem);
 }
 
 .ProjectInfoWrapper {
@@ -106,4 +115,27 @@
 
 .Detail:not(:last-of-type) {
   margin-right: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+  .HeroSectionWrapper {
+    padding: 0 3.88em;
+    max-width: 97.5em;
+  }
+  .HeroSection p {
+    width: 55rem;
+    margin-top: 5.75rem;
+    margin-bottom: 10rem;
+  }
+
+  .HeroWrapper h1 {
+    padding: 0;
+  }
+
+  .LinksWrapper {
+    left: calc(-150px + 2.06rem);
+  }
 }
