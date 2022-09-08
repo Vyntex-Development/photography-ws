@@ -22,15 +22,15 @@
   cursor: pointer;
   text-align: center;
   letter-spacing: 0.01em;
-  color: var(--gray-light);
+  color: var(--gray-dark);
 }
 
 .TitleLinksWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-top: 2.5rem;
+  padding-top: 14px;
   border-bottom: 2px solid #808080;
-  align-items: center;
   padding-bottom: 2.5rem;
   position: relative;
   z-index: 2;
@@ -85,23 +85,23 @@
 
 .ProjectHeading {
   color: var(--gray-light);
+  margin-bottom: 2.5rem;
 }
 
 .LinksDotWrapper a {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 1rem;
-  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
   align-items: center;
   padding: 1.5rem 0;
   position: relative;
-  z-index: 2;
+  width: 100%;
 }
 
 .LinksDotWrapper:hover h3,
 .LinksDotWrapper:hover p {
   color: var(--gray-light);
 }
+
 .LinksDotWrapper:hover .SpanBlock {
   background-color: var(--gray-light);
 }
@@ -112,6 +112,7 @@
   letter-spacing: 0.01em;
   color: var(--gray-dark);
   transition: all 0.3s ease;
+  max-width: 164px;
 }
 .LinksDotWrapper a p {
   grid-area: 1 / 5 / 2 / 6;
@@ -129,8 +130,9 @@
   z-index: 3;
 }
 
-.Selected {
+.SpansWrapper .Selected {
   border-bottom: 1px solid var(--gray-light);
+  color: var(--gray-light);
 }
 
 .ImageWrapper {
@@ -143,4 +145,34 @@
 }
 .ImageWrapper > span {
   z-index: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .LinksDotWrapper a h3 {
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .TitleLinksWrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ProjectHeading {
+    margin-bottom: 0;
+  }
+
+  .LinksDotWrapper a {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1rem;
+    width: 100%;
+
+    z-index: 2;
+  }
+
+  .TitleLinksWrapper {
+    padding-top: 2.5rem;
+  }
 }

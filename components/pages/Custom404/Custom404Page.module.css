@@ -16,17 +16,17 @@
   background-color: white;
   opacity: 0.85;
   z-index: 1;
-
   display: flex;
 }
 
 .ContentWrapper {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 32px);
   height: 100%;
   left: 0;
   top: 0;
   z-index: 2;
+  transform: translateX(16px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,8 +35,26 @@
 
 .ContentWrapper h2 {
   margin: 2.5rem 0 1rem;
+  text-align: center;
 }
 
 .ContentWrapper p {
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .ContentWrapper h2 {
+    width: auto;
+  }
+
+  .ContentWrapper p {
+    width: auto;
+  }
+
+  .ContentWrapper {
+    position: absolute;
+    width: 100%;
+    transform: translateX(0px);
+  }
 }

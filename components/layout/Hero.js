@@ -11,7 +11,7 @@ const Hero = ({ title, media, client, location, time }) => {
   const projectPage = router.pathname.includes("/projects");
 
   return (
-    <div className="container">
+    <div className={`container ${classes.HeroSectionWrapper}`}>
       <div className={classes.HeroSection}>
         <div
           className={`${classes.HeroWrapper} ${

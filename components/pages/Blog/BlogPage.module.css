@@ -1,60 +1,56 @@
 .HeroWrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .HeroWrapper h2 {
-    font-family: 'Cormorant Garamond';
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 58px;
-letter-spacing: 0.01em;
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: 0.01em;
 
-/* Firefly */
-color: #012839;
-margin-bottom: 1.5rem;
+  /* Firefly */
+  color: #012839;
+  margin-bottom: 1.5rem;
 }
 
 .HeroWrapper p {
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
 
-/* or 24px */
+  /* or 24px */
 
-/* Firefly */
-color: #012839;
-margin-bottom: 1.5rem;
-width: 27rem;
-
+  /* Firefly */
+  color: #012839;
+  margin-bottom: 1.5rem;
+  width: 27rem;
 }
 
 .ImageWrapper {
-    position:relative;
-    width: 100%;
-    height: 30rem;
-
+  position: relative;
+  width: 100%;
+  height: 30rem;
 }
 .ArrowDotWrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
 }
 .ArrowWrapper {
-    position: relative;
-    width: 2.5rem;
-    height: 1.125rem;
-
+  position: relative;
+  width: 2.5rem;
+  height: 1.125rem;
 }
 
 .Dot {
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    background-color: #012839;
-    border-radius: 100%;
-
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: #012839;
+  border-radius: 100%;
 }
