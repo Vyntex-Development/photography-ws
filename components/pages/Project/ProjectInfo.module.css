@@ -6,22 +6,30 @@
   border-top: 2px solid var(--green-dark);
 }
 
-.Grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 0px;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--green-dark);
+.GirdItemWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.Grid > div:nth-of-type(1) {
+.Grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--green-dark);
+  position: relative;
+}
+
+.Grid > div > div:nth-of-type(1) {
   grid-area: 1 / 1 / 2 / 4;
 }
-.Grid > div:nth-of-type(2) {
+.Grid > div > div:nth-of-type(2) {
   grid-area: 1 / 4 / 2 / 12;
 }
-.Grid > div:nth-of-type(3) {
+.Grid > div > div:nth-of-type(3) {
   grid-area: 1 / 12 / 2 / 13;
 }
 
@@ -31,6 +39,11 @@
   width: 0.5rem;
   background-color: var(--green-dark);
   border-radius: 50%;
+  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .GridItem p {
@@ -51,24 +64,24 @@
 }
 
 .NavigateWrapper {
-  padding: 7.5rem 0 16.56rem;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  padding: 5rem 0rem 8rem;
+  display: flex;
 }
 
 .PrevProjectWrapper {
   grid-column: 2/5;
   height: 40px;
   position: relative;
-  width: 100%;
+  width: auto;
   z-index: 2;
   cursor: pointer;
+  margin-right: 1.5rem;
 }
 
 .NextProjectWrapper {
   grid-column: 9/12;
   position: relative;
-  width: 100%;
+  width: auto;
   z-index: 2;
   cursor: pointer;
 }
@@ -115,6 +128,7 @@
   margin-bottom: 1rem;
   z-index: 2;
   position: relative;
+  height: 80px;
 }
 
 .PrevProjectWrapper > span {
@@ -126,4 +140,47 @@
   right: 3.88em;
   bottom: 3rem;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .Grid > div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 0px;
+    width: 100%;
+  }
+
+  .GirdItemWrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 0rem;
+  }
+
+  .Grid span {
+    position: relative;
+    right: 0;
+    top: 0%;
+    transform: translateY(0%);
+  }
+
+  .NavigateWrapper {
+    padding: 7.5rem 0 16.56rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .PrevProjectWrapper h3,
+  .NextProjectWrapper h3 {
+    height: auto;
+  }
+
+  .PrevProjectWrapper,
+  .NextProjectWrapper {
+    width: 100%;
+  }
+
+  .PrevProjectWrapper {
+    margin-right: 1.5rem;
+  }
 }

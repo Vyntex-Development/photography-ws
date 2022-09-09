@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Input from "../../UI/Input";
 import { useInView } from "react-intersection-observer";
 
-const BlogContent = ({ details }) => {
+const BlogContent = ({ details, setDuration }) => {
   const { author, reading_time, date } = details;
   const [readingDurationVisualDisplay, setReadingDurationVisualDisplay] =
     useState();
@@ -15,9 +15,9 @@ const BlogContent = ({ details }) => {
   useEffect(() => {
     const animateOnScroll = () => {
       if (inView) {
-        setReadingDurationVisualDisplay(
-          (window.scrollY / entry.boundingClientRect.height) * 100
-        );
+        let duration = (window.scrollY / entry.boundingClientRect.height) * 100;
+        setReadingDurationVisualDisplay(duration);
+        setDuration(duration);
       }
     };
     window.addEventListener("scroll", animateOnScroll);
@@ -28,7 +28,7 @@ const BlogContent = ({ details }) => {
   }, [inView]);
 
   return (
-    <div className="container">
+    <div>
       <div className={classes.BlogContentWrapper} ref={ref}>
         <div className={classes.StickyWrapper}>
           <div>
@@ -66,21 +66,28 @@ const BlogContent = ({ details }) => {
               <FacebookSvg />
               <TweeterSvg />
             </div>
-            <div>
+            <div className={classes.ImageWraper}>
               <Image
                 src="/blog-img.png"
                 width={207}
                 height={150}
-                objectFit="contain"
+                objectFit={`${
+                  typeof window !== "undefined" && window.innerWidth > 768
+                    ? "contain"
+                    : "cover"
+                }`}
               />
             </div>
             <div>
               <form className={classes.Form} action="">
                 <p>subscribe to our newsletter:</p>
-                <Input placeholder="Email" />
-                <Button btnType="secondary" type="submit">
-                  Subscribe
-                </Button>
+                <div className={classes.FormInnerWrapper}>
+                  <Input placeholder="Email" />
+                  <Button btnType="secondary" type="submit">
+                    Subscribe
+                  </Button>
+                </div>
+
                 <p>
                   By submitting this form you read and agree to the Terms &
                   Conditions and our privacy policy.

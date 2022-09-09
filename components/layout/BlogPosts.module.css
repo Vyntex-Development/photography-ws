@@ -4,6 +4,7 @@
 
 .Grid {
   display: flex;
+  position: relative;
 }
 
 .BlogCards {
@@ -46,7 +47,7 @@
 .Grid .ScrollSvgWrapper {
   position: absolute;
   right: 0px;
-  bottom: -2rem;
+  bottom: -4rem;
   cursor: pointer;
 }
 
@@ -63,7 +64,6 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 16px;
-    position: relative;
   }
 
   .GridItem {
@@ -78,5 +78,9 @@
 @media screen and (min-width: 1440px) {
   .BlogCards {
     gap: 4.5rem;
+  }
+
+  .Grid .ScrollSvgWrapper {
+    bottom: -2rem;
   }
 }

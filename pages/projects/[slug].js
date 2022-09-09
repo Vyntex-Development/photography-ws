@@ -1,8 +1,12 @@
 import ProjectPage from "../../components/pages/Project/ProjectPage";
 import { projects } from "../../cms/projects";
+import SEO from "../../components/SEO/SEO";
 
 const project = ({ project, projects }) => (
-  <ProjectPage project={project} projects={projects} />
+  <>
+    <SEO metaTitle={project.title} />
+    <ProjectPage project={project} projects={projects} />
+  </>
 );
 
 export default project;
