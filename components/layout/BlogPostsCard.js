@@ -16,11 +16,11 @@ const BlogCard = ({
   const router = useRouter();
 
   const isHomepage = router.pathname === "/";
-  const isBlogsDynamicPage = router.pathname === "/blogs/[slug]";
+  const isBlogsDynamicPage = router.pathname === "/blog/[slug]";
 
   return (
     <div className={classes.Card}>
-      <Link href={`/blogs/${slug}`} passHref>
+      <Link href={`/blog/${slug}`} passHref>
         <a>
           <div className={classes.ImageWrapper}>
             <Image src={media} layout="fill" alt={title} />
