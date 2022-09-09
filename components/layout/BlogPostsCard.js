@@ -23,7 +23,7 @@ const BlogCard = ({
       <Link href={`/blogs/${slug}`} passHref>
         <a>
           <div className={classes.ImageWrapper}>
-            <Image src={media} layout="fill" />
+            <Image src={media} layout="fill" alt={title} />
           </div>
           <div className={classes.CardContentWrapper}>
             <p
