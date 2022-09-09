@@ -16,6 +16,7 @@ const BlogCard = ({
   const router = useRouter();
 
   const isHomepage = router.pathname === "/";
+  const isBlogsDynamicPage = router.pathname === "/blogs/[slug]";
 
   return (
     <div className={classes.Card}>
@@ -27,22 +28,48 @@ const BlogCard = ({
           <div className={classes.CardContentWrapper}>
             <p
               className={classes.CardTitle}
-              style={{ color: `${isHomepage ? "#012839" : "#DFDFE0"}` }}
+              style={{
+                color: `${
+                  isHomepage || isBlogsDynamicPage ? "#012839" : "#DFDFE0"
+                }`,
+              }}
             >
               {title}
             </p>
             <p className={classes.CardDescription}>{description}</p>
             <div className={classes.CardDetailsWrapper}>
               <div>
-                <ClockSvg color={isHomepage ? "#808080" : "#DFDFE0"} />
-                <p style={{ color: `${isHomepage ? "#808080" : "#DFDFE0"}` }}>
+                <ClockSvg
+                  color={
+                    isHomepage || isBlogsDynamicPage ? "#808080" : "#DFDFE0"
+                  }
+                />
+                <p
+                  style={{
+                    color: `${
+                      isHomepage || isBlogsDynamicPage ? "#808080" : "#DFDFE0"
+                    }`,
+                  }}
+                >
                   {readingTime} min
                 </p>
               </div>
-              <p style={{ color: `${isHomepage ? "#808080" : "#DFDFE0"}` }}>
+              <p
+                style={{
+                  color: `${
+                    isHomepage || isBlogsDynamicPage ? "#808080" : "#DFDFE0"
+                  }`,
+                }}
+              >
                 By <span>{author}</span>
               </p>
-              <p style={{ color: `${isHomepage ? "#808080" : "#DFDFE0"}` }}>
+              <p
+                style={{
+                  color: `${
+                    isHomepage || isBlogsDynamicPage ? "#808080" : "#DFDFE0"
+                  }`,
+                }}
+              >
                 {date}
               </p>
             </div>

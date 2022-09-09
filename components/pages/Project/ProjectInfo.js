@@ -13,42 +13,50 @@ const ProjectInfo = ({ project, projects }) => {
     <div className={`${classes.ProjectDetailsWrapper} container`}>
       <div className={classes.ProjectDetails}>
         <div className={classes.Grid}>
-          <div className={classes.GridItem}>
-            <p>art director</p>
+          <div className={classes.GirdItemWrapper}>
+            <div className={classes.GridItem}>
+              <p>art director</p>
+            </div>
+            <div className={classes.GridItem}>
+              <p>{art_director}</p>
+            </div>
+            <span></span>
           </div>
-          <div className={classes.GridItem}>
-            <p>{art_director}</p>
-          </div>
-          <span></span>
         </div>
         <div className={classes.Grid}>
-          <div className={classes.GridItem}>
-            <p>photographer</p>
+          <div className={classes.GirdItemWrapper}>
+            <div className={classes.GridItem}>
+              <p>photographer</p>
+            </div>
+            <div className={classes.GridItem}>
+              <p>{photographer}</p>
+            </div>
+            <span></span>
           </div>
-          <div className={classes.GridItem}>
-            <p>{photographer}</p>
-          </div>
-          <span></span>
         </div>
         <div className={classes.Grid}>
-          <div className={classes.GridItem}>
-            <p>make-up</p>
+          <div className={classes.GirdItemWrapper}>
+            <div className={classes.GridItem}>
+              <p>make-up</p>
+            </div>
+            <div className={classes.GridItem}>
+              <p>{makeup}</p>
+            </div>
+            <span></span>
           </div>
-          <div className={classes.GridItem}>
-            <p>{makeup}</p>
-          </div>
-          <span></span>
         </div>
         <div className={classes.Grid}>
-          <div className={classes.GridItem}>
-            <p>costumes</p>
+          <div className={classes.GirdItemWrapper}>
+            <div className={classes.GridItem}>
+              <p>costumes</p>
+            </div>
+            <div className={classes.GridItem}>
+              {costumes.map((c, i) => (
+                <p key={i}>{c}</p>
+              ))}
+            </div>
+            <span></span>
           </div>
-          <div className={classes.GridItem}>
-            {costumes.map((c, i) => (
-              <p key={i}>{c}</p>
-            ))}
-          </div>
-          <span></span>
         </div>
       </div>
       <div className={classes.NavigateWrapper}>

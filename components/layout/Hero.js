@@ -18,7 +18,11 @@ const Hero = ({ title, media, client, location, time }) => {
             projectPage ? classes.SwitchOrder : ""
           }`}
         >
-          <div className={classes.ImageWrapper}>
+          <div
+            className={`${classes.ImageWrapper} ${
+              projectPage ? classes.ProjectPageImageWrapper : ""
+            }`}
+          >
             {mainPage && (
               <div className={classes.LinksWrapper}>
                 <Link passHref={true} href="https://www.facebook.com/">
@@ -42,7 +46,9 @@ const Hero = ({ title, media, client, location, time }) => {
               src={media}
             ></Image>
           </div>
-          <h1>{title}</h1>
+          <h1 className={` ${projectPage ? classes.ProjectPageTitle : ""}`}>
+            {title}
+          </h1>
         </div>
         {mainPage && (
           <p>

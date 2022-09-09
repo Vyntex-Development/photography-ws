@@ -9,6 +9,12 @@
   max-width: 97.5em;
 }
 
+.ProjectPageTitle {
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: 0.01em;
+}
+
 .HeroSection p {
   width: 100%;
   margin-top: 4rem;
@@ -57,6 +63,11 @@
   margin-bottom: 1rem;
 }
 
+.ProjectPageImageWrapper {
+  width: calc(100% - 32px);
+  margin: 0 auto;
+}
+
 .LinksWrapper {
   position: absolute;
   display: flex;
@@ -69,19 +80,31 @@
 
 .ProjectInfoWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0 1rem;
+  position: relative;
+  gap: 2.5rem;
+}
+
+.ProjectInfoWrapper > div:nth-of-type(1) {
+  margin-right: auto;
 }
 
 .ProjectInfoWrapper > div:nth-of-type(2) {
   display: flex;
+  width: 100%;
 }
 
 .Dot {
+  position: absolute;
+  top: 0;
+  right: 16px;
   background-color: white;
-  height: 1rem;
-  width: 1rem;
+  height: 0.5rem;
+  width: 0.5rem;
   border-radius: 50%;
   display: block;
   margin-left: 6rem;
@@ -89,10 +112,14 @@
 
 .Details {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .Detail {
   display: flex;
+  flex-direction: column;
+  min-width: 74px;
 }
 
 .Detail span {
@@ -114,13 +141,18 @@
 }
 
 .Detail:not(:last-of-type) {
-  margin-right: 5rem;
+  margin-right: 0rem;
 }
 
 @media screen and (min-width: 768px) {
 }
 
 @media screen and (min-width: 1024px) {
+  .ProjectPageTitle {
+    font-size: 6.94em;
+    line-height: 121%;
+  }
+
   .HeroSectionWrapper {
     padding: 0 3.88em;
     max-width: 97.5em;
@@ -137,5 +169,36 @@
 
   .LinksWrapper {
     left: calc(-150px + 2.06rem);
+  }
+
+  .ProjectPageImageWrapper {
+    margin: 0;
+    width: 100%;
+  }
+
+  .Detail {
+    flex-direction: row;
+    min-width: auto;
+  }
+
+  .ProjectInfoWrapper {
+    flex-direction: row;
+    padding: 0;
+    gap: 0rem;
+  }
+
+  .Dot {
+    position: relative;
+    right: 0px;
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .Detail:not(:last-of-type) {
+    margin-right: 5rem;
+  }
+
+  .ProjectInfoWrapper > div:nth-of-type(2) {
+    width: auto;
   }
 }
