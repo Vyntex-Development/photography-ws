@@ -7,7 +7,6 @@ import Link from "next/link";
 const MostTrending = ({ blogs }) => {
   const slicedBlogs = blogs.slice(0, 5);
   const firstBlog = blogs.slice(5, 6)[0];
-
   return (
     <div className={classes.MostTrending}>
       <div className="container">

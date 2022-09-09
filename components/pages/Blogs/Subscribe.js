@@ -4,8 +4,8 @@ import classes from "./Subscribe.module.css";
 const Subscribe = () => {
   return (
     <div className={classes.Subscribe}>
-      <Image src="/subscribe-img.png" layout="fill" />
-      <div className="container">
+      <Image src="/subscribe-img.png" layout="fill" objectFit="cover" />
+      <div className={`${classes.FormWrapper} container`}>
         <form className={classes.Form} action="">
           <h3>Subscribe to Our Newsletter:</h3>
           <p>

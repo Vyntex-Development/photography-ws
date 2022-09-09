@@ -1,5 +1,11 @@
 import ContactPage from "../components/pages/Contact/ContactPage";
+import SEO from "../components/SEO/SEO.js";
 
-const contact = () => <ContactPage />;
+const contact = () => (
+  <>
+    <SEO metaTitle="Contact" />
+    <ContactPage />;
+  </>
+);
 
 export default contact;

@@ -1,7 +1,13 @@
 import BlogPage from "../../components/pages/Blog/BlogPage";
 import { blogs } from "../../cms/blogs";
+import SEO from "../../components/SEO/SEO";
 
-const blog = ({ blog, blogs }) => <BlogPage blog={blog} blogs={blogs} />;
+const blog = ({ blog, blogs }) => (
+  <>
+    <SEO metaTitle={blog.title} />
+    <BlogPage blog={blog} blogs={blogs} />;
+  </>
+);
 
 export default blog;
 

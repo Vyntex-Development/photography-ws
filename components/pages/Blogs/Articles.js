@@ -5,7 +5,6 @@ import { ClockSvg } from "../../svg/svg";
 
 const Articles = ({ blogs }) => {
   const lastTreeArticles = blogs.slice(-3);
-
   return (
     <div className={`${classes.Articles} container`}>
       <h2>Latest Articles</h2>

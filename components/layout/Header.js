@@ -2,7 +2,7 @@ import classes from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const router = useRouter();
@@ -11,31 +11,62 @@ const Header = () => {
   const contactPage = router.pathname === "/contact";
   const aboutPage = router.pathname === "/about";
 
+  // useEffect(() => {
+  //   isOpen
+  //     ? document.body.classList.add("no-scroll")
+  //     : document.body.classList.remove("no-scroll");
+  // }, [isOpen]);
+
   return (
     <div className={`${classes.HeaderSectionWrapper} container`}>
       <div className={`${classes.MobileMenu} ${isOpen ? classes.Open : ""}`}>
         <Link passHref={true} href="/">
-          <a className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}>
+          <a
+            className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             HOME
           </a>
         </Link>
         <Link passHref={true} href="/about">
-          <a className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}>
+          <a
+            className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             ABOUT
           </a>
         </Link>
         <Link passHref={true} href="/projects">
-          <a className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}>
+          <a
+            className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             PROJECTS
           </a>
         </Link>
         <Link passHref={true} href="/blogs">
-          <a className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}>
+          <a
+            className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             BLOG
           </a>
         </Link>
         <Link passHref={true} href="/contact">
-          <a className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}>
+          <a
+            className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             CONTACT
           </a>
         </Link>

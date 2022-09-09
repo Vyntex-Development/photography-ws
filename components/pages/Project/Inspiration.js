@@ -19,6 +19,9 @@ const Inspiration = ({ project }) => {
               everything after party statement knit Issey
             </p>
           </div>
+          <div className={classes.ImageWrapperStyleAbsolute}>
+            <Image src="/inspiration-img-2.png" layout="fill" />
+          </div>
         </div>
         <div className={classes.InspirationImagesWrapper}>
           <div className={classes.GridImageWrapper}>
@@ -39,9 +42,6 @@ const Inspiration = ({ project }) => {
           <div className={classes.GridImageWrapper}>
             <Image layout="fill" src="/project-grid-img-6.png" />
           </div>
-        </div>
-        <div className={classes.ImageWrapperStyleAbsolute}>
-          <Image src="/inspiration-img-2.png" layout="fill" />
         </div>
       </div>
       <BackDecorationLine />
