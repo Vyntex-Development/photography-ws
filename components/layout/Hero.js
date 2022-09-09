@@ -42,7 +42,7 @@ const Hero = ({ title, media, client, location, time }) => {
             <Image
               layout="fill"
               objectFit="cover"
-              alt="hero"
+              alt="hero-image"
               src={media}
             ></Image>
           </div>
