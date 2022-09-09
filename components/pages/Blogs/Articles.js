@@ -35,7 +35,7 @@ const Articles = ({ blogs }) => {
                   </div>
                 </div>
                 <div>
-                  <Link href={`/blogs/${slug}`}>read more</Link>
+                  <Link href={`/blog/${slug}`}>read more</Link>
                 </div>
               </div>
             );

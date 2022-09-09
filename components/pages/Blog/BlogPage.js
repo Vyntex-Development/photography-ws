@@ -25,7 +25,7 @@ const BlogPage = ({ blog, blogs }) => {
         <div>
           <div className={classes.HeroWrapper}>
             <div className={classes.ArrowDotWrapper}>
-              <Link passHref={true} href="/blogs">
+              <Link passHref={true} href="/blog">
                 <a>
                   <div className={classes.ArrowWrapper}>
                     <Image

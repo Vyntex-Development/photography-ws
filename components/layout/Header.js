@@ -50,7 +50,7 @@ const Header = () => {
             PROJECTS
           </a>
         </Link>
-        <Link passHref={true} href="/blogs">
+        <Link passHref={true} href="/blog">
           <a
             className={`${classes.Link} ${isOpen ? classes.AnimateLink : ""}`}
             onClick={() => {
@@ -131,7 +131,7 @@ const Header = () => {
           <Link passHref={true} href="/projects">
             <a className={classes.Link}>PROJECTS</a>
           </Link>
-          <Link passHref={true} href="/blogs">
+          <Link passHref={true} href="/blog">
             <a className={classes.Link}>BLOG</a>
           </Link>
           <Link passHref={true} href="/contact">

@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     router.pathname === "/blog" ||
     router.pathname === "/privacy-policy" ||
     router.pathname === "/about" ||
-    router.pathname.includes("/blogs")
+    router.pathname.includes("/blog")
   ) {
     bgColor = "#DFDFE0";
   }

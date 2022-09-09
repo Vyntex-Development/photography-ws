@@ -32,7 +32,7 @@ const MostTrending = ({ blogs }) => {
             }
           )}
           <div className={classes.CardBig}>
-            <Link href={`/blogs/${firstBlog.slug}`} passHref>
+            <Link href={`/blog/${firstBlog.slug}`} passHref>
               <a href="">
                 <div className={classes.Image}>
                   <Image src="/blog-card-img-1.png" layout="fill" />

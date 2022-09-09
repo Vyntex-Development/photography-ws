@@ -16,7 +16,7 @@ const BlogPosts = ({ blogs }) => {
           <div className={classes.GridItem}>
             <div className={classes.Heading}>
               <h2>Latest blog posts</h2>
-              <Link href="/blogs">see more</Link>
+              <Link href="/blog">see more</Link>
             </div>
             <div className={classes.BlogCards}>
               {slicedBlogs.map(
