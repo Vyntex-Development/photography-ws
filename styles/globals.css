@@ -79,7 +79,7 @@ p {
 .show {
   opacity: 1;
   right: 16px !important;
-  bottom: -48px !important;
+  bottom: 0 !important;
 }
 
 @media screen and (min-width: 992px) {
