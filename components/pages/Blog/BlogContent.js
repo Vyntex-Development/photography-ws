@@ -2,7 +2,7 @@ import classes from "./BlogContent.module.css";
 import Image from "next/image";
 import Button from "../../UI/Button";
 import { ClockSvg, InstagramSvg, FacebookSvg, TweeterSvg } from "../../svg/svg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Input from "../../UI/Input";
 import { useInView } from "react-intersection-observer";
 
@@ -10,12 +10,19 @@ const BlogContent = ({ details, setDuration }) => {
   const { author, reading_time, date } = details;
   const [readingDurationVisualDisplay, setReadingDurationVisualDisplay] =
     useState();
+  const [isInitial, setIsInitial] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const modalRef = useRef();
   const [ref, inView, entry] = useInView();
+  const [ref2, inView2] = useInView({
+    trashhold: 0.3,
+  });
 
   useEffect(() => {
     const animateOnScroll = () => {
       if (inView) {
         let duration = (window.scrollY / entry.boundingClientRect.height) * 100;
+        if (duration > 100) return;
         setReadingDurationVisualDisplay(duration);
         setDuration(duration);
       }
@@ -26,6 +33,15 @@ const BlogContent = ({ details, setDuration }) => {
       window.removeEventListener("scroll", animateOnScroll);
     };
   }, [inView]);
+
+  useEffect(() => {
+    inView2 && setIsInitial(true);
+    if (isInitial) return;
+    if (inView2 && !modalIsOpen) {
+      setModalIsOpen(true);
+      return;
+    }
+  }, [inView2, modalIsOpen]);
 
   return (
     <div>
@@ -94,6 +110,55 @@ const BlogContent = ({ details, setDuration }) => {
                 </p>
               </form>
             </div>
+
+            {modalIsOpen && (
+              <div
+                className={classes.Backdrop}
+                ref={modalRef}
+                onClick={() => setModalIsOpen(false)}
+              >
+                <div className={classes.SubscribeReadingDuration}>
+                  <div
+                    style={{ width: `${readingDurationVisualDisplay}%` }}
+                    className={classes.Duration}
+                  ></div>
+                </div>
+                <div className={classes.SubscribeModal}>
+                  <div className={classes.ImageWraper}>
+                    <Image
+                      src="/blog-img.png"
+                      width={207}
+                      height={150}
+                      objectFit={`${
+                        typeof window !== "undefined" && window.innerWidth > 768
+                          ? "contain"
+                          : "cover"
+                      }`}
+                    />
+                  </div>
+                  <div>
+                    <form className={classes.Form} action="">
+                      <p>subscribe to our newsletter:</p>
+                      <div className={classes.FormInnerWrapper}>
+                        <Input placeholder="Email" />
+                        <Button
+                          btnType="secondary"
+                          type="submit"
+                          onClick={() => setModalIsOpen(false)}
+                        >
+                          Subscribe
+                        </Button>
+                      </div>
+
+                      <p>
+                        By submitting this form you read and agree to the Terms
+                        & Conditions and our privacy policy.
+                      </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -107,7 +172,7 @@ const BlogContent = ({ details, setDuration }) => {
               fringilla.
             </p>
           </div>
-          <div>
+          <div ref={ref2}>
             <h3>What works for me?</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec

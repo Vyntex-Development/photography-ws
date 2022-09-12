@@ -24,21 +24,26 @@ const Footer = () => {
     inView && setIsFirstSectionEnter(true);
     if (isFirstSectionEnter) return;
     if (contactPage) return;
-    firstImage.current.style.transform = inView
-      ? "translate(0px, 0px)"
-      : "translate(-100px, 900px)";
-    secondImage.current.style.transform = inView
-      ? "translate(0px, -10px)"
-      : "translate(-100px, 900px)";
-    thirdImage.current.style.transform = inView
-      ? "translate(0px, -15px)"
-      : "translate(-100px, 900px)";
-    fourthImage.current.style.transform = inView
-      ? "translate(0px, -2.5px)"
-      : "translate(-100px, 900px)";
-    fifthImage.current.style.transform = inView
-      ? "translate(0px, 10px)"
-      : "translate(-100px, 900px)";
+    firstImage.current.style.transform =
+      inView && !isFirstSectionEnter
+        ? "translate(0px, 0px)"
+        : "translate(-100px, 900px)";
+    secondImage.current.style.transform =
+      inView && !isFirstSectionEnter
+        ? "translate(0px, -10px)"
+        : "translate(-100px, 900px)";
+    thirdImage.current.style.transform =
+      inView && !isFirstSectionEnter
+        ? "translate(0px, -15px)"
+        : "translate(-100px, 900px)";
+    fourthImage.current.style.transform =
+      inView && !isFirstSectionEnter
+        ? "translate(0px, -2.5px)"
+        : "translate(-100px, 900px)";
+    fifthImage.current.style.transform =
+      inView && !isFirstSectionEnter
+        ? "translate(0px, 10px)"
+        : "translate(-100px, 900px)";
   }, [inView]);
 
   return (
