@@ -70,9 +70,16 @@ const ProjectInfo = ({ project, projects }) => {
             />
             <p>previous project</p>
             <Link href={`/projects/${prevProject.slug}`} passHref>
+              <a href="">
               <h3>{prevProject.title}</h3>
+              {/* <div className={classes.ArrowWrapper}>
+              <Image src="/arrow.png" width={150} height={30} />
+              </div> */}
+             
+              </a>
+             
             </Link>
-            <Image src="/arrow.png" width={150} height={30} />
+            
           </div>
         )}
         {nextProject && (
@@ -85,10 +92,18 @@ const ProjectInfo = ({ project, projects }) => {
             />
             <p>next project</p>
             <Link href={`/projects/${nextProject.slug}`} passHref>
+              <a href="">
               <h3>{nextProject.title}</h3>
+              <div className={classes.ArrowWrapperRight}>
+              <Image src="/arrow.png" width={150} height={30} />
+              </div>
+              
+
+              </a>
+              
             </Link>
 
-            <Image src="/arrow.png" width={150} height={30} />
+            
           </div>
         )}
       </div>

@@ -7,8 +7,13 @@
   justify-content: space-between;
   width: 100%;
   position: relative;
-  z-index: 1;
-  padding: 26px 0;
+
+  z-index: 100;
+  padding-top: 40px;
+  padding-bottom: 26px;
+  padding-left: 0px;
+  padding-right: 0px;
+
 }
 
 .LogoWrapper {

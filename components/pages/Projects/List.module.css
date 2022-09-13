@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 5rem;
+  margin-bottom: 3.625rem;
   position: relative;
   z-index: 2;
 }
@@ -151,12 +151,17 @@
   .LinksDotWrapper a h3 {
     max-width: none;
   }
+  .List {
+    margin-bottom: 5rem;
+    
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .TitleLinksWrapper {
     flex-direction: row;
     align-items: center;
+    
   }
 
   .ProjectHeading {
@@ -173,6 +178,6 @@
   }
 
   .TitleLinksWrapper {
-    padding-top: 2.5rem;
+    padding-top: 1.25rem;
   }
 }
