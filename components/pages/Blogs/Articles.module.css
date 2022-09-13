@@ -1,9 +1,9 @@
 .Articles {
-  padding: 5rem 1rem;
+  padding: 5rem 1rem 50px;
 }
 
 .Articles h2 {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--blue-dark);
 }
 
@@ -17,20 +17,12 @@
 }
 
 .Grid:nth-of-type(1) {
+  padding: 1.5rem 0 0;
   border-top: 2px solid var(--green-dark);
 }
 
-.Grid:nth-of-type(2),
-.Grid:nth-of-type(3) {
-  border-top: 1px solid var(--green-dark);
-}
-
-.Grid:nth-of-type(1) {
-  padding: 1.5rem 0 2.5rem;
-}
-
 .Grid:nth-of-type(2) {
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 0;
 }
 .Grid:nth-of-type(3) {
   padding-top: 2.5rem;
@@ -51,6 +43,7 @@
   width: 100%;
   max-width: auto;
   height: 7.125rem;
+  height: 90px;
 }
 
 .Grid h3 {
@@ -60,9 +53,10 @@
 
 .Title {
   max-width: 20rem;
-  height: 7.125rem;
+  /* height: 7.125rem; */
   display: flex;
   align-items: center;
+  margin: 1rem 0 1.5rem;
 }
 
 .Title h3 {
@@ -120,9 +114,23 @@
   margin-top: 1.5rem;
 }
 
+@media screen and (min-width: 768px) {
+  .Image {
+    height: 12.125rem;
+  }
+
+  .ArticleDetails {
+    justify-content: space-evenly;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .Articles {
     padding: 5rem 3.88em;
+  }
+
+  .Articles h2 {
+    margin-bottom: 3rem;
   }
 
   .Grid {
@@ -136,9 +144,33 @@
 
   .Image {
     max-width: 13rem;
+    height: 100%;
   }
 
   .Grid > div:last-of-type a {
     margin: auto 0;
+  }
+
+  .Grid:nth-of-type(1) {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .Grid:nth-of-type(2),
+  .Grid:nth-of-type(3) {
+    border-top: 1px solid var(--green-dark);
+  }
+
+  .Grid:nth-of-type(2) {
+    padding: 2.5rem 0;
+  }
+
+  .ArticleDetails {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Grid div:nth-of-type(2) {
+    grid-area: 1 / 3 / 2 / 7;
   }
 }

@@ -11,8 +11,20 @@ import Input from "../../UI/Input";
 import TextArea from "../../UI/TextArea";
 import Button from "../../UI/Button";
 import Faq from "./Faq";
+// import { useRef } from "react";
+// import useForm from "../../hooks/useForm";
 
 const ContactPage = () => {
+  // const nameInputRef = useRef();
+  // const lastnameInputRef = useRef();
+  // const emailInputRef = useRef();
+
+  // const { submitFormHandler } = useForm({
+  //   name: { el: nameInputRef, error: "" },
+  //   lastName: { el: lastnameInputRef, error: "" },
+  //   email: { el: emailInputRef, error: "" },
+  // });
+
   return (
     <div className={`${classes.Grid} container`}>
       <div>

@@ -87,7 +87,6 @@ const ProjectInfo = ({ project, projects }) => {
             <Link href={`/projects/${nextProject.slug}`} passHref>
               <h3>{nextProject.title}</h3>
             </Link>
-
             <Image src="/arrow.png" width={150} height={30} />
           </div>
         )}

@@ -6,16 +6,27 @@ import { useState, useEffect } from "react";
 
 const Header = () => {
   const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const projectPage = router.pathname.includes("/projects");
   const contactPage = router.pathname === "/contact";
   const aboutPage = router.pathname === "/about";
+  const isHomepageOnMobile = router.pathname === "/";
+  const isBlogOrBlogCmsPage =
+    router.pathname === "/blog" || router.pathname.includes("/blog");
+  const is404Page = router.pathname === "/404";
+  const isProjectsPageOnMobile = router.pathname === "/projects";
 
   // useEffect(() => {
   //   isOpen
   //     ? document.body.classList.add("no-scroll")
   //     : document.body.classList.remove("no-scroll");
   // }, [isOpen]);
+
+  useEffect(() => {
+    setIsDesktop(typeof window !== "undefined" && window.innerWidth > 767);
+  }, []);
 
   return (
     <div className={`${classes.HeaderSectionWrapper} container`}>
@@ -73,7 +84,11 @@ const Header = () => {
       </div>
       <div className={classes.HeaderWrapper}>
         <div
-          className={classes.LogoWrapper}
+          className={`${classes.LogoWrapper} ${
+            isHomepageOnMobile || isProjectsPageOnMobile || isDesktop
+              ? ""
+              : classes.LogoWrapperAlternative
+          }`}
           style={{
             filter: `${
               projectPage || contactPage || aboutPage
@@ -82,16 +97,34 @@ const Header = () => {
             }`,
           }}
         >
-          <Link passHref={true} href="/">
-            <a href="">
-              <Image
-                layout="fill"
-                objectFit="cover"
-                alt="logo"
-                src="/images/logo.png"
-              ></Image>
-            </a>
-          </Link>
+          {isHomepageOnMobile || isProjectsPageOnMobile || isDesktop ? (
+            <Link passHref={true} href="/">
+              <a href="">
+                <Image
+                  layout="fill"
+                  objectFit="cover"
+                  alt="logo"
+                  src="/images/logo.png"
+                ></Image>
+              </a>
+            </Link>
+          ) : (
+            <Link passHref={true} href="/">
+              <p
+                style={{
+                  color: `${
+                    is404Page || isBlogOrBlogCmsPage ? "#012839" : "#dfdfe0"
+                  }`,
+                  filter: `${
+                    is404Page || isBlogOrBlogCmsPage ? "invert(0)" : "invert(1)"
+                  }`,
+                }}
+                className={classes.LogoAlternative}
+              >
+                Alexander Alexandrovic
+              </p>
+            </Link>
+          )}
         </div>
         <div
           className={`${classes.MenuButtonWrapper} ${
