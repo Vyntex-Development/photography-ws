@@ -100,10 +100,8 @@ const ProjectInfo = ({ project, projects }) => {
               
 
               </a>
-              
+         
             </Link>
-
-            
           </div>
         )}
       </div>

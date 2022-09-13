@@ -11,11 +11,11 @@
 
 .AboutHeaderWrapper {
   position: relative;
-  height: 450px;
-  top: -112px;
+  height: 538px;
+  top: -157px;
   z-index: 2;
-  margin-top: -32px;
-  padding-top: 32px;
+  margin-top: -88px;
+  padding-top: 88px;
 }
 
 .LinksWrapper {
@@ -25,7 +25,7 @@
   transform: rotate(-90deg);
   gap: 0.75rem;
   left: 1.5rem;
-  top: 26rem;
+  top: 31.5rem;
   transform-origin: 0%;
 }
 

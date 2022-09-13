@@ -54,7 +54,11 @@ const BlogPage = ({ blog, blogs }) => {
               </div>
             </div>
           </div>
-          <BlogContent details={details} setDuration={setDurationHandler} />
+          <BlogContent
+            details={details}
+            media={media}
+            setDuration={setDurationHandler}
+          />
         </div>
       </div>
       <BlogPosts blogs={blogs} />
