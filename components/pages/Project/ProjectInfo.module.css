@@ -86,6 +86,15 @@
   cursor: pointer;
 }
 
+/* .ArrowWrapper {
+  transform: rotate(180deg) !important;
+}
+
+.ArrowWrapperRight {
+  transform: rotate(360deg) !important;
+
+} */
+
 .PrevProjectWrapper > span:nth-of-type(1) {
   transform: rotate(360deg) !important;
 }
@@ -140,6 +149,7 @@
   right: 3.88em;
   bottom: 3rem;
   cursor: pointer;
+  display: none;
 }
 
 @media screen and (min-width: 1024px) {
@@ -182,5 +192,12 @@
 
   .PrevProjectWrapper {
     margin-right: 1.5rem;
+  }
+  .ProjectDetailsWrapper svg {
+    position: absolute;
+    right: 3.88em;
+    bottom: 3rem;
+    cursor: pointer;
+    display: block;
   }
 }

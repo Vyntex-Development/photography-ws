@@ -4,7 +4,7 @@ import SEO from "../components/SEO/SEO.js";
 const contact = () => (
   <>
     <SEO metaTitle="Contact" />
-    <ContactPage />;
+    <ContactPage />
   </>
 );
 

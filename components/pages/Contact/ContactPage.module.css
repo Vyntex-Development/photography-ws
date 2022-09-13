@@ -8,7 +8,7 @@
 }
 
 .Grid > div:nth-of-type(4) {
-  padding-bottom: 115px;
+  padding-bottom: 86px;
 }
 
 .Grid > div:nth-of-type(1) h2 {
@@ -94,10 +94,13 @@
   margin-right: 0rem;
   width: 100%;
   margin-bottom: 1rem;
+  padding: 10px 48px;
 }
 
 .FormBottomWrapper p {
   color: var(--gray-light);
+  font-size: 14px;
+  line-height: 140%;
 }
 
 .FormBottomWrapper {
@@ -129,7 +132,7 @@
   .Grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-column-gap: 4rem;
     grid-row-gap: 10rem;
   }
@@ -138,7 +141,7 @@
     grid-area: 1 / 1 / 2 / 7;
   }
   .Grid > div:nth-of-type(2) {
-    grid-area: 1 / 7 / 2 / -1;
+    grid-area: 1 / 7 / 2 / 12;
     margin-top: 0rem;
   }
   .Grid > div:nth-of-type(3) {
@@ -157,14 +160,16 @@
     flex-direction: row;
     gap: 2.875rem;
     margin-bottom: 2.5rem;
+    max-width: 432px;
   }
 
   .SocialIcons {
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
+    max-width: 432px;
   }
 
   .FormBottomWrapper {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0;
   }
 
@@ -174,6 +179,10 @@
 
   .Grid > div:nth-of-type(3) p {
     margin-bottom: 0px;
+  }
+
+  .Grid > div:nth-of-type(1) > p {
+    max-width: 432px;
   }
 }
 
@@ -190,6 +199,10 @@
   }
   .Grid > div:nth-of-type(4) {
     grid-area: 2 / 7 / 3 / 13;
+  }
+
+  .FormBottomWrapper p {
+    letter-spacing: 0.015em;
   }
 }
 

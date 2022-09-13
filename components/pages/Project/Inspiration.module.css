@@ -24,6 +24,7 @@
 
 .TextWrapper {
   margin-left: 0rem;
+  max-width: 224px;
 }
 
 .TextWrapper h2 {
@@ -101,6 +102,7 @@
   .InspirationDescriptionWrapper {
     display: grid;
   }
+  
 
   .InspirationDescriptionImageMain {
     height: 43.75rem;
@@ -112,6 +114,7 @@
 
   .TextWrapper {
     margin-left: 5rem;
+    max-width: 100%;
   }
 
   .TextWrapper h2 {
@@ -131,7 +134,7 @@
     position: absolute;
     width: 23.75rem;
     height: 25rem;
-    right: 0;
+    right: -3.88em;
     top: 11.25rem;
   }
 

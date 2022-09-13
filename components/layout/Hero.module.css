@@ -50,6 +50,7 @@
 .SwitchOrder h1 {
   margin-bottom: 2.5rem;
   color: var(--gray-light);
+  padding-top: 14px;
 }
 
 .SwitchOrder .ImageWrapper {
@@ -151,6 +152,10 @@
   .ProjectPageTitle {
     font-size: 6.94em;
     line-height: 121%;
+  }
+
+  .SwitchOrder h1 {
+    padding-top: 0px;
   }
 
   .HeroSectionWrapper {

@@ -1,7 +1,7 @@
 .Subscribe {
   width: 100%;
   position: relative;
-  padding-top: 5rem;
+  padding-top: 0rem;
 }
 
 .Subscribe .FormWrapper {
@@ -30,9 +30,14 @@
 
 .Form p {
   max-width: 27rem;
-  line-height: 140%;
+  line-height: 150%;
   letter-spacing: -0.03em;
   color: var(--gray-dark);
+}
+
+.Form p:nth-of-type(2) {
+  font-size: 14px;
+  line-height: 140%;
 }
 
 .InputWrapper {
@@ -40,6 +45,16 @@
   width: 100%;
   max-width: 27rem;
   position: relative;
+}
+
+.InputWrapper input,
+.InputWrapper button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.015em;
 }
 
 .InputWrapper input {
@@ -65,17 +80,29 @@
   right: 0;
   top: 0;
   z-index: 1;
-  padding: 0.625rem 3rem;
+  padding: 0.625rem 20px;
   background: var(--green-dark);
   border: 0;
   text-transform: uppercase;
   color: var(--gray-light);
   cursor: pointer;
   transition: all 0.3s ease;
+  max-width: 120px;
 }
 
 .InputWrapper button:hover {
   background-color: var(--blue-dark);
+}
+
+.Error {
+  color: #ff3333;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .Form {
+    max-width: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -90,5 +117,18 @@
 
   .Form {
     padding: 2.5rem 0 2.5rem 7rem;
+  }
+
+  .InputWrapper button {
+    max-width: none;
+    padding: 0.625rem 3rem;
+  }
+
+  .Subscribe {
+    padding-top: 5rem;
+  }
+
+  .Form {
+    max-width: 655px;
   }
 }

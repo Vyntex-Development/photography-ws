@@ -5,7 +5,7 @@ import SEO from "../../components/SEO/SEO";
 const blog = ({ blog, blogs }) => (
   <>
     <SEO metaTitle={blog.title} />
-    <BlogPage blog={blog} blogs={blogs} />;
+    <BlogPage blog={blog} blogs={blogs} />
   </>
 );
 

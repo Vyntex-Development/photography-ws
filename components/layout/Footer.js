@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { useState, useEffect, useRef } from "react";
 
 const Footer = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
   const router = useRouter();
   const contactPage = router.pathname === "/contact";
   const firstImage = useRef();
@@ -19,31 +20,41 @@ const Footer = () => {
     threshold: 0.7,
   });
   const [isFirstSectionEnter, setIsFirstSectionEnter] = useState(false);
+  useEffect(() => {
+    setIsDesktop(typeof window !== "undefined" && window.innerWidth > 767);
+  }, []);
 
   useEffect(() => {
     inView && setIsFirstSectionEnter(true);
     if (isFirstSectionEnter) return;
     if (contactPage) return;
-    firstImage.current.style.transform =
-      inView && !isFirstSectionEnter
-        ? "translate(0px, 0px)"
-        : "translate(-100px, 900px)";
-    secondImage.current.style.transform =
-      inView && !isFirstSectionEnter
-        ? "translate(0px, -10px)"
-        : "translate(-100px, 900px)";
-    thirdImage.current.style.transform =
-      inView && !isFirstSectionEnter
+    if (inView && !isFirstSectionEnter) {
+      firstImage.current.style.transform = isDesktop
+        ? "translate(0px, -5px)"
+        : "translate(0px, 15px)";
+
+      secondImage.current.style.transform = isDesktop
         ? "translate(0px, -15px)"
-        : "translate(-100px, 900px)";
-    fourthImage.current.style.transform =
-      inView && !isFirstSectionEnter
-        ? "translate(0px, -2.5px)"
-        : "translate(-100px, 900px)";
-    fifthImage.current.style.transform =
-      inView && !isFirstSectionEnter
-        ? "translate(0px, 10px)"
-        : "translate(-100px, 900px)";
+        : "translate(0px, 15px)";
+
+      thirdImage.current.style.transform = isDesktop
+        ? "translate(0px, -20px)"
+        : "translate(0px, 10px)";
+
+      fourthImage.current.style.transform = isDesktop
+        ? "translate(0px, -7.5px)"
+        : "translate(0px, 13.5px)";
+
+      fifthImage.current.style.transform = isDesktop
+        ? "translate(0px, 5px)"
+        : "translate(0px, 20px)";
+    } else {
+      firstImage.current.style.transform = "translate(-100px, 900px)";
+      secondImage.current.style.transform = "translate(-100px, 900px)";
+      thirdImage.current.style.transform = "translate(-100px, 900px)";
+      fourthImage.current.style.transform = "translate(-100px, 900px)";
+      fifthImage.current.style.transform = "translate(-100px, 900px)";
+    }
   }, [inView]);
 
   return (

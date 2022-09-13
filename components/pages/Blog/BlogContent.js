@@ -5,8 +5,9 @@ import { ClockSvg, InstagramSvg, FacebookSvg, TweeterSvg } from "../../svg/svg";
 import { useEffect, useState, useRef } from "react";
 import Input from "../../UI/Input";
 import { useInView } from "react-intersection-observer";
+import useSubscribe from "../../hooks/useSubscribe";
 
-const BlogContent = ({ details, setDuration }) => {
+const BlogContent = ({ details, setDuration, media }) => {
   const { author, reading_time, date } = details;
   const [readingDurationVisualDisplay, setReadingDurationVisualDisplay] =
     useState();
@@ -17,6 +18,15 @@ const BlogContent = ({ details, setDuration }) => {
   const [ref2, inView2] = useInView({
     trashhold: 0.3,
   });
+
+  const subscribeInputRef = useRef();
+  const mobileSubscribeInputRef = useRef();
+  const { submitFormHandler: submiFormForDesktop, error } =
+    useSubscribe(subscribeInputRef);
+  const {
+    submitFormHandler: submitFormHandlerForMobile,
+    error: errorOnMobile,
+  } = useSubscribe(mobileSubscribeInputRef);
 
   useEffect(() => {
     const animateOnScroll = () => {
@@ -43,6 +53,16 @@ const BlogContent = ({ details, setDuration }) => {
     }
   }, [inView2, modalIsOpen]);
 
+  useEffect(() => {
+    !errorOnMobile && setModalIsOpen(false);
+  }, [errorOnMobile]);
+
+  const setModalIsOpenHandler = (ev) => {
+    if (ev.target.className === modalRef.current.className) {
+      setModalIsOpen(false);
+    }
+  };
+
   return (
     <div>
       <div className={classes.BlogContentWrapper} ref={ref}>
@@ -64,7 +84,7 @@ const BlogContent = ({ details, setDuration }) => {
                 <div className={classes.Info}>
                   <p>{date}</p>
                   <div>
-                    <ClockSvg />
+                    <ClockSvg color="#808080" />
                     <p>{reading_time} min</p>
                   </div>
                 </div>
@@ -85,8 +105,16 @@ const BlogContent = ({ details, setDuration }) => {
             <div className={classes.ImageWraper}>
               <Image
                 src="/blog-img.png"
-                width={207}
-                height={150}
+                width={
+                  typeof window !== "undefined" && window.innerWidth > 768
+                    ? 207
+                    : 150
+                }
+                height={
+                  typeof window !== "undefined" && window.innerWidth > 768
+                    ? 150
+                    : 138
+                }
                 objectFit={`${
                   typeof window !== "undefined" && window.innerWidth > 768
                     ? "contain"
@@ -95,10 +123,20 @@ const BlogContent = ({ details, setDuration }) => {
               />
             </div>
             <div>
-              <form className={classes.Form} action="">
+              <form
+                className={classes.Form}
+                action=""
+                onSubmit={submiFormForDesktop}
+              >
                 <p>subscribe to our newsletter:</p>
                 <div className={classes.FormInnerWrapper}>
-                  <Input placeholder="Email" />
+                  <Input
+                    placeholder="Email"
+                    color="#808080"
+                    ref={subscribeInputRef}
+                  />
+                  {error && <span className={classes.Error}>{error}</span>}
+
                   <Button btnType="secondary" type="submit">
                     Subscribe
                   </Button>
@@ -109,13 +147,25 @@ const BlogContent = ({ details, setDuration }) => {
                   Conditions and our privacy policy.
                 </p>
               </form>
+
+              <div className={classes.FormImageWrapper}>
+                <Image
+                  objectFit="cover"
+                  alt="blog-hero"
+                  src={media}
+                  height={1070}
+                  width={800}
+                  layout="responsive"
+                ></Image>
+              </div>
             </div>
 
             {modalIsOpen && (
               <div
                 className={classes.Backdrop}
                 ref={modalRef}
-                onClick={() => setModalIsOpen(false)}
+                onClick={setModalIsOpenHandler}
+
               >
                 <div className={classes.SubscribeReadingDuration}>
                   <div
@@ -137,18 +187,25 @@ const BlogContent = ({ details, setDuration }) => {
                     />
                   </div>
                   <div>
-                    <form className={classes.Form} action="">
+                    <form
+                      className={classes.Form}
+                      action=""
+                      onSubmit={submitFormHandlerForMobile}
+                    >
                       <p>subscribe to our newsletter:</p>
                       <div className={classes.FormInnerWrapper}>
-                        <Input placeholder="Email" />
-                        <Button
-                          btnType="secondary"
-                          type="submit"
-                          onClick={() => setModalIsOpen(false)}
-                        >
+                        <Input
+                          placeholder="Email"
+                          ref={mobileSubscribeInputRef}
+                          color="#808080"
+                        />
+                        <Button btnType="secondary" type="submit">
                           Subscribe
                         </Button>
                       </div>
+                      {errorOnMobile && (
+                        <span className={classes.Error}>{errorOnMobile}</span>
+                      )}
 
                       <p>
                         By submitting this form you read and agree to the Terms
@@ -244,11 +301,12 @@ const BlogContent = ({ details, setDuration }) => {
                 dui erat finibus orci, a vehicula arcu sapien id metus. Quisque
                 quis lorem a sem porttitor feugiat. Etiam quis congue est. Donec
                 fermentum ac libero a pretium. Nulla nisl sem, euismod ut eros
-                vitae, egestas scelerisque enim. Vivamus id pharetra massa.
-                Nulla aliquet erat elit, a gravida dui efficitur vel. Sed
-                pulvinar diam sed neque ullamcorper semper. Nulla elementum arcu
-                lacus, quis porta nisl posuere varius. Quisque tempus libero sed
-                urna posuere hendrerit.
+                vitae, egestas scelerisque enim.&nbsp;
+                <span>Vivamus id pharetra massa.</span>&nbsp; Nulla aliquet erat
+                elit, a gravida dui efficitur vel. Sed pulvinar diam sed neque
+                ullamcorper semper. Nulla elementum arcu lacus, quis porta nisl
+                posuere varius. Quisque tempus libero sed urna posuere
+                hendrerit.
               </p>
               <ul>
                 <li>Lectus id duis vitae porttitor enim gravida morbi.</li>

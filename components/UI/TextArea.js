@@ -3,7 +3,7 @@ import classes from "./TextArea.module.css";
 const TextArea = (props) => {
   return (
     <div className={classes.TextArea}>
-      <textarea rows="14" {...props}></textarea>
+      <textarea rows="11" {...props}></textarea>
     </div>
   );
 };

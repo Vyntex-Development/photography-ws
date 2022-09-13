@@ -9,6 +9,7 @@
   resize: none;
   outline: none;
   color: var(--gray-light);
+  max-height: 200px;
 }
 
 .TextArea textarea::placeholder {

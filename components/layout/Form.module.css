@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 
 .ContactDetails > div {
@@ -41,7 +41,7 @@
 }
 .FormWrapper > p {
   color: var(--gray-dark);
-  margin: 1.25rem 0 2.2rem;
+  margin: 1.25rem 0 1.5rem;
 }
 
 .ContactDetails > div p {
@@ -55,6 +55,7 @@
   display: flex;
   gap: 1.875rem;
   margin-bottom: 2.5rem;
+  display: none;
 }
 
 .SocialIcons svg {
@@ -88,13 +89,21 @@
 }
 
 .FormBottomWrapper button {
+  font-family: "Inter";
+  font-style: normal;
   margin-right: 0rem;
   width: 100%;
   margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.015em;
+  padding: 10px 48px;
 }
 
 .FormBottomWrapper p {
   color: var(--gray-light);
+  font-size: 0.875rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -135,5 +144,19 @@
 
   .SocialIcons {
     margin-bottom: 0rem;
+    display: flex;
+  }
+
+  .ContactDetails {
+    margin-bottom: 2.5rem;
+  }
+
+  .FormWrapper > p {
+    margin: 1.25rem 0 2.2rem;
+  }
+
+  .Grid > div > div:nth-of-type(1) {
+    grid-area: 1 / 1 / 2 / 6;
+    max-width: 432px;
   }
 }

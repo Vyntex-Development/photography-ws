@@ -7,7 +7,7 @@
 
 .List h2 {
   letter-spacing: 0.01em;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
   color: #012839;
 }
 .LinksWrapper {
@@ -63,5 +63,13 @@
   .LinksWrapper span:nth-of-type(2) {
     color: var(--blue-dark);
     text-align: center;
+  }
+
+  .List h2 {
+    margin-bottom: 2.25rem;
+  }
+
+  .Load {
+    margin-top: 2.5rem;
   }
 }
