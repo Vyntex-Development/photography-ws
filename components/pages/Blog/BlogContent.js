@@ -18,6 +18,7 @@ const BlogContent = ({ details, setDuration, media }) => {
   const [ref2, inView2] = useInView({
     trashhold: 0.3,
   });
+
   const subscribeInputRef = useRef();
   const mobileSubscribeInputRef = useRef();
   const { submitFormHandler: submiFormForDesktop, error } =
@@ -164,6 +165,7 @@ const BlogContent = ({ details, setDuration, media }) => {
                 className={classes.Backdrop}
                 ref={modalRef}
                 onClick={setModalIsOpenHandler}
+
               >
                 <div className={classes.SubscribeReadingDuration}>
                   <div
@@ -204,6 +206,7 @@ const BlogContent = ({ details, setDuration, media }) => {
                       {errorOnMobile && (
                         <span className={classes.Error}>{errorOnMobile}</span>
                       )}
+
                       <p>
                         By submitting this form you read and agree to the Terms
                         & Conditions and our privacy policy.
