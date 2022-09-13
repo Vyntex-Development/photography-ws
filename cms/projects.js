@@ -5,6 +5,7 @@ export const projects = [
     description: "divandivan",
     slug: "simplicity-of-living",
     media: "/images/portfolio1.png",
+    media_animation: "/images/portfolio-animation.png",
     details: {
       client: "Trial and error",
       location: "New york",
@@ -24,6 +25,7 @@ export const projects = [
     description: "sloun",
     slug: "becoming-you",
     media: "/images/portfolio2.png",
+    media_animation: "/images/portfolio-animation.png",
     details: {
       client: "Trial and error",
       location: "Berlin",
@@ -43,6 +45,7 @@ export const projects = [
     description: "floskula",
     slug: "enrichment",
     media: "/images/portfolio3.png",
+    media_animation: "/images/portfolio-animation.png",
     details: {
       client: "Trial and error",
       location: "Berlin",
@@ -62,6 +65,7 @@ export const projects = [
     description: "floskula",
     slug: "waking-life",
     media: "/images/portfolio5.png",
+    media_animation: "/images/portfolio-animation.png",
     details: {
       client: "Trial and error",
       location: "Tokyo",
@@ -81,6 +85,7 @@ export const projects = [
     description: "doingwork",
     slug: "champagne",
     media: "/images/portfolio6.png",
+    media_animation: "/images/portfolio-animation.png",
     details: {
       client: "Trial and error",
       location: "Amsterdam",
@@ -100,6 +105,7 @@ export const projects = [
     description: "divandivan",
     slug: "classic-as-chanel",
     media: "/images/portfolio4.png",
+    media_animation: "/images/portfolio-animation.png",
     details: {
       client: "Trial and error",
       location: "Dublin",

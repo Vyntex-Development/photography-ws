@@ -14,8 +14,8 @@ const List = ({ projects }) => {
   const imageRef = useRef();
   const { x, y } = useMousePosition();
 
-  const imageWidth = 400;
-  const imageHeight = 450;
+  const imageWidth = 383;
+  const imageHeight = 419;
 
   const [ref, inView, entry] = useInView();
 
@@ -93,7 +93,7 @@ const List = ({ projects }) => {
           })}
         </div>
         <div className={classes.Images}>
-          {filteredProjects.map(({ media, id }) => {
+          {filteredProjects.map(({ media_animation, id }) => {
             return (
               <div
                 key={id}
@@ -110,7 +110,7 @@ const List = ({ projects }) => {
                   } ${visibleImageId === id ? "scale(1.1)" : "scale(1)"}  `,
                 }}
               >
-                <Image src={media} height={imageHeight} width={imageWidth} />
+                <Image objectFit="cover" src={media_animation} height={imageHeight} width={imageWidth} />
               </div>
             );
           })}
