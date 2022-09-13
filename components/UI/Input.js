@@ -1,7 +1,9 @@
-import classes from "./Input.module.css";
-import React from "react";
+/* eslint-disable react/display-name */
 
-const Input = React.forwardRef((props, ref) => {
+import classes from "./Input.module.css";
+import { forwardRef } from "react";
+
+const Input = forwardRef((props, ref) => {
   return (
     <div className={classes.Input}>
       <input
