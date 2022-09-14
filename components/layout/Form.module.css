@@ -47,6 +47,7 @@
 .ContactDetails > div p {
   color: var(--gray-light);
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 .SocialIcons {

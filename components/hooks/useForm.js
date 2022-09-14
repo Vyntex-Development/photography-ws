@@ -1,26 +1,34 @@
 import { useState } from "react";
 
-const useForm = (element) => {
-  //   const [error, setError] = useState("");
+const useForm = (inputElements) => {
+  const [modifiedInputElements, setModifiedInputElements] =
+    useState(inputElements);
 
   const submitFormHandler = (ev) => {
     ev.preventDefault();
-    // console.log(element.current.value);
-    // if (element.current.value.trim() === "") {
-    //   setError("This field can not be empty");
-    //   return;
-    // }
-    // if (!element.current.value.includes("@")) {
-    //   setError("Email must include @ symbol");
-    //   return;
-    // }
-    // setError("");
-    // console.log("send the data");
+
+    let modifiedInputElements = inputElements.map(({ el }, i) => {
+      if (el.current.value.trim() === "") {
+        return { el, error: "This field can not be empty" };
+      }
+
+      if (el.current.id === "email" && !el.current.value.includes("@")) {
+        return { el, error: "Please include @ symbol" };
+      }
+
+      return { el, error: "" };
+    });
+
+    setModifiedInputElements(modifiedInputElements);
+
+    if (!modifiedInputElements.some((el) => el.error)) {
+      console.log("send the data");
+    }
   };
 
   return {
     submitFormHandler,
-    error,
+    modifiedInputElements,
   };
 };
 

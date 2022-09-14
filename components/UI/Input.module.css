@@ -16,3 +16,8 @@
   text-transform: uppercase;
   color: var(--gray-dark);
 }
+
+.Error {
+  color: #ff3333;
+  font-size: 12px;
+}
