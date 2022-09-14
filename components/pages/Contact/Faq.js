@@ -1,10 +1,7 @@
 import { OpenSvg, ClosedSvg } from "../../svg/svg";
 import classes from "./Faq.module.css";
-import { useState } from "react";
 
-const Faq = () => {
-  const [active, setActive] = useState(0);
-
+const Faq = ({ setActive, active }) => {
   return (
     <div>
       <div className={classes.Faq}>

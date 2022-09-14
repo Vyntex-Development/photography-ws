@@ -11,19 +11,27 @@ import Input from "../../UI/Input";
 import TextArea from "../../UI/TextArea";
 import Button from "../../UI/Button";
 import Faq from "./Faq";
-// import { useRef } from "react";
-// import useForm from "../../hooks/useForm";
+import { useState, useRef } from "react";
+import useForm from "../../hooks/useForm";
 
 const ContactPage = () => {
-  // const nameInputRef = useRef();
-  // const lastnameInputRef = useRef();
-  // const emailInputRef = useRef();
+  const [active, setActive] = useState(0);
 
-  // const { submitFormHandler } = useForm({
-  //   name: { el: nameInputRef, error: "" },
-  //   lastName: { el: lastnameInputRef, error: "" },
-  //   email: { el: emailInputRef, error: "" },
-  // });
+  const nameInputRef = useRef();
+  const lastnameInputRef = useRef();
+  const emailInputRef = useRef();
+
+  const { submitFormHandler, modifiedInputElements } = useForm([
+    { el: nameInputRef, error: "" },
+    { el: lastnameInputRef, error: "" },
+    { el: emailInputRef, error: "" },
+  ]);
+
+  const [name, lastName, email] = modifiedInputElements;
+
+  const setActiveHandler = (id) => {
+    setActive(id === active ? -1 : id);
+  };
 
   return (
     <div className={`${classes.Grid} container`}>
@@ -52,13 +60,33 @@ const ContactPage = () => {
         </div>
       </div>
       <div>
-        <form action="" className={classes.Form}>
+        <form action="" className={classes.Form} onSubmit={submitFormHandler}>
           <div>
             <p className={classes.FormTitles}>contact info</p>
             <div className={classes.FormInputWrapper}>
-              <Input placeholder="first name *" />
-              <Input placeholder="last name *" />
-              <Input placeholder="email *" />
+              <Input
+                placeholder="first name *"
+                ref={nameInputRef}
+                error={name.error}
+                type="text"
+                name="name"
+                id="name"
+              />
+              <Input
+                placeholder="last name *"
+                ref={lastnameInputRef}
+                error={lastName.error}
+                type="text"
+                name="lastname"
+                id="lastname"
+              />
+              <Input
+                placeholder="email *"
+                ref={emailInputRef}
+                error={email.error}
+                name="email"
+                id="email"
+              />
               <Input placeholder="phone number" />
             </div>
           </div>
@@ -85,7 +113,12 @@ const ContactPage = () => {
           molestie venenatis malesuada.
         </p>
       </div>
-      <Faq />
+      <Faq
+        active={active}
+        setActive={(activeId) => {
+          setActiveHandler(activeId);
+        }}
+      />
     </div>
   );
 };

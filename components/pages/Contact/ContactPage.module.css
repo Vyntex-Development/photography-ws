@@ -91,10 +91,14 @@
 }
 
 .FormBottomWrapper button {
+  font-weight: 400;
   margin-right: 0rem;
   width: 100%;
   margin-bottom: 1rem;
   padding: 10px 48px;
+  letter-spacing: 0.015em;
+  font-size: 14px;
+  line-height: 140%;
 }
 
 .FormBottomWrapper p {

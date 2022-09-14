@@ -10,8 +10,22 @@ import {
 import Input from "../UI/Input";
 import TextArea from "../UI/TextArea";
 import Button from "../UI/Button";
+import { useRef } from "react";
+import useForm from "../hooks/useForm";
 
 const Form = () => {
+  const nameInputRef = useRef();
+  const lastnameInputRef = useRef();
+  const emailInputRef = useRef();
+
+  const { submitFormHandler, modifiedInputElements } = useForm([
+    { el: nameInputRef, error: "" },
+    { el: lastnameInputRef, error: "" },
+    { el: emailInputRef, error: "" },
+  ]);
+
+  const [name, lastName, email] = modifiedInputElements;
+
   return (
     <div className={classes.Grid}>
       <div className="container">
@@ -40,13 +54,33 @@ const Form = () => {
           </div>
         </div>
         <div>
-          <form action="" className={classes.Form}>
+          <form action="" className={classes.Form} onSubmit={submitFormHandler}>
             <div>
               <p className={classes.FormTitles}>contact info</p>
               <div className={classes.FormInputWrapper}>
-                <Input placeHolder="first name *" />
-                <Input placeHolder="last name *" />
-                <Input placeHolder="email *" />
+                <Input
+                  placeHolder="first name *"
+                  ref={nameInputRef}
+                  error={name.error}
+                  type="text"
+                  name="name"
+                  id="name"
+                />
+                <Input
+                  placeHolder="last name *"
+                  ref={lastnameInputRef}
+                  error={lastName.error}
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                />
+                <Input
+                  placeHolder="email *"
+                  ref={emailInputRef}
+                  error={email.error}
+                  name="email"
+                  id="email"
+                />
                 <Input placeHolder="phone number" />
               </div>
             </div>
