@@ -35,6 +35,11 @@
   text-transform: uppercase;
   color: var(--green-dark);
 }
+.Heading h2 {
+  color: #012839;
+ 
+}
+
 
 .BlogCards > div {
   width: 100%;
