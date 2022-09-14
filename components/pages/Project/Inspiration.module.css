@@ -1,5 +1,6 @@
 .InspirationWrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .Inspiration {
@@ -93,9 +94,9 @@
   position: absolute;
   z-index: 0;
   top: 45%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
-  display: none;
+  /* display: none; */
 }
 
 @media screen and (min-width: 1024px) {

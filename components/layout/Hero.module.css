@@ -1,5 +1,6 @@
 .HeroSectionWrapper {
   padding: 0;
+  color: #012839
 }
 
 .HeroSection {
@@ -21,6 +22,8 @@
   margin-bottom: 7.875rem;
   font-size: 2.25rem;
   padding: 0 1rem;
+  color: #012839;
+
 }
 
 .HeroWrapper h1 {
@@ -121,6 +124,7 @@
   display: flex;
   flex-direction: column;
   min-width: 74px;
+  gap: 0.5rem;
 }
 
 .Detail span {
@@ -129,7 +133,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.87rem;
+  font-size: 0.75rem;
   line-height: 140%;
   letter-spacing: 0.015em;
   text-transform: uppercase;
@@ -152,6 +156,11 @@
   .ProjectPageTitle {
     font-size: 6.94em;
     line-height: 121%;
+  }
+
+  .Detail span {
+    font-size: 0.875rem;
+    
   }
 
   .SwitchOrder h1 {
