@@ -48,7 +48,7 @@
 
 .GridItem p {
   line-height: 140%;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--green-dark);
@@ -199,5 +199,9 @@
     bottom: 3rem;
     cursor: pointer;
     display: block;
+  }
+  .GridItem p {
+    font-size: 0.875rem;
+    
   }
 }
