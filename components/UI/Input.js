@@ -11,6 +11,7 @@ const Input = forwardRef((props, ref) => {
         style={{ color: props.color ? props.color : "#dfdfe0" }}
         {...props}
       />
+      {props.error && <span className={classes.Error}>{props.error}</span>}
     </div>
   );
 });

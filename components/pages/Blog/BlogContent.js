@@ -165,7 +165,6 @@ const BlogContent = ({ details, setDuration, media }) => {
                 className={classes.Backdrop}
                 ref={modalRef}
                 onClick={setModalIsOpenHandler}
-
               >
                 <div className={classes.SubscribeReadingDuration}>
                   <div
@@ -247,7 +246,7 @@ const BlogContent = ({ details, setDuration, media }) => {
               massa. Eu dolor aliquet risus gravida nunc at feugiat consequat
               purus.
             </span>
-            <p>— John Doe, CEO & Founder</p>
+            <p className={classes.WrittenBy}>— John Doe, CEO & Founder</p>
           </div>
           <div>
             <p>
@@ -262,7 +261,8 @@ const BlogContent = ({ details, setDuration, media }) => {
             <Image src="/blog-cms-img.png" layout="fill" objectFit="cover" />
           </div>
           <p className={classes.ImageText}>
-            Non massa enim vitae duis mattis. Vel in ultricies vel fringilla.
+            Non massa enim vitae duis mattis. Vel in <span>ultricies</span> vel
+            fringilla.
           </p>
           <div className={classes.Choices}>
             <h3>So many choices</h3>
