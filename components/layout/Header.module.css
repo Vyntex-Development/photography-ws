@@ -15,8 +15,8 @@
 }
 
 .LogoWrapper {
-  width: 100px;
-  height: 60px;
+  width: 77px;
+  height: 44px;
   position: relative;
 }
 
@@ -54,7 +54,7 @@
   background-color: var(--gray-light);
   width: 100%;
   padding: 2rem;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   top: 112px;
   right: 0;
   z-index: 1000;
@@ -158,6 +158,11 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .LogoWrapper {
+    width: 100px;
+    height: 63px;
+  }
+
   .HeaderWrapper {
     padding: 2.5rem 0;
     align-items: center;

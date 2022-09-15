@@ -12,7 +12,7 @@ const Who = () => {
             In Pedro Almodovar&apos;s early film ¿Qué he hecho yo para merecer
             esto? What Have I Done to Deserve this? - two writers devise a plan
             to sell diaries, although they know them to be forged. Their plot
-            depends upon the protagonist&apos;s husband Antonio
+            depends upon the protagonist&apos;s husband Antonio.
           </p>
         </div>
         <div className={classes.ImageWrapper}>
@@ -33,10 +33,13 @@ const Who = () => {
             <p>
               As such, he is convinced that his work is really not forgery,
               since the source material – or so he was lead to believe – is
-              true. Certainly documents and records can serve as some measure of
-              authenticity, but the events, experiences and self­understanding
-              of the autobiographical subject can only be confirmed by the
-              subject herself; the signa­ture serves as a guarantor.
+              true.
+              <p>
+                Certainly documents and records can serve as some measure of
+                authenticity, but the events, experiences and self­understanding
+                of the autobiographical subject can only be confirmed by the
+                subject herself; the signa­ture serves as a guarantor.
+              </p>
             </p>
             <p>
               As madcap a storyline as this might seem, it illustrates a problem
