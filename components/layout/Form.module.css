@@ -48,6 +48,7 @@
   color: var(--gray-light);
   text-transform: uppercase;
   font-size: 14px;
+  line-height: 140%;
 }
 
 .SocialIcons {
@@ -105,9 +106,14 @@
 .FormBottomWrapper p {
   color: var(--gray-light);
   font-size: 0.875rem;
+  line-height: 140%;
 }
 
 @media screen and (min-width: 768px) {
+  .FormWrapper,
+  .Grid > div > div:nth-of-type(2) {
+    max-width: 70%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -122,6 +128,11 @@
   .FormInputWrapper {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+  }
+
+  .FormWrapper,
+  .Grid > div > div:nth-of-type(2) {
+    max-width: none;
   }
 
   .ContactDetails {
@@ -154,6 +165,7 @@
 
   .FormWrapper > p {
     margin: 1.25rem 0 2.2rem;
+    max-width: 415px;
   }
 
   .Grid > div > div:nth-of-type(1) {

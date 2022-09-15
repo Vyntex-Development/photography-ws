@@ -62,6 +62,9 @@ const Footer = () => {
       className={`${classes.footer} ${contactPage ? classes.TopBorder : ""}`}
       ref={ref}
     >
+      {/* <div className={classes.Layer1}></div>
+      <div className={classes.Layer2}></div> */}
+
       {!contactPage && (
         <div className={`${classes.grid} container`}>
           <div className={classes.gridTextWrapper}>
