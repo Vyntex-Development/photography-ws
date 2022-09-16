@@ -3,7 +3,7 @@ import classes from "./Faq.module.css";
 
 const Faq = ({ setActive, active }) => {
   return (
-    <div>
+    <div className={classes.FaqWrapper}>
       <div className={classes.Faq}>
         <div className={classes.Question} onClick={() => setActive(0)}>
           <p className={`${active === 0 ? classes.Active : ""}`}>

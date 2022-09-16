@@ -34,13 +34,16 @@ const Who = () => {
               As such, he is convinced that his work is really not forgery,
               since the source material – or so he was lead to believe – is
               true.
-              <p>
-                Certainly documents and records can serve as some measure of
-                authenticity, but the events, experiences and self­understanding
-                of the autobiographical subject can only be confirmed by the
-                subject herself; the signa­ture serves as a guarantor.
-              </p>
+              
+           
             </p>
+            <p>
+            Certainly documents and records can serve as some measure of
+              authenticity, but the events, experiences and self­understanding
+              of the autobiographical subject can only be confirmed by the
+              subject herself; the signa­ture serves as a guarantor.
+            </p>
+
             <p>
               As madcap a storyline as this might seem, it illustrates a problem
               that has always plagued autobi­ography and its claims to veracity:

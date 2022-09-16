@@ -43,8 +43,11 @@ const BusinessPlan = () => {
               discovered as a creative entrepreneurs
             </p>
           </div>
-          <div>
-            <p
+          {/* <div className={classes.MobileTabsWrapper}>
+            <div  className={`${classes.TabWrapper}  ${
+                activeTab === 0 ? classes.ActiveTabWrapper : ""
+              }`}>
+              <p
               className={`${classes.Tab}  ${
                 activeTab === 0 ? classes.ActiveTab : ""
               }`}
@@ -57,6 +60,10 @@ const BusinessPlan = () => {
                 className={`${activeTab === 0 ? classes.Active : ""}`}
               ></span>
             </p>
+            </div>
+            <div  className={`${classes.TabWrapper}  ${
+                activeTab === 1 ? classes.ActiveTabWrapper : ""
+              }`}>
             <p
               className={`${classes.Tab}  ${
                 activeTab === 1 ? classes.ActiveTab : ""
@@ -70,6 +77,10 @@ const BusinessPlan = () => {
                 className={`${activeTab === 1 ? classes.Active : ""}`}
               ></span>
             </p>
+            </div>
+            <div  className={`${classes.TabWrapper}  ${
+                activeTab === 2 ? classes.ActiveTabWrapper : ""
+              }`}>
             <p
               className={`${classes.Tab}  ${
                 activeTab === 2 ? classes.ActiveTab : ""
@@ -83,6 +94,54 @@ const BusinessPlan = () => {
                 className={`${activeTab === 2 ? classes.Active : ""}`}
               ></span>
             </p>
+            </div>
+            
+          </div> */}
+          <div >
+              <p
+              className={`${classes.Tab}  ${
+                activeTab === 0 ? classes.ActiveTab : ""
+              }`}
+              onClick={() => {
+                setActiveTab(0);
+              }}
+            >
+              Event Photography
+              <span
+                className={`${activeTab === 0 ? classes.Active : ""}`}
+              ></span>
+            </p>
+            
+            
+            <p
+              className={`${classes.Tab}  ${
+                activeTab === 1 ? classes.ActiveTab : ""
+              }`}
+              onClick={() => {
+                setActiveTab(1);
+              }}
+            >
+              Commercial
+              <span
+                className={`${activeTab === 1 ? classes.Active : ""}`}
+              ></span>
+            </p>
+           
+            <p
+              className={`${classes.Tab}  ${
+                activeTab === 2 ? classes.ActiveTab : ""
+              }`}
+              onClick={() => {
+                setActiveTab(2);
+              }}
+            >
+              Filming & Editing
+              <span
+                className={`${activeTab === 2 ? classes.Active : ""}`}
+              ></span>
+            </p>
+            
+            
           </div>
           {activeTab === 0 && (
             <div className={activeFirst}>
