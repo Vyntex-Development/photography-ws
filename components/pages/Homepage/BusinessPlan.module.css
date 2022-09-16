@@ -4,6 +4,13 @@
   overflow: hidden;
 }
 
+.TabWrapper {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #779593;
+
+}
+
+
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -40,7 +47,6 @@
 }
 
 .grid > div:nth-of-type(3) {
-  border-bottom: 1px solid var(--green-dark);
   display: flex;
   flex-direction: column;
   padding-bottom: 0.875rem;
@@ -160,6 +166,7 @@
   bottom: 28px;
   cursor: pointer;
   transition: all 0.5s ease;
+  z-index: 5;
 }
 
 .Tab {
@@ -193,6 +200,16 @@
     grid-column-gap: 16px;
     grid-row-gap: 0px;
     position: relative;
+  }
+
+  .TabWrapper {
+    padding-bottom: 0px;
+    border-bottom: none;
+    
+  }
+
+  .grid > div:nth-of-type(3) {
+    border-bottom: 1px solid var(--green-dark);
   }
 
   .grid > div:nth-of-type(1) {
@@ -231,12 +248,27 @@
 
   .grid > div:nth-of-type(3):not(:last-of-type) {
     width: 100%;
+    gap: 2.375rem;
   }
 
   .grid > div:nth-of-type(5) li,
   .grid > div:nth-of-type(6) li {
     font-size: 0.875rem;
   }
+  .MobileTabsWrapper {
+    display: none!important;
+  
+  }
+  
+ 
+ 
+  
+  
+  
+
+
+
+  
 }
 
 @media screen and (min-width: 1440px) {

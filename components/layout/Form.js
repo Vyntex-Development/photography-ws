@@ -59,7 +59,7 @@ const Form = () => {
               <p className={classes.FormTitles}>contact info</p>
               <div className={classes.FormInputWrapper}>
                 <Input
-                  placeHolder="first name *"
+                  placeholder="first name *"
                   ref={nameInputRef}
                   error={name.error}
                   type="text"
@@ -67,7 +67,7 @@ const Form = () => {
                   id="name"
                 />
                 <Input
-                  placeHolder="last name *"
+                  placeholder="last name *"
                   ref={lastnameInputRef}
                   error={lastName.error}
                   type="text"
@@ -75,18 +75,18 @@ const Form = () => {
                   id="lastname"
                 />
                 <Input
-                  placeHolder="email *"
+                  placeholder="email *"
                   ref={emailInputRef}
                   error={email.error}
                   name="email"
                   id="email"
                 />
-                <Input placeHolder="phone number" />
+                <Input placeholder="phone number" />
               </div>
             </div>
             <div>
               <p className={classes.FormTitles}>your message</p>
-              <TextArea placeHolder="message" />
+              <TextArea placeholder="message" />
             </div>
             <div className={classes.FormBottomWrapper}>
               <Button type="submit" btnType="primary">
