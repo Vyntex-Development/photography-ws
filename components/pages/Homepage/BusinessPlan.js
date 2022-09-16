@@ -98,7 +98,9 @@ const BusinessPlan = () => {
             
           </div> */}
           <div className={classes.Desktop}>
-            <div className={classes.TabWrapper}>
+            <div className={`${classes.TabWrapper}  ${
+                activeTab === 0 ? classes.ActiveTabWrapper : ""
+              }`}>
             <p
               className={`${classes.Tab}  ${
                 activeTab === 0 ? classes.ActiveTab : ""
@@ -115,7 +117,9 @@ const BusinessPlan = () => {
             </div>
               
             
-            <div className={classes.TabWrapper}>
+            <div className={`${classes.TabWrapper}  ${
+                activeTab === 1 ? classes.ActiveTabWrapper : ""
+              }`}>
             <p
               className={`${classes.Tab}  ${
                 activeTab === 1 ? classes.ActiveTab : ""
@@ -131,7 +135,9 @@ const BusinessPlan = () => {
             </p>
             </div>
             
-           <div className={classes.TabWrapper}>
+           <div className={`${classes.TabWrapper}  ${
+                activeTab === 2 ? classes.ActiveTabWrapper : ""
+              }`}>
            <p
               className={`${classes.Tab}  ${
                 activeTab === 2 ? classes.ActiveTab : ""
