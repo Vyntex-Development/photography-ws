@@ -1,6 +1,9 @@
 .TextArea textarea {
   font-family: "Inter";
-
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
   background: transparent;
   border: 1px solid var(--gray-dark);
   border-radius: 4px;
