@@ -33,8 +33,7 @@ export const blogs = [
       date: "20/07/2022",
     },
     slug: "best-camera-for-portrait-photography",
-
-    media: "/blog-hero.png",
+    media: "/photo.png",
   },
   {
     id: 4,
@@ -58,7 +57,7 @@ export const blogs = [
       date: "20/07/2022",
     },
     slug: "best-camera-for-portrait-photography",
-    media: "/blog-hero.png",
+    media: "/photo.png",
   },
   {
     id: 6,
