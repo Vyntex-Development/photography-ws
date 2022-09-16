@@ -75,6 +75,10 @@
     grid-column-gap: 16px;
   }
 
+  .Heading {
+    margin-bottom: 2.25rem;
+  }
+
   .GridItem {
     grid-area: 1 / 2 / 2 / 12;
   }
