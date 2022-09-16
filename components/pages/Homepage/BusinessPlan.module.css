@@ -6,8 +6,13 @@
 
 .TabWrapper {
   padding-bottom: 16px;
-  border-bottom: 1px solid #779593;
+  
 
+}
+
+.ActiveTabWrapper {
+  border-bottom: 1px solid #779593;
+  padding-bottom: 16px;
 }
 
 
