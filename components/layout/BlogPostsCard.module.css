@@ -27,6 +27,7 @@
   color: var(--gray-dark);
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(119, 149, 147, 0.2);
+  width: 100%;
 }
 
 .CardDetailsWrapper {
@@ -60,6 +61,14 @@
   .CardDetailsWrapper {
     justify-content: space-evenly;
   }
+
+  .ImageWrapper {
+    height: 192px;
+  }
+
+  .CardDescription {
+    width: fit-content;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -70,10 +79,24 @@
   .CardTitle {
     letter-spacing: 0.01em;
   }
+
+  .CardDescription {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .CardDescription {
+    width: 20rem;
+  }
+
 }
 
 @media screen and (min-width: 1440px) {
   .CardDetailsWrapper {
     justify-content: space-between;
+    
   }
+
+
 }
