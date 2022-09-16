@@ -17,12 +17,7 @@ const Header = () => {
     router.pathname === "/blog" || router.pathname.includes("/blog");
   const is404Page = router.pathname === "/404";
   const isProjectsPageOnMobile = router.pathname === "/projects";
-
-  // useEffect(() => {
-  //   isOpen
-  //     ? document.body.classList.add("no-scroll")
-  //     : document.body.classList.remove("no-scroll");
-  // }, [isOpen]);
+  const isBlogCmsPage = router.pathname === "/blog/[slug]";
 
   useEffect(() => {
     setIsDesktop(typeof window !== "undefined" && window.innerWidth > 767);
@@ -82,7 +77,11 @@ const Header = () => {
           </a>
         </Link>
       </div>
-      <div className={classes.HeaderWrapper}>
+      <div
+        className={`${classes.HeaderWrapper} ${
+          isBlogCmsPage ? classes.HeaderWrapperForBlogCmsPage : ""
+        }`}
+      >
         <div
           className={`${classes.LogoWrapper} ${
             isHomepageOnMobile || isProjectsPageOnMobile || isDesktop
