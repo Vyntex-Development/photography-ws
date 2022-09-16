@@ -37,9 +37,7 @@
 }
 .Heading h2 {
   color: #012839;
- 
 }
-
 
 .BlogCards > div {
   width: 100%;
@@ -58,6 +56,11 @@
   right: 0px;
   bottom: -4rem;
   cursor: pointer;
+}
+
+.Grid .ScrollSvgWrapper svg {
+  width: 36px;
+  height: 36px;
 }
 
 @media screen and (min-width: 768px) {
@@ -85,6 +88,11 @@
 
   .BlogCards {
     flex-direction: row;
+  }
+
+  .Grid .ScrollSvgWrapper svg {
+    width: 48px;
+    height: 48px;
   }
 }
 

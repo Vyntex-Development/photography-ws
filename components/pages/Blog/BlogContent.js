@@ -102,25 +102,10 @@ const BlogContent = ({ details, setDuration, media }) => {
               <FacebookSvg />
               <TweeterSvg />
             </div>
-            <div className={classes.ImageWraper}>
-              <Image
-                src="/blog-img.png"
-                width={
-                  typeof window !== "undefined" && window.innerWidth > 768
-                    ? 207
-                    : 150
-                }
-                height={
-                  typeof window !== "undefined" && window.innerWidth > 768
-                    ? 150
-                    : 138
-                }
-                objectFit={`${
-                  typeof window !== "undefined" && window.innerWidth > 768
-                    ? "contain"
-                    : "cover"
-                }`}
-              />
+            <div
+              className={`${classes.ImageWraper} ${classes.ImageWrapperTop}`}
+            >
+              <Image src="/blog-img.png" layout="fill" />
             </div>
             <div>
               <form
@@ -150,20 +135,10 @@ const BlogContent = ({ details, setDuration, media }) => {
 
               <div className={classes.FormImageWrapper}>
                 <Image
-                  objectFit="cover"
                   alt="blog-hero"
                   src={media}
-                  height={
-                    typeof window !== "undefined" && window.innerWidth >= 768
-                      ? 270
-                      : 1070
-                  }
-                  width={
-                    typeof window !== "undefined" && window.innerWidth >= 768
-                      ? 400
-                      : 800
-                  }
-                  layout="responsive"
+                  layout="fill"
+                  objectFit="cover"
                 ></Image>
               </div>
             </div>
@@ -181,17 +156,10 @@ const BlogContent = ({ details, setDuration, media }) => {
                   ></div>
                 </div>
                 <div className={classes.SubscribeModal}>
-                  <div className={classes.ImageWraper}>
-                    <Image
-                      src="/blog-img.png"
-                      width={207}
-                      height={150}
-                      objectFit={`${
-                        typeof window !== "undefined" && window.innerWidth > 768
-                          ? "contain"
-                          : "cover"
-                      }`}
-                    />
+                  <div
+                    className={`${classes.ImageWraper} ${classes.ImageWrapperTop}`}
+                  >
+                    <Image src="/blog-img.png" layout="fill" />
                   </div>
                   <div>
                     <form
