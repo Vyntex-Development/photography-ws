@@ -153,8 +153,16 @@ const BlogContent = ({ details, setDuration, media }) => {
                   objectFit="cover"
                   alt="blog-hero"
                   src={media}
-                  height={1070}
-                  width={800}
+                  height={
+                    typeof window !== "undefined" && window.innerWidth >= 768
+                      ? 270
+                      : 1070
+                  }
+                  width={
+                    typeof window !== "undefined" && window.innerWidth >= 768
+                      ? 400
+                      : 800
+                  }
                   layout="responsive"
                 ></Image>
               </div>
