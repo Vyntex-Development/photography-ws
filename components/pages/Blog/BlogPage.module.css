@@ -101,7 +101,7 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
   .HeroWrapper h2 {
     margin-bottom: 1.5rem;
   }
