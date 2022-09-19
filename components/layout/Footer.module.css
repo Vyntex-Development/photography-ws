@@ -33,6 +33,10 @@
   height: 100%;
 }
 
+.gridTextWrapper h2 {
+  line-height: 90%;
+}
+
 .gridTextWrapper h2,
 .gridTextWrapper p {
   color: var(--gray-light);
@@ -132,7 +136,7 @@
 }
 
 .Icons {
-  margin-top: 0.625rem;
+  margin-top: 0.5rem;
 }
 
 .MarginTopDisable {
@@ -270,6 +274,10 @@
 
   .ImageWrapper > span {
     max-height: none !important;
+  }
+  .gridTextWrapper h2 {
+    line-height: 58px;
+    font-size: 3rem;
   }
 }
 

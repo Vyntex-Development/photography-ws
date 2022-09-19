@@ -75,11 +75,11 @@
   width: auto;
   z-index: 2;
   cursor: pointer;
-  margin-right: 1.5rem;
+  margin-right: 15vw;
 }
 
 .NextProjectWrapper {
-  grid-column: 9/12;
+  grid-column: 10/12;
   position: relative;
   width: auto;
   z-index: 2;
@@ -122,7 +122,7 @@
 .PrevProjectWrapper p,
 .NextProjectWrapper p {
   line-height: 140%;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -137,7 +137,7 @@
   margin-bottom: 1rem;
   z-index: 2;
   position: relative;
-  height: 80px;
+  font-size: 24px;
 }
 
 .PrevProjectWrapper > span {
@@ -152,7 +152,32 @@
   display: none;
 }
 
+@media screen and (min-width: 480px) {
+  .PrevProjectWrapper {
+    margin-right: 33vw;
+  }
+}
+  
+
+@media screen and (min-width: 768px) {
+  .PrevProjectWrapper {
+    margin-right: 58vw;
+  }
+
+  
+}
+
 @media screen and (min-width: 1024px) {
+
+  .PrevProjectWrapper h3,
+  .NextProjectWrapper h3 {
+    font-size: 32px;
+}
+.PrevProjectWrapper p,
+.NextProjectWrapper p {
+  font-size: 0.875rem;
+
+}
   .Grid > div {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
