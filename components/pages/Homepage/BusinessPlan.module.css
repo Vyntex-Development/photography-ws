@@ -2,17 +2,18 @@
   background-color: var(--green-light);
   padding: 5rem 0;
   overflow: hidden;
+  border-top: 1px solid #012839;
 }
 
 .TabWrapper {
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   
 
 }
 
 .ActiveTabWrapper {
   border-bottom: 1px solid #779593;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
 }
 
 
@@ -36,7 +37,7 @@
 
 .grid > div:nth-of-type(3) {
   grid-area: 3 / 1 / 4 / 2;
-  margin: 2rem 0 2.5rem;
+  margin: 2.5rem 0 2.5rem;
 }
 
 .grid > div:nth-of-type(4) {

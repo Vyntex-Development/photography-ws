@@ -133,6 +133,8 @@
 .SpansWrapper .Selected {
   border-bottom: 1px solid var(--gray-light);
   color: var(--gray-light);
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .ImageWrapper {
