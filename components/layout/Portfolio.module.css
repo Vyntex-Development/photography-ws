@@ -118,6 +118,7 @@
 
 .ImageWrapper {
   height: 192px;
+  margin-bottom: 1rem;
 }
 
 .ImageWrapperBig {
@@ -173,6 +174,8 @@
 .SpansWrapper .Selected {
   border-bottom: 2px solid #012839;
   color: #012839;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -198,7 +201,8 @@
 
   .CurveWrapper {
     top: 100px;
-    left: calc(-200px - 3.9em);
+    top: 2%;
+    left: -6%;
   }
 
   .ScollElement {
