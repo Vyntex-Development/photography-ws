@@ -26,6 +26,7 @@
   letter-spacing: 0.01em;
   color: var(--gray-light);
   margin-bottom: 1rem;
+  font-size: 24px;
 }
 
 .Form p {
@@ -106,6 +107,8 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+  
   .Subscribe > span {
     position: absolute !important;
     height: auto !important;
@@ -130,5 +133,9 @@
 
   .Form {
     max-width: 655px;
+  }
+
+  .Form h3 {
+    font-size: 32px;
   }
 }
