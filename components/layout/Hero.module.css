@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 97.5em;
+  max-width: 1440px;
 }
 
 .ProjectPageTitle {
@@ -54,6 +54,7 @@
   margin-bottom: 2.5rem;
   color: var(--gray-light);
   padding-top: 14px;
+  text-transform: capitalize;
 }
 
 .SwitchOrder .ImageWrapper {
@@ -169,7 +170,7 @@
 
   .HeroSectionWrapper {
     padding: 0 3.88em;
-    max-width: 97.5em;
+    max-width: 1440px;
   }
   .HeroSection p {
     width: 55rem;

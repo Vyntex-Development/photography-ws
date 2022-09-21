@@ -12,6 +12,7 @@
   letter-spacing: 0.01em;
   color: #012839;
   margin-bottom: 1rem;
+  text-transform: capitalize;
 }
 
 .HeroWrapper p {
