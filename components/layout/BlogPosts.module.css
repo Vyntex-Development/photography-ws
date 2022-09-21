@@ -14,6 +14,8 @@
   flex-direction: column;
 }
 
+
+
 .Heading {
   display: flex;
   align-items: center;
@@ -83,7 +85,7 @@
   }
 
   .GridItem {
-    grid-area: 1 / 2 / 2 / 13;
+    grid-area: 1 / 2 / 2 / 12;
   }
 
   .BlogCards {
@@ -98,7 +100,15 @@
 
 @media screen and (min-width: 1440px) {
   .BlogCards {
-    gap: 4.5rem;
+    gap: 5em;
+  }
+  .BlogCards a {
+    width: 100%;
+   
+  }
+
+  .BlogCards > div {
+    width: 100%;
   }
 
   .Grid .ScrollSvgWrapper {
