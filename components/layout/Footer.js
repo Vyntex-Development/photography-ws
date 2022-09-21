@@ -34,15 +34,15 @@ const Footer = () => {
         : "translate(0px, 15px)";
 
       secondImage.current.style.transform = isDesktop
-        ? "translate(0px, -15px)"
+        ? "translate(0px, -7.5px)"
         : "translate(0px, 15px)";
 
       thirdImage.current.style.transform = isDesktop
-        ? "translate(0px, -20px)"
+        ? "translate(0px, 0px)"
         : "translate(0px, 10px)";
 
       fourthImage.current.style.transform = isDesktop
-        ? "translate(0px, -7.5px)"
+        ? "translate(0px, 2.5px)"
         : "translate(0px, 13.5px)";
 
       fifthImage.current.style.transform = isDesktop
@@ -62,9 +62,6 @@ const Footer = () => {
       className={`${classes.footer} ${contactPage ? classes.TopBorder : ""}`}
       ref={ref}
     >
-      {/* <div className={classes.Layer1}></div>
-      <div className={classes.Layer2}></div> */}
-
       {!contactPage && (
         <div className={`${classes.grid} container`}>
           <div className={classes.gridTextWrapper}>
@@ -81,10 +78,7 @@ const Footer = () => {
             >
               <Image
                 src="/footer-image-1.png"
-                objectFit="contain"
-                layout="responsive"
-                height={265}
-                width={465}
+                layout="fill"
                 alt="footer-image"
               />
             </div>
@@ -94,10 +88,7 @@ const Footer = () => {
             >
               <Image
                 src="/footer-image-2.png"
-                objectFit="contain"
-                layout="responsive"
-                height={265}
-                width={430}
+                layout="fill"
                 alt="footer-image"
               />
             </div>
@@ -107,10 +98,7 @@ const Footer = () => {
             >
               <Image
                 src="/footer-image-3.png"
-                objectFit="contain"
-                layout="responsive"
-                height={245}
-                width={400}
+                layout="fill"
                 alt="footer-image"
               />
             </div>
@@ -120,10 +108,7 @@ const Footer = () => {
             >
               <Image
                 src="/footer-image-4.png"
-                objectFit="contain"
-                layout="responsive"
-                height={242}
-                width={445}
+                layout="fill"
                 alt="footer-image"
               />
             </div>
@@ -133,10 +118,7 @@ const Footer = () => {
             >
               <Image
                 src="/footer-image-5.png"
-                objectFit="contain"
-                layout="responsive"
-                height={245}
-                width={480}
+                layout="fill"
                 alt="footer-image"
               />
             </div>

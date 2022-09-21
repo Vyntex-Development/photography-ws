@@ -4,14 +4,7 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-  /* background-color: #161719; */
 }
-
-/* .Layer1 {
-}
-
-.Layer2 {
-} */
 
 .grid {
   display: flex;
@@ -124,10 +117,6 @@
   letter-spacing: 0.01em;
 }
 
-/* .footerLinksWrapper div:nth-of-type(2) svg:not(:last-of-type) {
-  margin-right: 1rem;
-} */
-
 .LinksWrapper {
   margin-bottom: 1rem;
   display: flex;
@@ -182,7 +171,6 @@
     display: flex;
     flex-direction: column;
     padding-top: 71px;
-    /* justify-content: center; */
   }
 
   .gridImageWrapper {
@@ -195,8 +183,8 @@
   .ImageWrapper {
     width: 100%;
     height: 100%;
-    max-width: 33.9em;
-    max-height: 20.4em;
+    /* max-width: 33.9em;
+    max-height: 20.4em; */
     transition: all 1s ease;
   }
 
@@ -208,30 +196,40 @@
   .ImageWrapper:nth-of-type(1) {
     z-index: 1;
     transform: translate(-100px, 700px);
+    width: 621px;
+    height: 387px;
   }
 
   .ImageWrapper:nth-of-type(2) {
     z-index: 2;
     transform: translate(-100px, 700px);
     transition-delay: 250ms;
+    width: 636px;
+    height: 417px;
   }
 
   .ImageWrapper:nth-of-type(3) {
     z-index: 3;
     transform: translate(-100px, 700px);
     transition-delay: 500ms;
+    width: 596px;
+    height: 402px;
   }
 
   .ImageWrapper:nth-of-type(4) {
     z-index: 4;
     transform: translate(-100px, 700px);
     transition-delay: 750ms;
+    width: 581px;
+    height: 362px;
   }
 
   .ImageWrapper:nth-of-type(5) {
     z-index: 5;
     transform: translate(-100px, 700px);
     transition-delay: 1000ms;
+    width: 566px;
+    height: 337px;
   }
 
   .footerMadeByWrapper > div a {
@@ -270,6 +268,9 @@
 
   .gridImageWrapper {
     min-height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .ImageWrapper > span {

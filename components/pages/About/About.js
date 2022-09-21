@@ -27,6 +27,7 @@ const About = () => {
           objectFit="cover"
           alt="header"
           src="/images/header.png"
+          objectPosition="top"
         ></Image>
       </div>
     </div>
