@@ -14,7 +14,7 @@ const Articles = ({ blogs }) => {
             return (
               <div className={classes.Grid} key={id}>
                 <div className={classes.Image}>
-                  <Image src={media} layout="fill" />
+                  <Image src={media} layout="fill" objectFit="cover"/>
                 </div>
                 <div className={classes.Title}>
                   <h3>{title}</h3>

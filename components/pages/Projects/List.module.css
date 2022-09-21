@@ -137,14 +137,7 @@
   padding-left: 5px;
 }
 
-.ImageWrapper {
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: all 0.3s ease-out;
-}
+
 .ImageWrapper > span {
   z-index: 0 !important;
 }
@@ -164,6 +157,14 @@
     flex-direction: row;
     align-items: center;
     
+  }
+  .ImageWrapper {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: all 0.3s ease-out;
   }
 
   .ProjectHeading {

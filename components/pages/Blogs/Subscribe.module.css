@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   padding-top: 0rem;
+  border-bottom: 1px solid #779593;
 }
 
 .Subscribe .FormWrapper {
