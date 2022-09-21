@@ -25,22 +25,46 @@ const Inspiration = ({ project }) => {
         </div>
         <div className={classes.InspirationImagesWrapper}>
           <div className={classes.GridImageWrapper}>
-            <Image layout="fill" src="/project-grid-img-1.png" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/project-grid-img-1.png"
+            />
           </div>
           <div className={classes.GridImageWrapper}>
-            <Image layout="fill" src="/project-grid-img-2.png" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/project-grid-img-2.png"
+            />
           </div>
           <div className={classes.GridImageWrapper}>
-            <Image layout="fill" src="/project-grid-img-3.png" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/project-grid-img-3.png"
+            />
           </div>
           <div className={classes.GridImageWrapper}>
-            <Image layout="fill" src="/project-grid-img-4.png" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/project-grid-img-4.png"
+            />
           </div>
           <div className={classes.GridImageWrapper}>
-            <Image layout="fill" src="/project-grid-img-5.png" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/project-grid-img-5.png"
+            />
           </div>
           <div className={classes.GridImageWrapper}>
-            <Image layout="fill" src="/project-grid-img-6.png" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/project-grid-img-6.png"
+            />
           </div>
         </div>
       </div>
