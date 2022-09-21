@@ -1,7 +1,7 @@
 export const blogs = [
   {
     id: 1,
-    title: "2023 Thailand Workshop",
+    title: "2024 Serbian New year workshop",
     description: `That's B for billions skiing in Aspen private art collection elegance precious upgrade lifestyle.`,
     details: {
       author: "Joe Doe",

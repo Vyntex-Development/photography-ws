@@ -48,7 +48,7 @@
   padding-top: 2.5rem;
 }
 .BlogContentWrapper > div:nth-of-type(2) {
-  grid-area: 1 / 6 / 2 / 12;
+  grid-area: 1 / 5 / 2 / 12;
   padding-top: 1.5rem;
 }
 
@@ -109,6 +109,10 @@
 .Info div {
   display: flex;
   align-items: center;
+}
+
+.Info div {
+  margin-left: auto;
 }
 
 .Info > p {
@@ -277,6 +281,8 @@
   width: 100%;
   height: 26.375rem;
   margin-top: 2.5rem;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .BlogContentText .ImageText {
@@ -336,12 +342,16 @@
   position: relative;
   width: 100%;
   height: 480px;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .ImageWrapperTop {
   position: relative;
   width: 100%;
   height: 138px;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .Error {
@@ -366,6 +376,16 @@
   .Form,
   .ImageWraper {
     max-width: 70vw;
+  }
+
+  .SubscribeModal {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .SubscribeModal .ImageWraper {
+    max-width: calc(50vw - 2rem);
+    height: 149px;
   }
 }
 
@@ -393,6 +413,10 @@
   .Form input,
   .Form p {
     max-width: 12.93rem;
+  }
+
+  .BlogAboutWrapper {
+    max-width: 16.125rem;
   }
 
   .BlogInfoWrapper {
@@ -473,6 +497,7 @@
     width: 100%;
     height: 150px;
     max-width: 12.93rem;
+    border-radius: 0px;
   }
 }
 
@@ -495,5 +520,9 @@
     font-size: 1rem;
     line-height: 100%;
     letter-spacing: 0.1px;
+  }
+
+  .FormImageWrapper {
+    border-radius: 0px;
   }
 }

@@ -64,6 +64,7 @@
   padding: 0;
   border: 0;
   padding: 0.625rem 0 0.625rem 1.5rem;
+  background-color: #dfdfe0;
 }
 
 .InputWrapper input::placeholder {
@@ -107,8 +108,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-
-  
   .Subscribe > span {
     position: absolute !important;
     height: auto !important;

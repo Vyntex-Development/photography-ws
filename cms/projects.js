@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Becoming You",
+    title: "Enrichment",
     description: "sloun",
     slug: "becoming-you",
     media: "/images/portfolio2.png",
@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Enrichment",
+    title: "Becoming you",
     description: "floskula",
     slug: "enrichment",
     media: "/images/portfolio3.png",
@@ -61,6 +61,26 @@ export const projects = [
   },
   {
     id: 4,
+    title: "Classic as chanel",
+    description: "divandivan",
+    slug: "classic-as-chanel",
+    media: "/images/portfolio4.png",
+    media_animation: "/images/portfolio-animation.png",
+    details: {
+      client: "Trial and error",
+      location: "Dublin",
+      time: "nov 2019",
+    },
+    stuff: {
+      art_director: "sophie amelie",
+      photographer: "sophie amelie",
+      makeup: "gracy jones",
+      costumes: ["sophie amelie", "gracy jones"],
+    },
+    type: "commercial",
+  },
+  {
+    id: 5,
     title: "Waking Life",
     description: "floskula",
     slug: "waking-life",
@@ -80,7 +100,7 @@ export const projects = [
     type: "commercial",
   },
   {
-    id: 5,
+    id: 6,
     title: "Champagne",
     description: "doingwork",
     slug: "champagne",
@@ -98,25 +118,5 @@ export const projects = [
       costumes: ["gracy jones"],
     },
     type: "personal",
-  },
-  {
-    id: 6,
-    title: "Classic as chanel",
-    description: "divandivan",
-    slug: "classic-as-chanel",
-    media: "/images/portfolio4.png",
-    media_animation: "/images/portfolio-animation.png",
-    details: {
-      client: "Trial and error",
-      location: "Dublin",
-      time: "nov 2019",
-    },
-    stuff: {
-      art_director: "sophie amelie",
-      photographer: "sophie amelie",
-      makeup: "gracy jones",
-      costumes: ["sophie amelie", "gracy jones"],
-    },
-    type: "commercial",
   },
 ];
