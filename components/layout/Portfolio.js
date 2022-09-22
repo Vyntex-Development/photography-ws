@@ -6,11 +6,12 @@ import { useInView } from "react-intersection-observer";
 
 const Portfolio = ({ projects }) => {
   const scrollWrapper = useRef();
-  const portfolioGridRef = useRef();
-  const [ref, inView, entry] = useInView({
-    threshold: 0.3,
-  });
+
   const [projectType, setProjectType] = useState("");
+  const [trashhold, setTrashhold] = useState(null);
+  const [ref, inView, entry] = useInView({
+    threshold: trashhold,
+  });
   const setFilteredProjectsHandler = (projectType) => {
     setProjectType(projectType);
   };
@@ -25,8 +26,9 @@ const Portfolio = ({ projects }) => {
     { type: "commercial", filteredProjects: comercialProjects },
   ];
 
+  console.log(trashhold);
+
   useEffect(() => {
-    console.log(entry);
     scrollWrapper.current.style.opacity = inView ? "1" : "0";
     scrollWrapper.current.style.transform = inView
       ? `translate(calc(-${
@@ -40,6 +42,25 @@ const Portfolio = ({ projects }) => {
       ? "all 0.7s ease"
       : "all 0.2s ease";
   }, [inView]);
+
+  useEffect(() => {
+    let trashhold;
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 991) {
+        trashhold = 0.35;
+        if (projectType === "personal" || projectType === "commercial") {
+          trashhold = 0.75;
+        }
+      } else {
+        trashhold =
+          projectType === "personal" || projectType === "commercial"
+            ? 0.5
+            : 0.3;
+      }
+    }
+
+    setTrashhold(trashhold);
+  }, [projectType]);
 
   return (
     <div className={classes.PortfolioContainer}>
@@ -63,7 +84,7 @@ const Portfolio = ({ projects }) => {
           </div>
         )}
         <div>
-          <div className="container" ref={ref}>
+          <div className="container">
             <div className={classes.ProtfolioWrapper}>
               <div className={classes.ScollElementWrapper} ref={scrollWrapper}>
                 <div className={classes.ScollElement}>
@@ -99,7 +120,7 @@ const Portfolio = ({ projects }) => {
                   Commercial
                 </span>
               </div>
-              <div className={classes.PortfolioGrid} ref={portfolioGridRef}>
+              <div className={classes.PortfolioGrid} ref={ref}>
                 {tabs.map(({ type, filteredProjects }) => {
                   return filteredProjects.map(
                     ({ title, description, media, id, slug }) => {

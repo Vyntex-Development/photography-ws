@@ -58,6 +58,8 @@
   justify-content: space-between;
   width: 20.625rem;
   margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2000;
 }
 
 .SpansWrapper span {
@@ -70,6 +72,15 @@
   letter-spacing: 0.01em;
   color: rgba(1, 40, 57, 0.5);
   cursor: pointer;
+  padding: 0 5px;
+}
+
+.SpansWrapper span:nth-of-type(1) {
+  margin-left: -5px;
+}
+
+.SpansWrapper span:nth-of-type(3) {
+  margin-right: -5px;
 }
 
 .PortfolioGrid {
@@ -174,8 +185,6 @@
 .SpansWrapper .Selected {
   border-bottom: 2px solid #012839;
   color: #012839;
-  padding-right: 5px;
-  padding-left: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -199,7 +208,6 @@
   .PortfolioGrid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, auto);
     grid-column-gap: 1rem;
     grid-row-gap: 2.5rem;
     width: 100%;

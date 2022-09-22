@@ -13,21 +13,21 @@
 
 .SubscribeReadingDuration {
   position: absolute;
-  top: 0px;
+  top: 90px;
   width: calc(100% - 32px);
   left: 16px;
-  z-index: 11;
-  background-color: #dfdfe0;
+  z-index: 13;
+  background-color: rgba(128, 128, 128, 0.2);
   height: 0.25rem;
   overflow: hidden;
 }
 
 .SubscribeModal {
   position: absolute;
-  top: 0px;
+  top: 90px;
   width: 100%;
   left: 0;
-  z-index: 10;
+  z-index: 12;
   background-color: #dfdfe0;
   padding: 2.5rem 1rem;
 }
@@ -48,7 +48,6 @@
   padding-top: 2.5rem;
 }
 .BlogContentWrapper > div:nth-of-type(2) {
-  grid-area: 1 / 5 / 2 / 12;
   padding-top: 1.5rem;
 }
 
@@ -372,12 +371,15 @@
   text-decoration: underline;
 }
 
-@media screen and (min-width: 768px) {
-  .Form,
-  .ImageWraper {
-    max-width: 70vw;
-  }
+.ImageWrapperTop {
+  display: block;
+}
 
+.FormWrapper .ImageWrapperTop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
   .SubscribeModal {
     display: flex;
     gap: 2rem;
@@ -387,6 +389,28 @@
     max-width: calc(50vw - 2rem);
     height: 149px;
   }
+
+  .ImageWrapperTop {
+    display: none;
+  }
+
+  .FormWrapper .ImageWrapperTop {
+    display: block;
+    width: 50%;
+    margin-right: 32px;
+  }
+
+  .SubscribeModal .ImageWraper {
+    display: block;
+  }
+
+  .FormWrapper {
+    display: flex;
+  }
+
+  .FormWrapper p:nth-of-type(1) {
+    margin-top: 0px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -394,6 +418,19 @@
   .SubscribeModal,
   .FormImageWrapper {
     display: none;
+  }
+
+  .ImageWrapperTop {
+    display: block;
+  }
+
+  .FormWrapper .ImageWrapperTop {
+    display: none;
+  }
+
+  .FormWrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   .BlogContentWrapper > div:nth-of-type(1) {
@@ -499,6 +536,10 @@
     max-width: 12.93rem;
     border-radius: 0px;
   }
+
+  .BlogContentWrapper > div:nth-of-type(2) {
+    grid-area: 1 / 6 / 2 / 12;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -524,5 +565,9 @@
 
   .FormImageWrapper {
     border-radius: 0px;
+  }
+
+  .BlogContentWrapper > div:nth-of-type(2) {
+    grid-area: 1 / 5 / 2 / 12;
   }
 }

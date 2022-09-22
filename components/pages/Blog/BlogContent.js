@@ -108,30 +108,37 @@ const BlogContent = ({ details, setDuration, media }) => {
               <Image src="/blog-img.png" layout="fill" />
             </div>
             <div>
-              <form
-                className={classes.Form}
-                action=""
-                onSubmit={submiFormForDesktop}
-              >
-                <p>subscribe to our newsletter:</p>
-                <div className={classes.FormInnerWrapper}>
-                  <Input
-                    placeholder="Email"
-                    color="#808080"
-                    ref={subscribeInputRef}
-                  />
-                  {error && <span className={classes.Error}>{error}</span>}
-
-                  <Button btnType="secondary" type="submit">
-                    Subscribe
-                  </Button>
+              <div className={classes.FormWrapper}>
+                <div
+                  className={`${classes.ImageWraper} ${classes.ImageWrapperTop}`}
+                >
+                  <Image src="/blog-img.png" layout="fill" />
                 </div>
+                <form
+                  className={classes.Form}
+                  action=""
+                  onSubmit={submiFormForDesktop}
+                >
+                  <p>subscribe to our newsletter:</p>
+                  <div className={classes.FormInnerWrapper}>
+                    <Input
+                      placeholder="Email"
+                      color="#808080"
+                      ref={subscribeInputRef}
+                    />
+                    {error && <span className={classes.Error}>{error}</span>}
 
-                <p>
-                  By submitting this form you read and agree to the Terms &
-                  Conditions and our privacy policy.
-                </p>
-              </form>
+                    <Button btnType="secondary" type="submit">
+                      Subscribe
+                    </Button>
+                  </div>
+
+                  <p>
+                    By submitting this form you read and agree to the Terms &
+                    Conditions and our privacy policy.
+                  </p>
+                </form>
+              </div>
 
               <div className={classes.FormImageWrapper}>
                 <Image
