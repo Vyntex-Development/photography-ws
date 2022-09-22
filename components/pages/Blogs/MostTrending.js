@@ -18,7 +18,7 @@ const MostTrending = ({ blogs }) => {
           {slicedBlogs.map(
             ({ title, description, id, details, media, slug }) => {
               return (
-                <BlogCard
+                <BlogCard 
                   key={id}
                   title={title}
                   description={description}
