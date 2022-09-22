@@ -25,4 +25,6 @@
 .Error {
   color: #ff3333;
   font-size: 12px;
+  margin-top: 8px;
+  display: inline-block;
 }

@@ -89,6 +89,10 @@
     color: #aac4b9;
     max-width: none;
   }
+
+  .Answer p {
+    max-width: calc(100% - 12px);
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -119,6 +123,10 @@
 
   .Faq:nth-of-type(1) .Question svg {
     transform: translateY(calc(-50% - 8px));
+  }
+
+  .Answer p {
+    max-width: 544px;
   }
 }
 

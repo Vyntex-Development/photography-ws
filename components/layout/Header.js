@@ -24,7 +24,11 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={`${classes.HeaderSectionWrapper} container`}>
+    <div
+      className={`${classes.HeaderSectionWrapper} ${`${
+        isBlogCmsPage ? classes.FixedHeader : ""
+      }`} container`}
+    >
       <div className={`${classes.MobileMenu} ${isOpen ? classes.Open : ""}`}>
         <Link passHref={true} href="/">
           <a
@@ -90,7 +94,7 @@ const Header = () => {
           }`}
           style={{
             filter: `${
-              projectPage || contactPage || aboutPage
+              (projectPage || contactPage || aboutPage) && !isOpen
                 ? "invert(1)"
                 : "invert(0)"
             }`,
@@ -134,21 +138,27 @@ const Header = () => {
           <span
             style={{
               backgroundColor: `${
-                projectPage || contactPage || aboutPage ? "#DFDFE0" : "#012839"
+                (projectPage || contactPage || aboutPage) && !isOpen
+                  ? "#DFDFE0"
+                  : "#012839"
               }`,
             }}
           ></span>
           <span
             style={{
               backgroundColor: `${
-                projectPage || contactPage || aboutPage ? "#DFDFE0" : "#012839"
+                (projectPage || contactPage || aboutPage) && !isOpen
+                  ? "#DFDFE0"
+                  : "#012839"
               }`,
             }}
           ></span>
           <span
             style={{
               backgroundColor: `${
-                projectPage || contactPage || aboutPage ? "#DFDFE0" : "#012839"
+                (projectPage || contactPage || aboutPage) && !isOpen
+                  ? "#DFDFE0"
+                  : "#012839"
               }`,
             }}
           ></span>
