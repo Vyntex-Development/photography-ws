@@ -29,25 +29,31 @@ const Footer = () => {
     if (isFirstSectionEnter) return;
     if (contactPage) return;
     if (inView && !isFirstSectionEnter) {
-      firstImage.current.style.transform = isDesktop
-        ? "translate(0px, -5px)"
-        : "translate(0px, 15px)";
+      firstImage.current.classList.add("image-animate");
+      secondImage.current.classList.add("image-animate");
+      thirdImage.current.classList.add("image-animate");
+      fourthImage.current.classList.add("image-animate");
+      fifthImage.current.classList.add("image-animate");
 
-      secondImage.current.style.transform = isDesktop
-        ? "translate(0px, -7.5px)"
-        : "translate(0px, 15px)";
+      // firstImage.current.style.transform = isDesktop
+      //   ? "translate(0px, -5px)"
+      //   : "translate(0px, 15px)";
 
-      thirdImage.current.style.transform = isDesktop
-        ? "translate(0px, 0px)"
-        : "translate(0px, 10px)";
+      // secondImage.current.style.transform = isDesktop
+      //   ? "translate(0px, -7.5px)"
+      //   : "translate(0px, 15px)";
 
-      fourthImage.current.style.transform = isDesktop
-        ? "translate(0px, 2.5px)"
-        : "translate(0px, 13.5px)";
+      // thirdImage.current.style.transform = isDesktop
+      //   ? "translate(0px, 0px)"
+      //   : "translate(0px, 10px)";
 
-      fifthImage.current.style.transform = isDesktop
-        ? "translate(0px, 5px)"
-        : "translate(0px, 20px)";
+      // fourthImage.current.style.transform = isDesktop
+      //   ? "translate(0px, 2.5px)"
+      //   : "translate(0px, 13.5px)";
+
+      // fifthImage.current.style.transform = isDesktop
+      //   ? "translate(0px, 5px)"
+      //   : "translate(0px, 20px)";
     } else {
       firstImage.current.style.transform = "translate(-100px, 900px)";
       secondImage.current.style.transform = "translate(-100px, 900px)";

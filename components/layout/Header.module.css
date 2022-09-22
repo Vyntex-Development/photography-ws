@@ -2,6 +2,15 @@
   position: relative;
 }
 
+.FixedHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--gray-light);
+  z-index: 11;
+}
+
 .HeaderWrapper {
   display: flex;
   justify-content: space-between;
@@ -12,6 +21,8 @@
   padding-bottom: 26px;
   padding-left: 0px;
   padding-right: 0px;
+  position: relative;
+  z-index: 12;
 }
 
 .HeaderWrapperForBlogCmsPage {
@@ -58,14 +69,17 @@
   background-color: var(--gray-light);
   width: 100%;
   padding: 2rem;
-  /* padding-top: 1rem; */
-  top: 112px;
+  top: 0px;
   right: 0;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   left: -999px;
   transition: all 0.5s ease-in-out;
+  z-index: 6;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .MobileMenu.Open {
@@ -114,6 +128,7 @@
 
 .Link {
   opacity: 0;
+  font-size: 20px;
 }
 
 .Link.AnimateLink {
@@ -186,6 +201,10 @@
 
   .MobileMenu {
     display: none;
+  }
+
+  .Link {
+    font-size: 0.875rem;
   }
 }
 

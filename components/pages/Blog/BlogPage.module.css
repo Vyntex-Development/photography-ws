@@ -1,6 +1,7 @@
 .HeroWrapper {
   display: flex;
   flex-direction: column;
+  margin-top: 110px;
 }
 
 .HeroWrapper h2 {
@@ -76,6 +77,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .HeroWrapper {
+    margin-top: 0px;
+  }
+
   .ImageWrapper {
     display: block;
   }
